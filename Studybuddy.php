@@ -1,3 +1,4 @@
+<!--Kopplar till databasen via db_connect.php-->
 <html>
 <?php include "db_connect.php" ?>
   <body>
