@@ -4,7 +4,7 @@
   <body>
 
 <!--Knapp som kopplar användaren till inloggningssidan-->
-    <form name="sida1" action="loggin.php" method="post" >
+    <form name="sida1" action="loggaIn.php" method="post" >
       <button name="loggaIn" type="submit" value="Button" >Logga in</button>
     </form>
 

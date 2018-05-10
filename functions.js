@@ -1,7 +1,7 @@
-function validateloggin()
+function validateLoggain()
 {
-    var x = document.forms["logginform"]["epost"].value;
-    var y = document.forms["logginform"]["psw"].value;
+    var x = document.forms["loggainform"]["epost"].value;
+    var y = document.forms["loggainform"]["psw"].value;
 
     if (x == "")
       {
@@ -15,7 +15,7 @@ function validateloggin()
       }
 }
 
-function validateregistration()
+function validateRegistration()
 {
   var a = document.forms["registrationform"]["namn"].value;
   var b = document.forms["registrationform"]["email"].value;
@@ -29,5 +29,3 @@ function validateregistration()
       return false;
     }
 }
-
-function

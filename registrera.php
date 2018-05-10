@@ -3,7 +3,7 @@
   <?php include "db_connect.php" ?> <!--include refererar till page db_connect.php, som i sin tur kopplar oss till databasen. -->
   <body>
 
-    <form name="registrationform" action="minasidor.php" method="post" onsubmit="return validateregistration()" >
+    <form name="registrationform" action="minasidor.php" method="post" onsubmit="return validateRegistration()" >
 
       <h1>Registrera dig NUUUUUUUUUUUU</h1>
       <p>Fyll i formuläret för att skapa en användare.</p>
@@ -27,7 +27,7 @@
       <button type="button" >Avbryt</button>
       <button type="submit" >Registrera dig</button>
 
-      <script src="studybuddy.js"></script>
+
 
     </form>
   </body>
