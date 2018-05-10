@@ -5,7 +5,7 @@
 
     <form name="registrationform" action="/studybuddy/minasidor.php" method="post" onsubmit="return validateregistration()" >
 
-      <h1>Registrera dig</h1>
+      <h1>Registrera dig NUUUUUUUUUUUU</h1>
       <p>Fyll i formuläret för att skapa en användare.</p>
 
       <label for="namn"><b>Ditt fullständiga namn</b></label>
