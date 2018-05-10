@@ -1,29 +1,31 @@
+//Funktion som säkerställer att båda inloggningsfält är ifyllda
 function validateloggin()
 {
-    var x = document.forms["logginform"]["epost"].value;
-    var y = document.forms["logginform"]["psw"].value;
+    var email = document.forms["logginform"]["epost"].value;
+    var psw = document.forms["logginform"]["psw"].value;
 
-    if (x == "")
+    if (email == "")
       {
         alert("Fyll i E-post");
         return false;
       }
-    else if (y == "")
+    else if (psw == "")
       {
         alert("Fyll i Lösenord");
         return false;
       }
 }
 
+//Funktion som säkerställer att alla registreringsfälten är ifyllda
 function validateregistration()
 {
-  var a = document.forms["registrationform"]["namn"].value;
-  var b = document.forms["registrationform"]["email"].value;
-  var c = document.forms["registrationform"]["mnr"].value;
-  var d = document.forms["registrationform"]["psw"].value;
-  var e = document.forms["registrationform"]["psw-repeat"].value;
+  var name = document.forms["registrationform"]["namn"].value;
+  var email = document.forms["registrationform"]["email"].value;
+  var mnr = document.forms["registrationform"]["mnr"].value;
+  var psw = document.forms["registrationform"]["psw"].value;
+  var psw-repeat = document.forms["registrationform"]["psw-repeat"].value;
 
-  if ((a == "") || (b == "") || (c == "") || (d == "") ||(e == ""))
+  if ((name == "") || (email == "") || (mnr == "") || (psw == "") ||(psw-repeat == ""))
     {
       alert("Fyll i alla fälten i formuläret");
       return false;
