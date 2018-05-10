@@ -1,4 +1,4 @@
-function validateLoggain()
+function validateloggin()
 {
     var x = document.forms["loggainform"]["epost"].value;
     var y = document.forms["loggainform"]["psw"].value;
@@ -15,7 +15,7 @@ function validateLoggain()
       }
 }
 
-function validateRegistration()
+function validateregistration()
 {
   var a = document.forms["registrationform"]["namn"].value;
   var b = document.forms["registrationform"]["email"].value;

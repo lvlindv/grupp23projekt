@@ -14,7 +14,7 @@ if($epost) []
   <?php include "db_connect.php" ?>
   <body>
 
-    <form name="loggainform" action="minasidor.php" method="post" onsubmit="return validateLoggain()">
+    <form name="logginform" action="minasidor.php" method="post" onsubmit="return validateloggin()">
 
       <label for="uname"><b>Epost</b></label>
       <input type="text" placeholder="Ange din E-post" name="epost" >
@@ -26,7 +26,7 @@ if($epost) []
 
     </form>
 
-    <script src="functions.js"></script>
+    <script src="studybuddy.js"></script>
 
   </body>
 </html>
