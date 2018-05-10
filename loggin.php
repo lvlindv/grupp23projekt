@@ -9,12 +9,12 @@ $psw = isset($_POST(['psw']) ? $_POST['psw'] : "";
 if($epost) []
 
 ?>*/
-
+?>
 <html>
   <?php include "db_connect.php" ?>
   <body>
 
-    <form name="logginform" action="/studybuddy/minasidor.php" method="post" onsubmit="return validateloggin()">
+    <form name="logginform" action="minasidor.php" method="post" onsubmit="return validateloggin()">
 
       <label for="uname"><b>Epost</b></label>
       <input type="text" placeholder="Ange din E-post" name="epost" >

@@ -4,12 +4,12 @@
   <body>
 
 <!--Knapp som kopplar användaren till inloggningssidan-->
-    <form name="sida1" action="/studybuddy/loggin.php" method="get" >
+    <form name="sida1" action="loggin.php" method="post" >
       <button name="loggaIn" type="submit" value="Button" >Logga in</button>
     </form>
 
 <!--Kopplar användaren till registrera.php sidan. Jag har gjort två forms för att kunna koppla till olika actions-->
-    <form name="sida2" action="/studybuddy/registrera.php" method="get"  >
+    <form name="sida2" action="registrera.php" method="post"  >
       <button name="registrera" type="submit" value="Button">Registrera</button>
     </form>
   </body>

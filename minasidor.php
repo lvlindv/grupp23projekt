@@ -4,14 +4,14 @@ include 'db_connect.php';
 
 $name = $_POST['namn'];
 $email = $_POST['email'];
-$Lösenord = $_POST['psw'];
+$psw = $_POST['psw'];
 $mobilnr = $_POST['mnr'];
 
-$sql = "INSERT INTO Student (namn, epost, lösenord, mobilNr)
-VALUES ('$name', '$email', '$lösenord','$mobilnr')";
+$sql = "INSERT INTO Student(namn, epost, password, mobilNr)
+VALUES ('$name', '$email', '$psw','$mobilnr')";
 
 
-if ($connection ->query($sql) === TRUE) {
+if ($connection ->query($sql)) {
   echo "worked";
 }
 else {

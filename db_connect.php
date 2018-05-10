@@ -1,5 +1,6 @@
 
 <?php
+
 $uname = "root";
 $pass = "root";
 $host = "localhost";
