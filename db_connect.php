@@ -4,7 +4,7 @@
 $uname = "root";
 $pass = "root";
 $host = "localhost";
-$dbname = "studybuddy";
+$dbname = "studyHelper";
 
 $connection = new mysqli($host, $uname, $pass, $dbname);
 
