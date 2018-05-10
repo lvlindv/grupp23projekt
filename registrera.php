@@ -28,6 +28,8 @@
       <button type="submit" >Registrera dig</button>
 
 
+       <script src="functions.js"></script>
+
 
     </form>
   </body>
