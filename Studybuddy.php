@@ -2,7 +2,7 @@
 <?php include "db_connect.php" ?>
   <body>
 
-<!--Kommentar-->
+<!--Knapp som kopplar användaren till inloggningssidan-->
     <form name="sida1" action="/studybuddy/loggin.php" method="get" >
       <button name="loggaIn" type="submit" value="Button" >Logga in</button>
     </form>
