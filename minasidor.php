@@ -7,7 +7,7 @@ $email = $_POST['email'];
 $psw = $_POST['psw'];
 $mobilnr = $_POST['mnr'];
 
-$sql = "INSERT INTO Student(namn, epost, password, mobilNr)
+$sql = "INSERT INTO Student(name, email, password, phoneNr)
 VALUES ('$name', '$email', '$psw','$mobilnr')";
 
 
