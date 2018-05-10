@@ -1,14 +1,14 @@
 <?php
 
 // Starta en session
-/*session_start();
+session_start();
 $epost = isset($_POST(['email']) ? $_POST['email'] : "";
 $psw = isset($_POST(['psw']) ? $_POST['psw'] : "";
 
 
 if($epost) []
 
-?>*/
+?>
 
 <html>
   <?php include "db_connect.php" ?>
