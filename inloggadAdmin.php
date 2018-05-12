@@ -8,7 +8,7 @@
     <title></title>
   </head>
   <body>
-    <form name="registrationform" action="nyRegHelper.php" method="post" onsubmit="return validateregistration()" >
+    <form name="regHelper" action="nyRegHelper.php" method="post" onsubmit="return validateregistration()" >
 
       <label for="name"><b>Fullständigt namn</b></label>
       <input type="text" placeholder="Ange fullständigt namn på StudyHelper" name="name" >
@@ -26,8 +26,7 @@
       <input type="text" placeholder="Ange mobilnummer" name="phoneNr" >
 
       <input type="submit" value="Registrera">
-
-      <script src="studybuddy.js"></script>
+        <script src="studybuddy.js"></script>
 
     </form>
 
