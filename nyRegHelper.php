@@ -1,4 +1,6 @@
 <?php
+include 'db_connect.php';
+
 $name = $_POST['name'];
 $email = $_POST['email'];
 $psw = $_POST['psw'];
