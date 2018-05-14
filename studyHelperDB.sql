@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 14, 2018 at 12:45 PM
+-- Generation Time: May 14, 2018 at 01:43 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -59,7 +59,7 @@ CREATE TABLE `Booking` (
 
 CREATE TABLE `CoachSubjects` (
   `subjectName` varchar(255) NOT NULL,
-  `helperId` int(11) NOT NULL
+  `coachId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -71,6 +71,19 @@ CREATE TABLE `CoachSubjects` (
 CREATE TABLE `Days` (
   `name` varchar(7) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Days`
+--
+
+INSERT INTO `Days` (`name`) VALUES
+('Fredag'),
+('Lördag'),
+('Måndag'),
+('Onsdag'),
+('Söndag'),
+('Tisdag'),
+('Torsdag');
 
 -- --------------------------------------------------------
 
@@ -149,8 +162,8 @@ ALTER TABLE `Booking`
 -- Indexes for table `CoachSubjects`
 --
 ALTER TABLE `CoachSubjects`
-  ADD PRIMARY KEY (`subjectName`,`helperId`),
-  ADD KEY `buddyId` (`helperId`);
+  ADD PRIMARY KEY (`subjectName`,`coachId`),
+  ADD KEY `buddyId` (`coachId`);
 
 --
 -- Indexes for table `Days`
@@ -229,4 +242,4 @@ ALTER TABLE `Booking`
 --
 ALTER TABLE `CoachSubjects`
   ADD CONSTRAINT `BuddyÄmnen_ibfk_1` FOREIGN KEY (`subjectName`) REFERENCES `studybuddy`.`Ämnen` (`name`),
-  ADD CONSTRAINT `BuddyÄmnen_ibfk_2` FOREIGN KEY (`helperId`) REFERENCES `studybuddy`.`StudyBuddy` (`helperId`);
+  ADD CONSTRAINT `BuddyÄmnen_ibfk_2` FOREIGN KEY (`coachId`) REFERENCES `studybuddy`.`StudyBuddy` (`helperId`);
