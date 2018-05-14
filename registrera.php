@@ -7,7 +7,7 @@
     <form name="registrationform" action="minasidor.php" method="post" onsubmit="return validateregistration()" >
 
       <!--Titel och brödtext-->
-      <h1>Registrera dig NUUUUUUUUUUUU</h1>
+      <h1>Registrera dig </h1>
       <p>Fyll i formuläret för att skapa en användare.</p>
 
       <!--Label och inputbox för namn-->
