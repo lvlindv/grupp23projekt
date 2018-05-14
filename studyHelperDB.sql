@@ -142,28 +142,16 @@ ALTER TABLE `Admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `Availability`
---
-ALTER TABLE `Availability`
-  ADD KEY `dag` (`day`),
-  ADD KEY `buddyID` (`coachId`);
-
---
 -- Indexes for table `Booking`
 --
 ALTER TABLE `Booking`
   ADD PRIMARY KEY (`bookingId`),
-  ADD KEY `dag` (`day`),
-  ADD KEY `ämne` (`subject`),
-  ADD KEY `studentId` (`studentId`),
-  ADD KEY `buddyId` (`coachId`);
 
 --
 -- Indexes for table `CoachSubjects`
 --
 ALTER TABLE `CoachSubjects`
   ADD PRIMARY KEY (`subjectName`,`coachId`),
-  ADD KEY `buddyId` (`coachId`);
 
 --
 -- Indexes for table `Days`
@@ -225,21 +213,21 @@ ALTER TABLE `StudyCoach`
 -- Constraints for table `Availability`
 --
 ALTER TABLE `Availability`
-  ADD CONSTRAINT `Tillgänglighet_ibfk_1` FOREIGN KEY (`day`) REFERENCES `studybuddy`.`Dag` (`name`),
-  ADD CONSTRAINT `Tillgänglighet_ibfk_2` FOREIGN KEY (`coachId`) REFERENCES `studybuddy`.`StudyBuddy` (`helperId`);
+  ADD CONSTRAINT `Availability_ibfk_1` FOREIGN KEY (`day`) REFERENCES `studyHelper`.`Days` (`name`),
+  ADD CONSTRAINT `Availability_ibfk_2` FOREIGN KEY (`coachId`) REFERENCES `studyHelper`.`StudyCoach` (`coachId`);
 
 --
 -- Constraints for table `Booking`
 --
 ALTER TABLE `Booking`
-  ADD CONSTRAINT `Bokning_ibfk_1` FOREIGN KEY (`day`) REFERENCES `studybuddy`.`Dag` (`name`),
-  ADD CONSTRAINT `Bokning_ibfk_2` FOREIGN KEY (`subject`) REFERENCES `studybuddy`.`Ämnen` (`name`),
-  ADD CONSTRAINT `Bokning_ibfk_3` FOREIGN KEY (`studentId`) REFERENCES `studybuddy`.`Student` (`studentId`),
-  ADD CONSTRAINT `Bokning_ibfk_4` FOREIGN KEY (`coachId`) REFERENCES `studybuddy`.`StudyBuddy` (`helperId`);
+  ADD CONSTRAINT `Booking_ibfk_1` FOREIGN KEY (`day`) REFERENCES `studyHelper`.`Days` (`name`),
+  ADD CONSTRAINT `Booking_ibfk_2` FOREIGN KEY (`subject`) REFERENCES `studyHelper`.`Subjects` (`name`),
+  ADD CONSTRAINT `Booking_ibfk_3` FOREIGN KEY (`studentId`) REFERENCES `studyHelper`.`Student` (`studentId`),
+  ADD CONSTRAINT `Booking_ibfk_4` FOREIGN KEY (`coachId`) REFERENCES `studyHelper`.`StudyCoach` (`coachId`);
 
 --
 -- Constraints for table `CoachSubjects`
 --
 ALTER TABLE `CoachSubjects`
-  ADD CONSTRAINT `BuddyÄmnen_ibfk_1` FOREIGN KEY (`subjectName`) REFERENCES `studybuddy`.`Ämnen` (`name`),
-  ADD CONSTRAINT `BuddyÄmnen_ibfk_2` FOREIGN KEY (`coachId`) REFERENCES `studybuddy`.`StudyBuddy` (`helperId`);
+  ADD CONSTRAINT `CoachSubjects_ibfk_1` FOREIGN KEY (`subjectName`) REFERENCES `studyHelper`.`Subjects` (`name`),
+  ADD CONSTRAINT `CoachSubjects_ibfk_2` FOREIGN KEY (`coachId`) REFERENCES `studyHelper`.`StudyCoach` (`coachId`);
