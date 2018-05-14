@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: May 14, 2018 at 01:43 PM
+-- Generation Time: May 14, 2018 at 05:29 PM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -22,9 +22,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `Admin` (
   `id` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `email` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -33,9 +33,9 @@ CREATE TABLE `Admin` (
 --
 
 CREATE TABLE `Availability` (
-  `day` varchar(7) NOT NULL,
+  `day` varchar(7) COLLATE utf8_swedish_ci NOT NULL,
   `coachId` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -44,12 +44,12 @@ CREATE TABLE `Availability` (
 --
 
 CREATE TABLE `Booking` (
-  `day` varchar(7) NOT NULL,
-  `subject` varchar(255) NOT NULL,
+  `day` varchar(7) COLLATE utf8_swedish_ci NOT NULL,
+  `subject` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
   `studentId` int(11) NOT NULL,
   `coachId` int(11) NOT NULL,
   `bookingId` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -58,9 +58,9 @@ CREATE TABLE `Booking` (
 --
 
 CREATE TABLE `CoachSubjects` (
-  `subjectName` varchar(255) NOT NULL,
+  `subjectName` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
   `coachId` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -69,21 +69,8 @@ CREATE TABLE `CoachSubjects` (
 --
 
 CREATE TABLE `Days` (
-  `name` varchar(7) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `Days`
---
-
-INSERT INTO `Days` (`name`) VALUES
-('Fredag'),
-('Lördag'),
-('Måndag'),
-('Onsdag'),
-('Söndag'),
-('Tisdag'),
-('Torsdag');
+  `name` varchar(7) COLLATE utf8_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -92,19 +79,12 @@ INSERT INTO `Days` (`name`) VALUES
 --
 
 CREATE TABLE `Student` (
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `name` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
   `phoneNr` int(20) NOT NULL,
   `studentId` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `Student`
---
-
-INSERT INTO `Student` (`name`, `email`, `password`, `phoneNr`, `studentId`) VALUES
-('Louise', 'louise@wiljander.com', 'hej', 876, 1);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -113,13 +93,13 @@ INSERT INTO `Student` (`name`, `email`, `password`, `phoneNr`, `studentId`) VALU
 --
 
 CREATE TABLE `StudyCoach` (
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `description` varchar(255) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
+  `description` varchar(255) COLLATE utf8_swedish_ci DEFAULT NULL,
   `coachId` int(11) NOT NULL,
   `phoneNr` int(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -128,8 +108,68 @@ CREATE TABLE `StudyCoach` (
 --
 
 CREATE TABLE `Subjects` (
-  `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `name` varchar(255) COLLATE utf8_swedish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `Admin`
+--
+ALTER TABLE `Admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `Availability`
+--
+ALTER TABLE `Availability`
+  ADD PRIMARY KEY (`day`,`coachId`),
+  ADD KEY `coachId` (`coachId`),
+  ADD KEY `day` (`day`);
+
+--
+-- Indexes for table `Booking`
+--
+ALTER TABLE `Booking`
+  ADD PRIMARY KEY (`bookingId`),
+  ADD KEY `day` (`day`),
+  ADD KEY `subject` (`subject`),
+  ADD KEY `studentId` (`studentId`),
+  ADD KEY `coachId` (`coachId`);
+
+--
+-- Indexes for table `CoachSubjects`
+--
+ALTER TABLE `CoachSubjects`
+  ADD PRIMARY KEY (`subjectName`,`coachId`),
+  ADD KEY `subjectName` (`subjectName`),
+  ADD KEY `coachId` (`coachId`);
+
+--
+-- Indexes for table `Days`
+--
+ALTER TABLE `Days`
+  ADD PRIMARY KEY (`name`);
+
+--
+-- Indexes for table `Student`
+--
+ALTER TABLE `Student`
+  ADD PRIMARY KEY (`studentId`);
+
+--
+-- Indexes for table `StudyCoach`
+--
+ALTER TABLE `StudyCoach`
+  ADD PRIMARY KEY (`coachId`);
+
+--
+-- Indexes for table `Subjects`
+--
+ALTER TABLE `Subjects`
+  ADD PRIMARY KEY (`name`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -151,7 +191,7 @@ ALTER TABLE `Booking`
 -- AUTO_INCREMENT for table `Student`
 --
 ALTER TABLE `Student`
-  MODIFY `studentId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `studentId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `StudyCoach`
@@ -167,21 +207,21 @@ ALTER TABLE `StudyCoach`
 -- Constraints for table `Availability`
 --
 ALTER TABLE `Availability`
-  ADD CONSTRAINT `Availability_ibfk_1` FOREIGN KEY (`day`) REFERENCES `studyHelper`.`Days` (`name`),
-  ADD CONSTRAINT `Availability_ibfk_2` FOREIGN KEY (`coachId`) REFERENCES `studyHelper`.`StudyCoach` (`coachId`);
+  ADD CONSTRAINT `availability_ibfk_1` FOREIGN KEY (`day`) REFERENCES `Days` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `availability_ibfk_2` FOREIGN KEY (`coachId`) REFERENCES `StudyCoach` (`coachId`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `Booking`
 --
 ALTER TABLE `Booking`
-  ADD CONSTRAINT `Booking_ibfk_1` FOREIGN KEY (`day`) REFERENCES `studyHelper`.`Days` (`name`),
-  ADD CONSTRAINT `Booking_ibfk_2` FOREIGN KEY (`subject`) REFERENCES `studyHelper`.`Subjects` (`name`),
-  ADD CONSTRAINT `Booking_ibfk_3` FOREIGN KEY (`studentId`) REFERENCES `studyHelper`.`Student` (`studentId`),
-  ADD CONSTRAINT `Booking_ibfk_4` FOREIGN KEY (`coachId`) REFERENCES `studyHelper`.`StudyCoach` (`coachId`);
+  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`day`) REFERENCES `Days` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`subject`) REFERENCES `Subjects` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `booking_ibfk_3` FOREIGN KEY (`studentId`) REFERENCES `Student` (`studentId`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `booking_ibfk_4` FOREIGN KEY (`coachId`) REFERENCES `StudyCoach` (`coachId`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `CoachSubjects`
 --
 ALTER TABLE `CoachSubjects`
-  ADD CONSTRAINT `CoachSubjects_ibfk_1` FOREIGN KEY (`subjectName`) REFERENCES `studyHelper`.`Subjects` (`name`),
-  ADD CONSTRAINT `CoachSubjects_ibfk_2` FOREIGN KEY (`coachId`) REFERENCES `studyHelper`.`StudyCoach` (`coachId`);
+  ADD CONSTRAINT `coachsubjects_ibfk_1` FOREIGN KEY (`subjectName`) REFERENCES `Subjects` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `coachsubjects_ibfk_2` FOREIGN KEY (`coachId`) REFERENCES `StudyCoach` (`coachId`) ON DELETE CASCADE ON UPDATE CASCADE;
