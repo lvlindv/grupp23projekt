@@ -139,7 +139,7 @@ CREATE TABLE `Subjects` (
 -- Indexes for table `Admin`
 --
 ALTER TABLE `Admin`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
 
 --
 -- Indexes for table `Booking`
