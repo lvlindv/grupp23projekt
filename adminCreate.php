@@ -1,3 +1,7 @@
+//Denna sida ska create (registrera) en ny studyhelper.
+//den lägger till i databasen när vi klickar på registrera.
+//Från adminpage kommer man till admincreate
+
 <?php include "db_connect.php"
 
 ?>
@@ -30,7 +34,7 @@
 
     </form>
 
-    <h1> Adminsida </h1>
+    <h1> Admin Registrera ny Helper </h1>
     <p> Lägga till/Ta bort eller Redigera info för studyhelper... </p>
 
       <button type="submit" >Registrera en ny StudyHelper</button>
