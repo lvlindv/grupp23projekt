@@ -1,5 +1,11 @@
 <!--Kopplar till databasen via db_connect.php-->
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <title>Startsida</title>
+  </head>
+
 <?php include "db_connect.php" ?>
   <body>
 
