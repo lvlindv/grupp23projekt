@@ -69,8 +69,22 @@ CREATE TABLE `CoachSubjects` (
 --
 
 CREATE TABLE `Days` (
+  `dayOrder` int(1) NOT NULL,
   `name` varchar(7) COLLATE utf8_swedish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
+
+--
+-- Dumping data for table `Days`
+--
+
+INSERT INTO `Days` (`dayOrder`, `name`) VALUES
+(5, 'Fredag'),
+(6, 'Lördag'),
+(1, 'Måndag'),
+(3, 'Onsdag'),
+(7, 'Söndag'),
+(2, 'Tisdag'),
+(4, 'Torsdag');
 
 -- --------------------------------------------------------
 
