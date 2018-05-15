@@ -2,29 +2,50 @@
 // Start the session
 session_start();
 
-//Kopplar till databasen via db_connect.php
-include "db_connect.php"
-
 ?>
 
 <!DOCTYPE HTML>
 <html lang="sv" dir="ltr">
   <head>
-    <script src="studybuddy.js"></script>
+    <script src="functions.js"></script>
     <meta charset="utf-8">
     <title>Startsida</title>
   </head>
 
   <body>
     <?php
-    // Set session variables
-    $_SESSION["email"] = $_POST['email'];
-    $_SESSION["psw"] = $_POST['psw'];
-    echo "Session variables are set.";
+      if(isset($_POST['btnLogin']))
+      {
+        //Koppling till databas
+        require 'db_connect.php';
 
-    echo $_SESSION["email"];
-    echo $_SESSION["psw"];
+        //Variablerna antar värdet av användarens input i loginForm
+        $email = $_POST['email'];
+        $psw = $_POST['psw'];
+
+        //Query som hämtar rader i tabellen StudyCoach som motsvarar inmatad email och lösenord
+        $result = mysqli_query($connection, 'SELECT * FROM StudyCoach WHERE email="'.$email.'" AND password="'.$psw.'"');
+
+        //Om det generererade resultatet motsvarar en rad (EN användare) i tabellen
+        if(mysqli_num_rows($result)==1)
+        {
+          //Sätter sessionsvariabeln till användarens email och matar ut meddelande
+          $_SESSION["email"] = $_POST['email'];
+          echo $_SESSION["email"]." är inloggad.";
+          echo '<a href="logoutUser.php">Logga ut</a>';
+        }
+        else
+        {
+          echo "Ogiltig inloggning.";
+          echo '<a href="startpage.php">Tillbaka till startsidan.</a>';
+        }
+      }
+
     ?>
+
+
+
+
   </body>
 
 </html>

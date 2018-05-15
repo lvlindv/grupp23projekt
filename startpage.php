@@ -6,25 +6,6 @@ session_start();
 //Kopplar till databasen via db_connect.php
 include "db_connect.php";
 
-/*
-
-if(isset($POST['btnLogin']))
-{
-  require 'db_connect.php';
-    // Variablerna antar värdet av användarens input.
-  $email = ($_POST(['email']) ? $_POST['email'] : "";
-  $psw = ($_POST(['psw']) ? $_POST['psw'] : "";
-  $result = mysqli_query($connection, 'SELECT * FROM Admin WHERE email="'.$email.'" AND password="'.$psw.'"');
-  if(mysqli_num_rows($result)==1)
-  {
-    $_SESSION['email'] = $email;
-    header ('Location: registerFormStudent.php');
-  }
-  else
-    echo "Konto finns ej!";
-
-}
-*/
  ?>
 
 <!DOCTYPE HTML>
