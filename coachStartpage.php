@@ -1,22 +1,26 @@
 <?php
+// Start the session
+session_start();
+
   include "db_connect.php";
   include "queries.php";
   include "htmlgenerator.php";
 ?>
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="sv" dir="ltr">
   <head>
-    <meta http-equiv="content-type" content="text/html" charset="ISO-8859-1" />
-    <title>Startsida</title>
+    <meta charset="utf-8">
+    <title>Startsida StudieCoach</title>
+    <script src="functions.js"></script>
   </head>
 
 <body>
-  <h1> Välkommen Studiecoach! </h1>
+  <h1> <?php echo "Välkommen ".$_SESSION["email"]; ?> </h1>
 
   <h2> Dina bokningar </h2><!--underrubrik-->
   <section class="myBookings"><!--ruta med bokningar-->
     <?php
-      $resultBookings = $connection->query($queryShowBookings);
+      $resultBookings = $connection->query($queryCoachBookings);
       while ($row = $resultBookings->fetch_assoc())
       {
     ?>
@@ -88,5 +92,8 @@
       <input type="submit" value="Lägg till" />
     </form>
 
+    <?php
+    echo '<a href="logoutUser.php">Logga ut</a>';
+     ?>
 </body>
 </html>

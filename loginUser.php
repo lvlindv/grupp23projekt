@@ -31,8 +31,7 @@ session_start();
         {
           //Sätter sessionsvariabeln till användarens email och matar ut meddelande
           $_SESSION["email"] = $_POST['email'];
-          echo $_SESSION["email"]." är inloggad.";
-          echo '<a href="logoutUser.php">Logga ut</a>';
+          header("Location: coachStartpage.php");
         }
         else
         {

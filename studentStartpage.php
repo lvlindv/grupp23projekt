@@ -1,4 +1,7 @@
   <?php
+    // Start the session
+    session_start();
+
     include "db_connect.php";
     include "queries.php";
     include "htmlgenerator.php";
@@ -16,7 +19,7 @@
     <h2> Dina bokningar </h2><!--underrubrik-->
     <section class="myBookings"><!--ruta med bokningar-->
       <?php
-        $resultBookings = $connection->query($queryShowBookings);
+        $resultBookings = $connection->query($queryStudentBookings);
         while ($row = $resultBookings->fetch_assoc())
         {
       ?>
@@ -95,6 +98,10 @@
 
         <input type="submit" value="Sök" />
       </form>
+
+      <?php
+        echo '<a href="logoutUser.php">Logga ut</a>';
+       ?>
 
   </body>
 </html>
