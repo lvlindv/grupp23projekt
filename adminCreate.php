@@ -5,10 +5,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="functions.js"></script>
+    <meta charset="utf-8">
+
     <title></title>
-  </head>
-  <body>
-    <form name="regHelper" action="nyRegHelper.php" method="post" onsubmit="return validateregistration()" >
+    </head>
+      <body>
+        <form name="regHelper" action="nyRegHelper.php" method="post" onsubmit="return validateregistration()" >
 
       <label for="name"><b>Fullständigt namn</b></label>
       <input type="text" placeholder="Ange fullständigt namn på StudyHelper" name="name" >
@@ -28,7 +31,7 @@
       <input type="submit" value="Registrera">
         <script src="studybuddy.js"></script>
 
-    </form>
+        </form>
 
     <h1> Adminsida </h1>
     <p> Lägga till/Ta bort eller Redigera info för studyhelper... </p>

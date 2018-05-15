@@ -2,8 +2,9 @@
 // Start the session
 session_start();
 ?>
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="sv" dir="ltr">
+    <meta charset="utf-8">
 <body>
 
 <?php
