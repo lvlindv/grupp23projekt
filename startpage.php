@@ -53,8 +53,8 @@ if(isset($POST['btnLogin']))
 </form>
 
 <!--Kopplar användaren till registrera.php sidan. Jag har gjort två forms för att kunna koppla till olika actions-->
-    <form name="sida2" action="registerFormStudent.php" method="post"  >
-      <button name="registrera" type="submit" value="Button">Registrera</button>
+    <form name="btnRegister" action="registerFormStudent.php" method="post"  >
+      <button name="btnRegister" type="submit" value="Button">Registrera</button>
     </form>
   </body>
 </html>
