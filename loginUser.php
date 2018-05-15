@@ -17,9 +17,13 @@ include "db_connect.php"
 
   <body>
     <?php
-      echo "Hello";
-      echo $_SESSION['username'];
-      echo $_SESSION['psw'];
+    // Set session variables
+    $_SESSION["email"] = $_POST['email'];
+    $_SESSION["psw"] = $_POST['psw'];
+    echo "Session variables are set.";
+
+    echo $_SESSION["email"];
+    echo $_SESSION["psw"];
     ?>
   </body>
 

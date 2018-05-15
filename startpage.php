@@ -4,9 +4,7 @@
 session_start();
 
 //Kopplar till databasen via db_connect.php
-include "db_connect.php"
-
-
+include "db_connect.php";
 
 /*
 
@@ -32,13 +30,14 @@ if(isset($POST['btnLogin']))
 <!DOCTYPE HTML>
 <html lang="sv" dir="ltr">
   <head>
-    <script src="studybuddy.js"></script>
+    <script src="functions.js"></script>
     <meta charset="utf-8">
     <title>Startsida</title>
   </head>
 
   <body>
 <!--Knapp som kopplar användaren till inloggningssidan-->
+
 
 <form name="loginForm" action="loginUser.php" method="post" >
 
@@ -53,7 +52,7 @@ if(isset($POST['btnLogin']))
 </form>
 
 <!--Kopplar användaren till registrera.php sidan. Jag har gjort två forms för att kunna koppla till olika actions-->
-    <form name="btnRegister" action="registerFormStudent.php" method="post"  >
+    <form name="btnRegister" action="registerFormStudent.php" method="post" >
       <button name="btnRegister" type="submit" value="Button">Registrera</button>
     </form>
   </body>

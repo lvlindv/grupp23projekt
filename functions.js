@@ -17,7 +17,7 @@ function validateLogin()
 }
 
 //Funktion som säkerställer att alla registreringsfälten är ifyllda
-function validateregistration()
+function validateRegistration()
 {
   var name = document.forms["registrationform"]["namn"].value;
   var email = document.forms["registrationform"]["email"].value;
