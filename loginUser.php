@@ -1,32 +1,26 @@
 <?php
+// Start the session
+session_start();
 
-// Starta en session
-/*session_start();
-$epost = isset($_POST(['email']) ? $_POST['email'] : "";
-$psw = isset($_POST(['psw']) ? $_POST['psw'] : "";
+//Kopplar till databasen via db_connect.php
+include "db_connect.php"
 
-
-if($epost) []
-
-?>*/
 ?>
-<html>
-  <?php include "db_connect.php" ?>
+
+<!DOCTYPE HTML>
+<html lang="sv" dir="ltr">
+  <head>
+    <script src="studybuddy.js"></script>
+    <meta charset="utf-8">
+    <title>Startsida</title>
+  </head>
+
   <body>
-
-    <form name="logginform" action="minasidor.php" method="post" onsubmit="return validateloggin()">
-
-      <label for="uname"><b>Epost</b></label>
-      <input type="text" placeholder="Ange din E-post" name="epost" >
-
-      <label for="psw"><b>Lösenord</b></label>
-      <input type="password" placeholder="Ange Lösenord" name="psw" >
-
-      <input type="submit" value="Submit">
-
-      <script src="studybuddy.js"></script>
-
-    </form>
-
+    <?php
+      echo "Hello";
+      echo $_SESSION['username'];
+      echo $_SESSION['psw'];
+    ?>
   </body>
+
 </html>

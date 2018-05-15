@@ -4,7 +4,7 @@
   <body>
 
 <!--Formulär för användarregistrering-->
-    <form name="registrationform" action="minasidor.php" method="post" onsubmit="return validateregistration()" >
+    <form name="registrationForm" action="registerToDBStudent.php" method="post" onsubmit="return validateregistration()" >
 
       <!--Titel och brödtext-->
       <h1>Registrera dig </h1>

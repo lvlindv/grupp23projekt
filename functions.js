@@ -1,5 +1,5 @@
 //Funktion som säkerställer att båda inloggningsfält är ifyllda
-function validateloggin()
+function validateLogin()
 {
     var email = document.forms["logginform"]["epost"].value;
     var psw = document.forms["logginform"]["psw"].value;
