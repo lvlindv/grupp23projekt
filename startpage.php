@@ -30,16 +30,21 @@ include "db_connect.php";
 <!--Knapp som kopplar användaren till loginUser.php -->
   <button name="btnLogin" type="submit" value="Button" >Logga in</button>
 </br>
-<!-- Knapp för om man glömt sitt lösenord -->
-  <a href="a">Glömt ditt lösenord?</a>
+<!-- Referens för glömt lösenord -->
+  <a href="glomtlosenord">Glömt ditt lösenord?</a>
 </br>
-<!-- Knapp för om man glömt sitt lösenord -->
-  <a href="a">Ansök om att bli studiecoach</a>
+
 </form>
 
 <!--Kopplar användaren till registreraFormStudent.php sidan. -->
     <form name="btnRegister" action="registerFormStudent.php" method="post" >
       <button name="btnRegister" type="submit" value="Button">Registrera</button>
     </form>
+
+<!--Knapp som kopplar användaren till ett form? för att bli studycoach. (EJ I FUNKTION) -->
+<button name="btnSC" type="submit" value="Button" >Bli Studycoach</button>
+
+
+
   </body>
 </html>
