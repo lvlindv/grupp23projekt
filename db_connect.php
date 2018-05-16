@@ -1,6 +1,6 @@
 
 <?php
-
+// Connectar till databasen studyHelper. 
 $uname = "root";
 $pass = "root";
 $host = "localhost";

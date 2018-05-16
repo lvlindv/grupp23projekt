@@ -37,7 +37,7 @@
       <button type="submit" >Registrera dig</button>
 
       <!--Koppling till javascript-fil-->
-      <script src="studybuddy.js"></script>
+      <script src="functions.js"></script>
 
     </form>
   </body>

@@ -35,15 +35,13 @@ session_start();
         }
         else
         {
+          //Ogiltig inmatning och användaren får klicka sig tillbaka till startsidan.
           echo "Ogiltig inloggning.";
           echo '<a href="startpage.php">Tillbaka till startsidan.</a>';
         }
       }
 
     ?>
-
-
-
 
   </body>
 

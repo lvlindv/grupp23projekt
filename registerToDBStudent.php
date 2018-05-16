@@ -7,6 +7,7 @@ $email = $_POST['email'];
 $psw = $_POST['psw'];
 $mobilnr = $_POST['mnr'];
 
+// En student registrerar sig och läggs till i databasen.
 $sql = "INSERT INTO Student(name, email, password, phoneNr)
 VALUES ('$name', '$email', '$psw','$mobilnr')";
 
