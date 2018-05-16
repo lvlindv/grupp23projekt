@@ -1,10 +1,14 @@
 <?php
-// Start the session
-session_start();
+  // Start the session
+  session_start();
 
+  //Koppling till databas
   include "db_connect.php";
+  //Fil med sql-queries
   include "queries.php";
+  //Fil som skapar dropdown listor och tabeller baserat på data från db
   include "htmlgenerator.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="sv" dir="ltr">
@@ -15,16 +19,17 @@ session_start();
   </head>
 
 <body>
-  <h1> <?php echo "Välkommen ".$_SESSION["email"]; ?> </h1>
+  <h1> <?php echo "Välkommen ".$_SESSION["email"]; ?> </h1><!--Rubrik med studiecoachens email-->
 
   <h2> Dina bokningar </h2><!--underrubrik-->
   <section class="myBookings"><!--ruta med bokningar-->
     <?php
+      //Lagrar resultat från query som hämtar studiecoachens bokningar och matar ut varje bokning
       $resultBookings = $connection->query($queryCoachBookings);
       while ($row = $resultBookings->fetch_assoc())
       {
     ?>
-        <!--Skriver ut bokningens dag, ämne, coachens namn och kontaktuppgifter
+        <!--Matar ut bokningens dag, ämne, coachens namn och kontaktuppgifter
             samt studentens namn och kontaktuppgifter-->
         <div class="booking">
           <div class="bookingDay">
@@ -82,17 +87,28 @@ session_start();
     ?>
   </section>
 
-  <h2> Lägg till tillgängliga tider </h2>
+  <h2> Lägg till tillgängliga tider </h2><!--underrubrik-->
   <form action="addAvailability.php" method="POST">
-    <label for="dayDropdown"><b>Välj dag</b></label><!--Rubrik-->
-    <?php
-      $resultDays = $connection->query($queryShowDays);
-      make_select_from_result("name", $resultDays );
-    ?>
-      <input type="submit" value="Lägg till" />
-    </form>
+    <label for="dayDropdown"><b>Välj dag</b></label><!--Label för dropdown med dagar-->
+    <select name="dayName">
+      <option value="Måndag">Måndag</option>
+      <option value="Tisdag">Tisdag</option>
+      <option value="Onsdag">Onsdag</option>
+      <option value="Torsdag">Torsdag</option>
+      <option value="Fredag">Fredag</option>
+      <option value="Lördag">Lördag</option>
+      <option value="Söndag">Söndag</option>
+    </select>
 
+    <input type="submit" value="Lägg till" name="btnAdd"/><!--Knapp för att lägga till tillgänglighet-->
+  </form>
     <?php
+    if(isset($_POST['btnAdd']))
+    {
+      // Lagrar vald dag i sessionvariabeln
+      $_SESSION['selected_day'] = $_POST['dayName'];
+    }
+    //Länk för att logga ut användare
     echo '<a href="logoutUser.php">Logga ut</a>';
      ?>
 </body>
