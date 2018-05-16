@@ -42,7 +42,7 @@ include "db_connect.php";
     </form>
 
 <!--Knapp som kopplar användaren till ett form? för att bli studycoach. (EJ I FUNKTION) -->
-<button name="btnSC" type="submit" value="Button" >Bli Studycoach</button>
+<button name="btnSC" type="submit" value="Button" >Bli studiecoach</button>
 
 
 
