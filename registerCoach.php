@@ -7,7 +7,7 @@ $psw = $_POST['psw'];
 $des = $_POST['description'];
 $phnr = $_POST['phoneNr'];
 
-
+//Admin registrerar en studycoach i databasen via adminsidan.
 $sql = "INSERT INTO StudyHelper(name, email, password, description, phoneNr)
 VALUES ('$name', '$email', '$psw', '$des', '$phnr')";
 

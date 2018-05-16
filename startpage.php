@@ -17,7 +17,7 @@ include "db_connect.php";
   </head>
 
   <body>
-<!--Knapp som kopplar användaren till inloggningssidan-->
+
 
 
 <form name="loginForm" action="loginUser.php" method="post" >
@@ -27,12 +27,12 @@ include "db_connect.php";
 
   <label for="psw"><b>Lösenord</b></label>
   <input type="password" placeholder="Ange Lösenord" name="psw" >
-
+<!--Knapp som kopplar användaren till loginUser.php -->
   <button name="btnLogin" type="submit" value="Button" >Logga in</button>
 
 </form>
 
-<!--Kopplar användaren till registrera.php sidan. Jag har gjort två forms för att kunna koppla till olika actions-->
+<!--Kopplar användaren till registreraFormStudent.php sidan. -->
     <form name="btnRegister" action="registerFormStudent.php" method="post" >
       <button name="btnRegister" type="submit" value="Button">Registrera</button>
     </form>
