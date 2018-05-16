@@ -13,7 +13,8 @@ VALUES ('$name', '$email', '$psw','$mobilnr')";
 
 
 if ($connection ->query($sql)) {
-  echo "worked";
+  echo "Du har nu skapat en användare och kan gå tillbaka till startsidan";
+  echo '<a href="startpage.php">Tillbaka till startsidan.</a>';
 }
 else {
   echo "try again". $sql. "<br>". $connection->error;
