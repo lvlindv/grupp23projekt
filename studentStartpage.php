@@ -14,7 +14,7 @@
     </head>
 
   <body>
-    <h1> Välkommen Student! </h1>
+    <h1> <?php echo "Välkommen ".$_SESSION["email"]."!" ?> </h1>
 
     <h2> Dina bokningar </h2><!--underrubrik-->
     <section class="myBookings"><!--ruta med bokningar-->
