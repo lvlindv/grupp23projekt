@@ -14,6 +14,7 @@ session_start();
 
   <body>
     <?php
+      //Om användaren trycker på btnLogin
       if(isset($_POST['btnLogin']))
       {
         //Koppling till databas
@@ -24,14 +25,25 @@ session_start();
         $psw = $_POST['psw'];
 
         //Query som hämtar rader i tabellen StudyCoach som motsvarar inmatad email och lösenord
-        $result = mysqli_query($connection, 'SELECT * FROM StudyCoach WHERE email="'.$email.'" AND password="'.$psw.'"');
+        $resultStudyCoach = mysqli_query($connection, 'SELECT * FROM StudyCoach WHERE email="'.$email.'" AND password="'.$psw.'"');
+        //Query som hämtar rader i tabellen Student som motsvarar inmatad email och lösenord
+        $resultStudent = mysqli_query($connection, 'SELECT * FROM Student WHERE email="'.$email.'" AND password="'.$psw.'"');
+        //Query som hämtar rader i tabellen Admin som motsvarar inmatad email och lösenord
+        $resultAdmin = mysqli_query($connection, 'SELECT * FROM Admin WHERE email="'.$email.'" AND password="'.$psw.'"');
 
-        //Om det generererade resultatet motsvarar en rad (EN användare) i tabellen
-        if(mysqli_num_rows($result)==1)
+        //Om det generererade resultatet motsvarar en rad (EN användare) i tabellen StudyCoach
+        if(mysqli_num_rows($resultStudyCoach)==1)
         {
           //Sätter sessionsvariabeln till användarens email och matar ut meddelande
           $_SESSION["email"] = $_POST['email'];
           header("Location: coachStartpage.php");
+        }
+        //Om det generererade resultatet motsvarar en rad (EN användare) i tabellen Student
+        else if(mysqli_num_rows($resultStudent)==1)
+        {
+          //Sätter sessionsvariabeln till användarens email och matar ut meddelande
+          $_SESSION["email"] = $_POST['email'];
+          header("Location: studentStartpage.php");
         }
         else
         {
