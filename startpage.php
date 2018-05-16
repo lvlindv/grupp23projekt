@@ -29,7 +29,12 @@ include "db_connect.php";
   <input type="password" placeholder="Ange Lösenord" name="psw" >
 
   <button name="btnLogin" type="submit" value="Button" >Logga in</button>
-
+</br>
+<!-- Knapp för om man glömt sitt lösenord -->
+  <a href="a">Glömt ditt lösenord?</a>
+</br>
+<!-- Knapp för om man glömt sitt lösenord -->
+  <a href="a">Ansök om att bli studiecoach</a>
 </form>
 
 <!--Kopplar användaren till registrera.php sidan. Jag har gjort två forms för att kunna koppla till olika actions-->
