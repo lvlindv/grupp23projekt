@@ -29,7 +29,12 @@ include "db_connect.php";
   <input type="password" placeholder="Ange Lösenord" name="psw" >
 <!--Knapp som kopplar användaren till loginUser.php -->
   <button name="btnLogin" type="submit" value="Button" >Logga in</button>
-
+</br>
+<!-- Knapp för om man glömt sitt lösenord -->
+  <a href="a">Glömt ditt lösenord?</a>
+</br>
+<!-- Knapp för om man glömt sitt lösenord -->
+  <a href="a">Ansök om att bli studiecoach</a>
 </form>
 
 <!--Kopplar användaren till registreraFormStudent.php sidan. -->
