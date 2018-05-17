@@ -37,9 +37,6 @@ include "db_connect.php"
 
         </form>
 
-
-
-
     <h2> Ta bort eller Redigera info för studyhelper </h2>
 
 <?php
@@ -49,7 +46,7 @@ $result = mysqli_query($connection, $sql);
 
  ?>
 
- <table boarder="0" cellpadding="10" cellspacing="1" width="500" class="tblListForm">
+ <table boarder="0" cellpadding="10" cellspacing="1" width="700" class="tblListForm">
    <tr class="listheader">
 
      <td>Namn</td>
@@ -76,13 +73,17 @@ $result = mysqli_query($connection, $sql);
      <td><?php echo $row["description"]; ?></td>
      <td><?php echo $row["phoneNr"]; ?></td>
 
-     <td><a href="edit_user.php?userId=<?php echo $row["userId"]; ?>" class="link"><img alt='Edit' title='Edit' src='images/edit.png' width='15px' height='15px' hspace='10' /></a>  <a href="delete_user.php?userId=<?php echo $row["userId"]; ?>"  class="link"><img alt='Delete' title='Delete' src='images/delete.png' width='15px' height='15px'hspace='10' /></a></td>
+     <td><a href="adminEditPage.php?userId=<?php echo $row["userId"]; ?>" class="link"><img alt='edit' title='edit' src='images/edit.png' width='50px' height='15px' hspace='10' /></a>
+         <a href="adminDeletePage.php?userId=<?php echo $row["userId"]; ?>"  class="link"><img alt='Radera' title='Radera' src='images/Radera.png' width='50px' height='15px'hspace='10' /></a></td>
    </tr>
 
  <?php
  $i++;
  }
  ?>
+ <?php
+if(isset($_GET['Ändra']))
+  ?>
 
  </table>
 
