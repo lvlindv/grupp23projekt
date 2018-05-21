@@ -83,12 +83,13 @@ $result = mysqli_query($connection, $sql);
  ?>
  <?php
 if(isset($_GET['Ändra']))
+
   ?>
 
  </table>
-
-
-
-
+ <?php
+  //Länk för att logga ut användare
+   echo '<a href="logoutUser.php">Logga ut</a>';
+  ?>
   </body>
 </html>
