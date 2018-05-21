@@ -1,6 +1,6 @@
 <?php
 include 'db_connect.php';
-
+//skapa variabler
 $name = $_POST['name'];
 $email = $_POST['email'];
 $psw = $_POST['psw'];
