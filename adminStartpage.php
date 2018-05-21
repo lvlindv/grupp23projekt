@@ -7,8 +7,6 @@ include "db_connect.php"
 ?>
 
 <!DOCTYPE html>
-
-<!DOCTYPE html>
 <html lang="sv" dir="ltr">
   <head>
     <script src="functions.js"></script>
