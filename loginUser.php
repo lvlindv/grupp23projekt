@@ -50,7 +50,8 @@ session_start();
           //Sätter sessionsvariabeln till användarens email och matar ut meddelande
           $_SESSION["email"] = $_POST['email'];
           header("Location: adminStartpage.php");
-        }        
+        }
+        
         else
         {
           //Ogiltig inmatning och användaren får klicka sig tillbaka till startsidan.

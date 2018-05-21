@@ -81,12 +81,18 @@ $result = mysqli_query($connection, $sql);
  $i++;
  }
  ?>
+
+
  <?php
-if(isset($_GET['Ändra']))
+//if(isset($_GET['edit']))
+//{
+  //$userId = $_GET['edit'];
+  //$update = true;
+  //$record = mysqli_query($db, "SELECT * FROM StudyCoach WHERE coachId=$userId");
+//}
   ?>
 
  </table>
-
 
 
 
