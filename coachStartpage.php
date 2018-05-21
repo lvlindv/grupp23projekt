@@ -19,7 +19,7 @@
   </head>
 
 <body>
-  <h1> <?php echo "Välkommen ".$_SESSION["email"]; ?> </h1><!--Rubrik med studiecoachens email-->
+  <h1> <?php echo "Välkommen ".$_SESSION["name"]."!"; ?> </h1><!--Rubrik med studiecoachens email-->
 
   <h2> Dina bokningar </h2><!--underrubrik-->
   <section class="myBookings"><!--ruta med bokningar-->

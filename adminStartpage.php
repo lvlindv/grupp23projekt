@@ -1,6 +1,9 @@
 <?php
-include "db_connect.php"
+// Start the session
+session_start();
 
+//Koppling till databas
+include "db_connect.php"
 ?>
 
 <!DOCTYPE html>
@@ -10,17 +13,17 @@ include "db_connect.php"
   <head>
     <script src="functions.js"></script>
     <meta charset="utf-8">
-    <title>Startsida Admin</title>
+    <title>Startsida</title>
     </head>
-    <h1> Adminsida </h1>
-    <h2> Registrera en ny studycoach </h2>
+    <h1> <?php echo "Välkommen ".$_SESSION["name"]."!"; ?>  </h1>
+    <h2> Registrera en ny studiecoach </h2>
       <body>
         <form name="regHelper" action="registerToDBCoach.php" method="post" onsubmit="return validateStudycoach()" >
 
       <label for="name"><b>Fullständigt namn</b></label>
       <input type="text" placeholder="Ange fullständigt namn på StudyCoachen" name="name" >
 
-      <label for="email"><b>epost</b></label>
+      <label for="email"><b>E-post</b></label>
       <input type="text" placeholder="Ange epost" name="email" >
 
       <label for="psw"><b>Lösenord</b></label>
@@ -37,7 +40,7 @@ include "db_connect.php"
 
         </form>
 
-    <h2> Ta bort eller Redigera info för studyhelper </h2>
+    <h2> Ta bort eller Redigera info för studiecoach </h2>
 
 <?php
 
@@ -50,7 +53,7 @@ $result = mysqli_query($connection, $sql);
    <tr class="listheader">
 
      <td>Namn</td>
-     <td>Email</td>
+     <td>E-post</td>
      <td>Lösenord</td>
      <td>Beskrivning</td>
      <td>Telefonummer</td>
