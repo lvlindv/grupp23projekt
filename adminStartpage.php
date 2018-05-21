@@ -84,6 +84,7 @@ $result = mysqli_query($connection, $sql);
 
 
  <?php
+<<<<<<< HEAD
 //if(isset($_GET['edit']))
 //{
   //$userId = $_GET['edit'];
@@ -96,5 +97,16 @@ $result = mysqli_query($connection, $sql);
 
 
 
+=======
+if(isset($_GET['Ändra']))
+
+  ?>
+
+ </table>
+ <?php
+  //Länk för att logga ut användare
+   echo '<a href="logoutUser.php">Logga ut</a>';
+  ?>
+>>>>>>> fb2fb9ce03d6e03132187f9f23517703e1e20ef4
   </body>
 </html>
