@@ -1,7 +1,16 @@
+<?php
+  //Koppling till databas
+  include "db_connect.php"
+?>
 
+<!DOCTYPE html>
 <html>
-<!--Kopplar till databasen via db_connect.php-->
-  <?php include "db_connect.php" ?>
+  <head>
+    <meta charset="utf-8">
+    <!--Koppling till javascript-fil-->
+    <script src="functions.js"></script>
+    <title>Registrering</title>
+  </head>
   <body>
 
 <!--Formulär för användarregistrering-->
@@ -36,8 +45,6 @@
       <!--Knapp för registrering som skickar vidare användaren till mina sidor-->
       <button type="submit" >Registrera dig</button>
 
-      <!--Koppling till javascript-fil-->
-      <script src="functions.js"></script>
 
     </form>
   </body>
