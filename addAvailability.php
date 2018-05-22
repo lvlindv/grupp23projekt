@@ -11,19 +11,21 @@
     $_SESSION['selectedDay'] = $_POST['dayName'];
   }
 
-  echo $_SESSION['selectedDay'];
-  echo $_SESSION['coachId'];
+  //Lagrar värdena av sessionvariablerna i nya varibler som ska sättas in i query
+  $selectedDay = $_SESSION['selectedDay'];
+  $coachId = $_SESSION['coachId'];
 
   //Query för att lägga till tillgänglig studiecoach i databasen
   $query = "INSERT INTO Availability(day, coachId)
-  VALUES ('$_SESSION['selectedDay']', '$_SESSION['coachId']')";
-
+  VALUES ('$selectedDay', '$coachId')";
 
   if ($connection->query($query)) {
-    echo "worked";
+    echo "Du har nu angett att du är tillgänglig på ".$_SESSION['selectedDay'].".";
+    echo '<a href="coachStartpage.php">Tillbaka till din sida.</a>';
     }
   else {
-      echo "try again".$query."<br>".$connection->error;
+      echo "Något gick fel.";
+      echo '<a href="coachStartpage.php">Vänligen försök igen.</a>';
     }
   $connection->close();
 ?>
