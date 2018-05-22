@@ -96,18 +96,11 @@
       <option value="Onsdag">Onsdag</option>
       <option value="Torsdag">Torsdag</option>
       <option value="Fredag">Fredag</option>
-      <option value="Lördag">Lördag</option>
-      <option value="Söndag">Söndag</option>
     </select>
 
     <input type="submit" value="Lägg till" name="btnAdd"/><!--Knapp för att lägga till tillgänglighet-->
   </form>
     <?php
-    if(isset($_POST['btnAdd']))
-    {
-      // Lagrar vald dag i sessionvariabeln
-      $_SESSION['selected_day'] = $_POST['dayName'];
-    }
     //Länk för att logga ut användare
     echo '<a href="logoutUser.php">Logga ut</a>';
      ?>
