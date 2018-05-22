@@ -27,6 +27,7 @@
       //Sätter sessionsvariabler
       $_SESSION["email"] = $_POST['email'];
       $_SESSION["name"] = $row["name"];
+      $_SESSION["coachId"] = $row["coachId"];
       //Skickar vidare till startsida
       header("Location: coachStartpage.php");
     }
