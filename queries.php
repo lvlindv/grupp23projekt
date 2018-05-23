@@ -48,6 +48,22 @@
   //Visar alla ämnen
   $queryShowSubjects ="SELECT name FROM Subjects";
 
+  //Lägger till tillgänglig studiecoach i databasen
+  function addAvailability($day, $coachId)
+  {
+    $query = "INSERT INTO Availability(day, coachId) VALUES ('$day', '$coachId')";
+
+    return $query;
+  }
+
+  //Tar bort tillgänglig studiecoach från databasen
+  function deleteAvailability($day, $coachId)
+  {
+    $query = "DELETE FROM Availability WHERE day='$day' AND coachId='$coachId'";
+
+    return $query;
+  }
+
   //Visar tillgängliga studiecoacher
   function availableCoaches($selectedDay, $selectedSubject)
   {
