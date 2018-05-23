@@ -9,6 +9,7 @@
     <meta charset="utf-8">
     <!--Koppling till javascript-fil-->
     <script src="functions.js"></script>
+    <link rel="stylesheet" href="startpage.css">
     <title>Registrering</title>
   </head>
   <body>
