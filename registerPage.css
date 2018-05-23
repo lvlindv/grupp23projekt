@@ -1,0 +1,9 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-image: url(img/bok.jpg);
+  background-size: cover;
+  font-family: sans-serif;
+  opacity: 0.2;
+}
+ /* Vill försöka göra bakgrundsbilden transparent när man klickat sig vidare för inloggning.  */
