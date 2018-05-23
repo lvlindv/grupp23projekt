@@ -48,4 +48,12 @@
   //Visar alla ämnen
   $queryShowSubjects ="SELECT name FROM Subjects";
 
+  //Visar tillgängliga studiecoacher
+  $queryAvailableCoaches = "SELECT StudyCoach.name, CoachSubjects.subjectName,
+                              StudyCoach.description
+                              FROM StudyCoach
+                              INNER JOIN CoachSubjects ON CoachSubjects.coachId=StudyCoach.coachId
+                              INNER JOIN Availability ON Availability.coachId=StudyCoach.coachId
+                              WHERE Availability.day='$selectedDay' AND CoachSubjects.subjectName='$selectedSubject'";
+
 ?>

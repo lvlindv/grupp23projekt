@@ -13,11 +13,12 @@ VALUES ('$name', '$email', '$psw', '$des', '$phnr')";
 
 
 if ($connection ->query($sql)) {
-  echo "Du har lagt till en ny StudyCoach!";
-  echo '<a href="adminStartpage.php">Tillbaka till Admin startsidan.</a>';
+  echo "Du har lagt till en ny studiecoach!";
+  echo '<a href="adminStartpage.php">Tillbaka till startsidan.</a>';
 }
 else {
-  echo "try again". $sql. "<br>". $connection->error;
+  echo "Något gick fel.". $sql. "<br>". $connection->error;
+  echo '<a href="adminStartpage.php">Försök igen.</a>';
 }
 $connection->close();
 ?>

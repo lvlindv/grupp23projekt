@@ -1,17 +1,22 @@
-  <?php
-    // Start the session
-    session_start();
+<?php
+  // Start the session
+  session_start();
 
-    include "db_connect.php";
-    include "queries.php";
-    include "htmlgenerator.php";
-  ?>
-  <!doctype html>
-  <html>
-    <head>
-      <meta http-equiv="content-type" content="text/html" charset="ISO-8859-1" />
-      <title>Startsida</title>
-    </head>
+  //Koppling till databas
+  include "db_connect.php";
+
+  //Koppling till fil med queries
+  include "queries.php";
+
+  //Koppling till fil som skapar dropdowns och tabeller från data i db
+  include "htmlgenerator.php";
+?>
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html" charset="ISO-8859-1" />
+    <title>Startsida</title>
+  </head>
 
   <body>
     <h1> <?php echo "Välkommen ".$_SESSION["name"]."!" ?> </h1>
@@ -84,24 +89,26 @@
     <h2> Boka ny tid </h2>
     <form action="search.php" method="POST">
       <label for="dayDropdown"><b>Välj dag</b></label><!--Rubrik-->
-      <?php
-        $resultDays = $connection->query($queryShowDays);
-        make_select_from_result("name", $resultDays );
-      ?>
+      <select name="dayName">
+        <option value="Måndag">Måndag</option>
+        <option value="Tisdag">Tisdag</option>
+        <option value="Onsdag">Onsdag</option>
+        <option value="Torsdag">Torsdag</option>
+        <option value="Fredag">Fredag</option>
+      </select>
 
 
-        <label for="subjectDropdown"><b>Välj ämne</b></label><!--rubrik-->
-            <?php
-              $resultSubjects = $connection->query($queryShowSubjects);
-              make_select_from_result("name", $resultSubjects );
-            ?>
+      <label for="subjectDropdown"><b>Välj ämne</b></label><!--rubrik-->
+          <?php
+            $resultSubjects = $connection->query($queryShowSubjects);
+            make_select_from_result("name", $resultSubjects);
+          ?>
 
-        <input type="submit" value="Sök" />
-      </form>
+        <input type="submit" value="Sök" name="btnSearch"/>
+    </form>
 
-      <?php
-        echo '<a href="logoutUser.php">Logga ut</a>';
-       ?>
-
+    <?php
+      echo '<a href="logoutUser.php">Logga ut</a>';
+    ?>
   </body>
 </html>
