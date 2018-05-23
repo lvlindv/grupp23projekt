@@ -139,9 +139,11 @@
 
       ?>
 
-      <label for="resultAvailability"><b><?php
-      echo "Tillgängliga coacher för den valda dagen ".$selectedDay." och det valda ämnet ".$selectedSubject.":"
-      ?></b></label>
+      <label for="resultAvailability"><b>
+        <?php
+        echo "Tillgängliga coacher för den valda dagen ".$selectedDay." och det valda ämnet ".$selectedSubject.":"
+        ?>
+      </b></label>
       <br><br>
 
       <?php
@@ -154,37 +156,36 @@
       //Annars matas resultatet ut i tabellform
       else
       {
-        ?>
-          <!--Tabell med tillgängliga studiecoacher-->
-          <table>
-            <!--Tabellrubriker i fetstilt-->
-            <tr>
-              <th>Namn</th>
-              <th>Beskrivning</th>
-            </tr>
-
+      ?>
+        <!--Tabell med tillgängliga studiecoacher-->
+        <table>
+          <!--Tabellrubriker i fetstilt-->
+          <tr>
+            <th>Namn</th>
+            <th>Beskrivning</th>
+          </tr>
           <?php
             //Matar ut resultatet från queryn ovan
             while ($row = $_SESSION['resultAvailability']->fetch_assoc())
             {
           ?>
-            <!--Namn och beskrivning för varje tillgänglig coach matas ut på ny rad-->
-            <tr>
-              <td><?php echo $row["name"] ?></td>
-              <td><?php echo $row["description"] ?></td>
-              <td>
-                <!--Knapp för bokning som kopplar till booking.php-->
-                <form action="booking.php" method="post">
-                  <input type="submit" value="Boka" name="btnBook">
-                </form>
-              </td>
-            </tr>
-        <?php
-          }
-        ?>
-        <!--Slut på tabell-->
-        </table>
-        <?php
+              <!--Namn och beskrivning för varje tillgänglig coach matas ut på ny rad-->
+              <tr>
+                <td><?php echo $row["name"] ?></td>
+                <td><?php echo $row["description"] ?></td>
+                <td>
+                  <!--Knapp för bokning som kopplar till booking.php-->
+                  <form action="booking.php" method="post">
+                    <input type="submit" value="Boka" name="btnBook">
+                  </form>
+                </td>
+              </tr>
+          <?php
+            }
+          ?>
+          <!--Slut på tabell-->
+          </table>
+    <?php
       }
 
       //Länk för att logga ut användaren
