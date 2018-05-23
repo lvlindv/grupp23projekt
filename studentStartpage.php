@@ -154,12 +154,27 @@
       //Annars matas resultatet ut i tabellform
       else
       {
-        echo "<table><tr><th>Namn</th><th>Beskrivning</th></tr>";
-        while ($row = $_SESSION['resultAvailability']->fetch_assoc())
-        {
-          echo "<tr><td>".$row["name"]."</td><td>".$row["description"]."</td></tr>";
-        }
-        echo "</table>";
+        ?>
+          <table><tr><th>Namn</th><th>Beskrivning</th></tr>
+
+        <?php
+          while ($row = $_SESSION['resultAvailability']->fetch_assoc())
+          {
+        ?>
+            <tr>
+              <td><?php echo $row["name"] ?></td>
+              <td><?php echo $row["description"] ?></td>
+              <td>
+                <form action="booking.php" method="post">
+                  <input type="submit" value="Boka" name="btnBook">
+                </form>
+              </td>
+            </tr>
+        <?php
+          }
+        ?>
+        </table>
+        <?php
       }
 
       //Länk för att logga ut användaren
