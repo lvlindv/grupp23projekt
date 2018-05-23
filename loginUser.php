@@ -39,6 +39,7 @@
       //Sätter sessionsvariabler
       $_SESSION["email"] = $_POST['email'];
       $_SESSION["name"] = $row["name"];
+      $_SESSION["studentId"] = $row["studentId"];
       //Skickar vidare till startsida
       header("Location: studentStartpage.php");
     }

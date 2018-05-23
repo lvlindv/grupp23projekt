@@ -49,11 +49,24 @@
   $queryShowSubjects ="SELECT name FROM Subjects";
 
   //Visar tillgängliga studiecoacher
-  $queryAvailableCoaches = "SELECT StudyCoach.name, CoachSubjects.subjectName,
-                              StudyCoach.description
-                              FROM StudyCoach
-                              INNER JOIN CoachSubjects ON CoachSubjects.coachId=StudyCoach.coachId
-                              INNER JOIN Availability ON Availability.coachId=StudyCoach.coachId
-                              WHERE Availability.day='$selectedDay' AND CoachSubjects.subjectName='$selectedSubject'";
+  function availableCoaches($selectedDay, $selectedSubject)
+  {
+    $query = "SELECT StudyCoach.name, StudyCoach.description, StudyCoach.coachId
+              FROM StudyCoach
+              INNER JOIN CoachSubjects ON CoachSubjects.coachId=StudyCoach.coachId
+              INNER JOIN Availability ON Availability.coachId=StudyCoach.coachId
+              WHERE Availability.day='$selectedDay' AND CoachSubjects.subjectName='$selectedSubject'";
+
+    return $query;
+}
+
+  //Lägger till ny bokning
+  function addBooking($day, $subject, $studentId, $coachId)
+  {
+    $query = "INSERT INTO `Booking`(`day`, `subject`, `studentId`, `coachId`, `bookingId`)
+              VALUES ('$day', '$subject', '$studentId', '$coachId', 0)";
+
+    return $query;
+  }
 
 ?>

@@ -117,25 +117,18 @@
       //Om användaren trycker på sök-knappen
       if(isset($_POST['btnSearch']))
       {
-        // Lagrar vald dag i sessionvariabeln
+        // Lagrar vald dag i variabel
         $_SESSION['selectedDay'] = $_POST['dayName'];
-        // Lagrar valt ämne i sessionvariabeln
+        // Lagrar valt ämne i variabel
         $_SESSION['selectedSubject'] = $_POST['name'];
       }
 
-      //Lagrar värdena av sessionvariablerna i nya varibler som ska sättas in i query
+      //Lagrar sessionvariabler i nya variabler för att lägga in i query
       $selectedDay = $_SESSION['selectedDay'];
       $selectedSubject = $_SESSION['selectedSubject'];
 
-      //SQL-query som hämtar tillgängliga studiecoacher
-      $queryAvailableCoaches = "SELECT StudyCoach.name, StudyCoach.description
-                                  FROM StudyCoach
-                                  INNER JOIN CoachSubjects ON CoachSubjects.coachId=StudyCoach.coachId
-                                  INNER JOIN Availability ON Availability.coachId=StudyCoach.coachId
-                                  WHERE Availability.day='$selectedDay' AND CoachSubjects.subjectName='$selectedSubject'";
-
-      //Lagrar queryresultat i en sessionsvariabel
-      $_SESSION['resultAvailability'] = $connection->query($queryAvailableCoaches);
+      //Hämtar tillgängliga studiecoacher genom funktion i queries.php och lagrar resultat i variabel
+      $resultAvailability = $connection->query(availableCoaches($selectedDay, $selectedSubject));
 
       ?>
 
@@ -149,7 +142,7 @@
       <?php
 
       //Om query inte resulterar i några rader så finns ingen tillgänglig coach
-      if(mysqli_num_rows($_SESSION['resultAvailability'])<1)
+      if(mysqli_num_rows($resultAvailability)<1)
       {
         echo "Det finns inga tillgängliga studiecoacher för den valda dagen/ämnet. Vänligen gör om din sökning.";
       }
@@ -166,16 +159,18 @@
           </tr>
           <?php
             //Matar ut resultatet från queryn ovan
-            while ($row = $_SESSION['resultAvailability']->fetch_assoc())
+            while ($row = $resultAvailability->fetch_assoc())
             {
+
           ?>
               <!--Namn och beskrivning för varje tillgänglig coach matas ut på ny rad-->
               <tr>
-                <td><?php echo $row["name"] ?></td>
-                <td><?php echo $row["description"] ?></td>
+                <td><?php echo $row['name'] ?></td>
+                <td><?php echo $row['description'] ?></td>
                 <td>
                   <!--Knapp för bokning som kopplar till booking.php-->
                   <form action="booking.php" method="post">
+                    <input type="hidden" value="<?php echo $row['coachId'] ?>" name="coachId">
                     <input type="submit" value="Boka" name="btnBook">
                   </form>
                 </td>
