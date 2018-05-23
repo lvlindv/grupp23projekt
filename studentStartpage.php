@@ -155,16 +155,25 @@
       else
       {
         ?>
-          <table><tr><th>Namn</th><th>Beskrivning</th></tr>
+          <!--Tabell med tillgängliga studiecoacher-->
+          <table>
+            <!--Tabellrubriker i fetstilt-->
+            <tr>
+              <th>Namn</th>
+              <th>Beskrivning</th>
+            </tr>
 
-        <?php
-          while ($row = $_SESSION['resultAvailability']->fetch_assoc())
-          {
-        ?>
+          <?php
+            //Matar ut resultatet från queryn ovan
+            while ($row = $_SESSION['resultAvailability']->fetch_assoc())
+            {
+          ?>
+            <!--Namn och beskrivning för varje tillgänglig coach matas ut på ny rad-->
             <tr>
               <td><?php echo $row["name"] ?></td>
               <td><?php echo $row["description"] ?></td>
               <td>
+                <!--Knapp för bokning som kopplar till booking.php-->
                 <form action="booking.php" method="post">
                   <input type="submit" value="Boka" name="btnBook">
                 </form>
@@ -173,6 +182,7 @@
         <?php
           }
         ?>
+        <!--Slut på tabell-->
         </table>
         <?php
       }
