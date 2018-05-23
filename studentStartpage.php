@@ -137,6 +137,15 @@
       //Lagrar queryresultat i en sessionsvariabel
       $_SESSION['resultAvailability'] = $connection->query($queryAvailableCoaches);
 
+      ?>
+
+      <label for="resultAvailability"><b><?php
+      echo "Tillgängliga coacher för den valda dagen ".$selectedDay." och det valda ämnet ".$selectedSubject.":"
+      ?></b></label>
+      <br><br>
+
+      <?php
+
       //Om query inte resulterar i några rader så finns ingen tillgänglig coach
       if(mysqli_num_rows($_SESSION['resultAvailability'])<1)
       {
@@ -154,7 +163,7 @@
       }
 
       //Länk för att logga ut användaren
-      echo "<br/>";
+      echo "<br/><br/>";
       echo '<a href="logoutUser.php">Logga ut</a>';
     ?>
   </body>
