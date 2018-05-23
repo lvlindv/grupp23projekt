@@ -47,36 +47,35 @@ $result = mysqli_query($connection, $sql);
 
  ?>
 
- <table boarder="0" cellpadding="10" cellspacing="1" width="700" class="tblListForm">
-   <tr class="listheader">
 
-     <td>Namn</td>
-     <td>E-post</td>
-     <td>Lösenord</td>
-     <td>Beskrivning</td>
-     <td>Telefonummer</td>
-     <td>Alternativ</td>
+ <table boarder="0" cellpadding="10" cellspacing="1" width="700" class="tblListForm">
+   <tr class="listheader"><th>Namn</th><th>E-post</th><th>Lösenord</th><th>Beskrivning</th><th>Telefonummer</th><th>Alternativ</th>
    </tr>
 
    <?php
-       $i=0;
-       while($row = mysqli_fetch_array($result)) {
-       if($i%2==0)
-       $classname="evenRow";
-       else
-       $classname="oddRow";
-    ?>
 
-  <tr class="<?php if(isset($classname)) echo $classname;?>">
+     //Matar ut resultatet från queryn ovan
+     while ($row = $result->fetch_assoc())
+     {
+    // $i=0;
+       // while($row = mysqli_fetch_array($result)) {
+       // if($i%2==0)
+       // $classname="evenRow";
+       // else
+       // $classname="oddRow";
+    ?>
      <td><?php echo $row["name"]; ?></td>
      <td><?php echo $row["email"]; ?></td>
      <td><?php echo $row["password"]; ?></td>
      <td><?php echo $row["description"]; ?></td>
      <td><?php echo $row["phoneNr"]; ?></td>
 
-     <td><a href="adminEditPage.php?userId=<?php echo $row["userId"]; ?>" class="link"><img alt='edit' title='edit' width='50px' height='20px' hspace='10' /></a>
-         <a href="adminDeletePage.php?userId=<?php echo $row["userId"]; ?>"  class="link"><img alt='Radera' title='Radera' width='50px' height='20px'hspace='10' /></a></td>
-   </tr>
+     <td><form action="adminDeletePage.php" method="post">
+       <input type="submit" value="Ta Bort" name="btndel">
+     </form></td>
+
+
+     </tr>
 
  <?php
  $i++;
