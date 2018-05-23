@@ -17,17 +17,16 @@ function validateLogin()
 }
 
 //Funktion som säkerställer att alla registreringsfälten är ifyllda
-function validateRegistration()
+function validateReg()
 {
-  var name = document.forms["registrationform"]["namn"].value;
-  var email = document.forms["registrationform"]["email"].value;
-  var mnr = document.forms["registrationform"]["mnr"].value;
-  var psw = document.forms["registrationform"]["psw"].value;
-  var psw-repeat = document.forms["registrationform"]["psw-repeat"].value;
+  var name = document.forms["regForm"]["namn"].value;
+  var email = document.forms["regForm"]["email"].value;
+  var mnr = document.forms["regForm"]["mnr"].value;
+  var psw = document.forms["regForm"]["psw"].value;
 
-  if ((name == "") || (email == "") || (mnr == "") || (psw == "") ||(psw-repeat == ""))
+  if ((name == "") || (email == "") || (mnr == "") || (psw == ""))
     {
-      alert("Fyll i alla fälten i formuläret");
+      alert("Fyll i alla fälten i formuläret!");
       return false;
     }
 }
