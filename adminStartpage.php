@@ -74,8 +74,8 @@ $result = mysqli_query($connection, $sql);
      <td><?php echo $row["description"]; ?></td>
      <td><?php echo $row["phoneNr"]; ?></td>
 
-     <td><a href="adminEditPage.php?userId=<?php echo $row["userId"]; ?>" class="link"><img alt='edit' title='edit' src='images/edit.png' width='50px' height='15px' hspace='10' /></a>
-         <a href="adminDeletePage.php?userId=<?php echo $row["userId"]; ?>"  class="link"><img alt='Radera' title='Radera' src='images/Radera.png' width='50px' height='15px'hspace='10' /></a></td>
+     <td><a href="adminEditPage.php?userId=<?php echo $row["userId"]; ?>" class="link"><img alt='edit' title='edit' width='50px' height='20px' hspace='10' /></a>
+         <a href="adminDeletePage.php?userId=<?php echo $row["userId"]; ?>"  class="link"><img alt='Radera' title='Radera' width='50px' height='20px'hspace='10' /></a></td>
    </tr>
 
  <?php
