@@ -10,6 +10,7 @@ echo "Connection worked"
     <meta charset="utf-8">
     <title>Edit page</title>
   </head>
+  <body>
 
     <input type="hidden" name="coachId" value="<?php echo $coachId; ?>">
 
