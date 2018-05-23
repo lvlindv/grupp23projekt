@@ -75,9 +75,18 @@ $result = mysqli_query($connection, $sql);
      <td><?php echo $row["description"]; ?></td>
      <td><?php echo $row["phoneNr"]; ?></td>
 
-     <td><a href="adminEditPage.php?userId=<?php echo $row["userId"]; ?>" class="link"><img alt='edit' title='edit' src='images/edit.png' width='50px' height='15px' hspace='10' /></a>
-         <a href="adminDeletePage.php?userId=<?php echo $row["userId"]; ?>"  class="link"><img alt='Radera' title='Radera' src='images/Radera.png' width='50px' height='15px'hspace='10' /></a></td>
-   </tr>
+     <td><a href="adminEditPage.php?userId=<?php
+     echo $row["userId"]; ?>
+     "class="link"><img alt='edit' title='edit' width='50px' height='30px' hspace='10' /></a>
+
+     <form action="adminDeletePage.php" method="post">
+       <button name="btndel" type="submit" value="Button" >Ta bort</button>
+       <?php echo $row["userId"]; ?>
+
+
+    </td>
+
+
 
  <?php
  $i++;
