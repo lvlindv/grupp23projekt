@@ -1,5 +1,4 @@
 <?php
-
-echo "Connection worked"
+include 'db_connect.php';
 
  ?>
