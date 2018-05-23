@@ -19,10 +19,12 @@
   </head>
 
   <body>
+    <!--Rubrik med användarens namn-->
     <h1> <?php echo "Välkommen ".$_SESSION["name"]."!" ?> </h1>
-
-    <h2> Dina bokningar </h2><!--underrubrik-->
-    <section class="myBookings"><!--ruta med bokningar-->
+    <!--Underrubrik-->
+    <h2> Dina bokningar </h2>
+    <!--Ruta med bokningar-->
+    <section class="myBookings">
       <?php
         $resultBookings = $connection->query($queryStudentBookings);
         while ($row = $resultBookings->fetch_assoc())
@@ -85,10 +87,13 @@
         }
       ?>
     </section>
-
+    <!--Formulär för bokning av stydiehjälp-->
     <h2> Boka ny tid </h2>
-    <form action="search.php" method="POST">
-      <label for="dayDropdown"><b>Välj dag</b></label><!--Rubrik-->
+    <!--Kopplar tillbaka till startsidan vid sökning-->
+    <form action="studentStartpage.php" method="POST">
+      <!--Rubrik-->
+      <label for="dayDropdown"><b>Välj dag</b></label>
+      <!--Dropdown-lista med vardagar-->
       <select name="dayName">
         <option value="Måndag">Måndag</option>
         <option value="Tisdag">Tisdag</option>
@@ -97,17 +102,59 @@
         <option value="Fredag">Fredag</option>
       </select>
 
-
-      <label for="subjectDropdown"><b>Välj ämne</b></label><!--rubrik-->
+      <!--Rubrik-->
+      <label for="subjectDropdown"><b>Välj ämne</b></label>
           <?php
+            //Dropdown-lista med ämnen hämtade från databasen
             $resultSubjects = $connection->query($queryShowSubjects);
             make_select_from_result("name", $resultSubjects);
           ?>
-
+        <!--Sök-knapp-->
         <input type="submit" value="Sök" name="btnSearch"/>
     </form>
 
     <?php
+      //Om användaren trycker på sök-knappen
+      if(isset($_POST['btnSearch']))
+      {
+        // Lagrar vald dag i sessionvariabeln
+        $_SESSION['selectedDay'] = $_POST['dayName'];
+        // Lagrar valt ämne i sessionvariabeln
+        $_SESSION['selectedSubject'] = $_POST['name'];
+      }
+
+      //Lagrar värdena av sessionvariablerna i nya varibler som ska sättas in i query
+      $selectedDay = $_SESSION['selectedDay'];
+      $selectedSubject = $_SESSION['selectedSubject'];
+
+      //SQL-query som hämtar tillgängliga studiecoacher
+      $queryAvailableCoaches = "SELECT StudyCoach.name, StudyCoach.description
+                                  FROM StudyCoach
+                                  INNER JOIN CoachSubjects ON CoachSubjects.coachId=StudyCoach.coachId
+                                  INNER JOIN Availability ON Availability.coachId=StudyCoach.coachId
+                                  WHERE Availability.day='$selectedDay' AND CoachSubjects.subjectName='$selectedSubject'";
+
+      //Lagrar queryresultat i en sessionsvariabel
+      $_SESSION['resultAvailability'] = $connection->query($queryAvailableCoaches);
+
+      //Om query inte resulterar i några rader så finns ingen tillgänglig coach
+      if(mysqli_num_rows($_SESSION['resultAvailability'])<1)
+      {
+        echo "Det finns inga tillgängliga studiecoacher för den valda dagen/ämnet. Vänligen gör om din sökning.";
+      }
+      //Annars matas resultatet ut i tabellform
+      else
+      {
+        echo "<table><tr><th>Namn</th><th>Beskrivning</th></tr>";
+        while ($row = $_SESSION['resultAvailability']->fetch_assoc())
+        {
+          echo "<tr><td>".$row["name"]."</td><td>".$row["description"]."</td></tr>";
+        }
+        echo "</table>";
+      }
+
+      //Länk för att logga ut användaren
+      echo "<br/>";
       echo '<a href="logoutUser.php">Logga ut</a>';
     ?>
   </body>

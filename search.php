@@ -21,29 +21,15 @@
   $selectedSubject = $_SESSION['selectedSubject'];
 
   //Visar tillgängliga studiecoacher
-  $queryAvailableCoaches = "SELECT StudyCoach.name, CoachSubjects.subjectName,
-                              StudyCoach.description
+  $queryAvailableCoaches = "SELECT StudyCoach.name, StudyCoach.description
                               FROM StudyCoach
                               INNER JOIN CoachSubjects ON CoachSubjects.coachId=StudyCoach.coachId
                               INNER JOIN Availability ON Availability.coachId=StudyCoach.coachId
                               WHERE Availability.day='$selectedDay' AND CoachSubjects.subjectName='$selectedSubject'";
 
-  $resultAvailability = $connection->query($queryAvailableCoaches);
+  $_SESSION['resultAvailability'] = $connection->query($queryAvailableCoaches);
 
-  if(mysqli_num_rows($resultAvailability)<1)
-  {
-    echo "Det finns inga tillgängliga studiecoacher för den valda dagen/ämnet.";
-    echo '<a href="studentStartpage.php">Vänligen gör om din sökning.</a>';
-  }
-  else
-  {
-    while ($row = $resultAvailability->fetch_assoc())
-    {
-      echo $row ["name"];
-      echo $row ["subjectName"];
-      echo $row ["description"];
-      echo "<br/>";
-    }
-  }
+  //Kopplar tillbaka till studentStartpage.php
+  header("Location: studentStartpage.php");
 
 ?>
