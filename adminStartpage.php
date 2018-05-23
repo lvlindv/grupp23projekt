@@ -41,12 +41,12 @@ include "db_connect.php"
     <h2> Ta bort eller Redigera info för studiecoach </h2>
 
 <?php
-
+// hämtar värden från studycoach och de ska skrivas ut i ordning efter coachid
 $sql = "SELECT * FROM StudyCoach ORDER BY coachId DESC";
 $result = mysqli_query($connection, $sql);
 
  ?>
-
+<!-- skapa tabellen med rubrikerna se nedan.-->
  <table boarder="0" cellpadding="10" cellspacing="1" width="700" class="tblListForm">
    <tr class="listheader">
 
@@ -59,6 +59,7 @@ $result = mysqli_query($connection, $sql);
    </tr>
 
    <?php
+
        $i=0;
        while($row = mysqli_fetch_array($result)) {
        if($i%2==0)
