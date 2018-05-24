@@ -1,5 +1,5 @@
 <?php
-  // Start the session
+  //Startar sessionen
   session_start();
 
   //Om användaren trycker på btnLogin
