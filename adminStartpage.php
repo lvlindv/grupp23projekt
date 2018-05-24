@@ -19,7 +19,7 @@ include "db_connect.php"
         <h1> <?php echo "Välkommen ".$_SESSION["email"]."!"; ?>  </h1>
         <h2> Registrera en ny studiecoach </h2>
         <!-- Ett formulär för att lähha till nya studiecoacher-->
-        <form name="regHelper" action="registerToDBCoach.php" method="post" onsubmit="return validateStudycoach()" >
+        <form name="regHelper" action="registerToDBCoach.php" method="post" onsubmit="return validateStudyCoach()" >
 
           <label for="name"><b>Fullständigt namn</b></label>
           <input type="text" placeholder="Ange fullständigt namn på StudyCoachen" name="name">

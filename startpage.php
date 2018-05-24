@@ -26,7 +26,7 @@ include "db_connect.php";
       <h2>LOGGA IN</h2>
       </br>
 
-      <form name="loginForm" action="loginUser.php" method="post">
+      <form name="loginForm" action="loginUser.php" method="post" onsubmit="validateLogin()">
       <div class="epost"> <!-- Skapar en klass ensklit för texten "E-post" för att justera designen/positionen för texten i css -->
       <label for="uname"><b>E-post</b></label>
       </div>
