@@ -1,7 +1,7 @@
 <?php
   session_start();
 
-  //Visar alla bokningar som lagts in i databasen
+  // Hämtar alla bokningar som lagts in i databasen
   $queryShowBookings = "SELECT Booking.day,
                   Booking.subject,
                   StudyCoach.name AS coachName,
@@ -14,7 +14,7 @@
             INNER JOIN Student ON Student.studentId=Booking.studentId
             INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId";
 
-  //Query för att få ut enskilda studenters bokningar
+  // Hämtar ut enskilda studenters bokningar
   $queryStudentBookings = "SELECT Booking.day,
                   Booking.subject,
                   StudyCoach.name AS coachName,
@@ -28,7 +28,7 @@
             INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId
             WHERE Student.email='{$_SESSION["email"]}'";
 
-  //Query för att få ut enskilda studiecoachers bokningar
+  // Hämtar ut enskilda studiecoachers bokningar
   $queryCoachBookings = "SELECT Booking.day,
                   Booking.subject,
                   StudyCoach.name AS coachName,
@@ -42,13 +42,21 @@
             INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId
             WHERE StudyCoach.email='{$_SESSION["email"]}'";
 
-  //Visar alla veckodagar i ordning
+  // Hämtar alla veckodagar i ordning
   $queryShowDays = "SELECT name FROM Days ORDER BY dayOrder ASC";
 
-  //Visar alla ämnen
+  // Hämtar alla ämnen
   $queryShowSubjects ="SELECT name FROM Subjects";
 
-  //Visar tillgängliga studiecoacher
+  // Lägger till tillgänglighet för studiecoacher
+  function addAvailability($selectedDay, $coachId)
+  {
+    $query = "INSERT INTO Availability(day, coachId) VALUES ('$selectedDay', '$coachId')";
+
+    return $query;
+  }
+
+  // Hämtar tillgängliga studiecoacher
   function availableCoaches($selectedDay, $selectedSubject)
   {
     $query = "SELECT StudyCoach.name, StudyCoach.description, StudyCoach.coachId
@@ -60,7 +68,7 @@
     return $query;
 }
 
-  //Lägger till ny bokning
+  // Lägger till ny bokning
   function addBooking($day, $subject, $studentId, $coachId)
   {
     $query = "INSERT INTO `Booking`(`day`, `subject`, `studentId`, `coachId`, `bookingId`)
@@ -69,7 +77,7 @@
     return $query;
   }
 
-  // Tar bort vald StudyCoach
+  // Tar bort vald studiecoach
   function deleteStudyCoach($coachId)
   {
     $query = "DELETE FROM `StudyCoach` WHERE coachId='$coachId'";
@@ -77,7 +85,7 @@
     return $query;
   }
 
-  // Plockar ut alla StudyCoaches ur databasen
+  // Hämtar ut alla studiecoacher ur databasen
   function showStudyCoaches()
   {
     $query = "SELECT * FROM StudyCoach ORDER BY coachId DESC";

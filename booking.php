@@ -18,6 +18,11 @@ if ($connection ->query(addBooking($selectedDay, $selectedSubject, $currentStude
 {
   echo "Du har lagt till en ny bokning!";
   echo '<a href="studentStartpage.php">Tillbaka till startsidan.</a>';
+  if ($connection ->query(deleteAvailability($selectedDay, $currentCoachId)))
+  {
+    echo "Tillgänglighet borttagen.";
+  }
+
 }
 else
 {
