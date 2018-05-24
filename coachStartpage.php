@@ -25,7 +25,7 @@
   <section class="myBookings"><!--ruta med bokningar-->
     <?php
       //Lagrar resultat från query som hämtar studiecoachens bokningar och matar ut varje bokning
-      $resultBookings = $connection->query($queryCoachBookings);
+      $resultBookings = $connection->query(showCoachBookings($_SESSION['email']));
       while ($row = $resultBookings->fetch_assoc())
       {
         //Skriver ut bokningens dag, ämne, coachens namn och kontaktuppgifter

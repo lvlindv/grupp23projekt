@@ -20,18 +20,23 @@
   }
 
   // Hämtar ut enskilda studiecoachers bokningar
-  $queryCoachBookings = "SELECT Booking.day,
-                  Booking.subject,
-                  StudyCoach.name AS coachName,
-                  StudyCoach.phoneNr AS coachNr,
-                  StudyCoach.email AS coachEmail,
-                  Student.name AS studentName,
-                  Student.phoneNr AS studentNr,
-                  Student.email AS studentEmail
-                  FROM Booking
-                  INNER JOIN Student ON Student.studentId=Booking.studentId
-                  INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId
-                  WHERE StudyCoach.email='{$_SESSION["email"]}'";
+  function showCoachBookings($email)
+  {
+    $query = "SELECT Booking.day,
+                            Booking.subject,
+                            StudyCoach.name AS coachName,
+                            StudyCoach.phoneNr AS coachNr,
+                            StudyCoach.email AS coachEmail,
+                            Student.name AS studentName,
+                            Student.phoneNr AS studentNr,
+                            Student.email AS studentEmail
+                            FROM Booking
+                            INNER JOIN Student ON Student.studentId=Booking.studentId
+                            INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId
+                            WHERE StudyCoach.email='$email'";
+    return $query;
+  }
+
 
   // Hämtar alla ämnen
   function showSubjects()
