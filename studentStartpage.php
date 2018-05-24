@@ -9,7 +9,7 @@
   include "queries.php";
 
   // Koppling till fil som skapar dropdowns och tabeller från data i db
-  include "htmlgenerator.php";
+  include "functions.php";
 ?>
 <!doctype html>
 <html>
