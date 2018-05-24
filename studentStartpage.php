@@ -14,7 +14,7 @@
 <!doctype html>
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html" charset="ISO-8859-1" />
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
     <title>Startsida</title>
   </head>
 
@@ -29,61 +29,9 @@
         $resultBookings = $connection->query($queryStudentBookings);
         while ($row = $resultBookings->fetch_assoc())
         {
-      ?>
-          <!--Skriver ut bokningens dag, ämne, coachens namn och kontaktuppgifter
-              samt studentens namn och kontaktuppgifter-->
-          <div class="booking">
-            <div class="bookingDay">
-              <?php
-              echo $row["day"];
-              ?>
-            </div>
-
-            <div class="bookingSubject">
-              <?php
-              echo $row["subject"];
-              ?>
-            </div>
-
-            <div class="coachName">
-              <?php
-              echo $row["coachName"];
-              ?>
-            </div>
-
-            <div class="coachNr">
-              <?php
-              echo $row["coachNr"];
-              ?>
-            </div>
-
-            <div class="coachEmail">
-              <?php
-              echo $row["coachEmail"];
-              ?>
-            </div>
-
-            <div class="studentName">
-              <?php
-              echo $row["studentName"];
-              ?>
-            </div>
-
-            <div class="studentNr">
-              <?php
-              echo $row["studentNr"];
-              ?>
-            </div>
-
-            <div class="studentEmail">
-              <?php
-              echo $row["studentEmail"];
-
-              echo "<br />";
-              ?>
-            </div>
-          </div>
-      <?php
+          //Skriver ut bokningens dag, ämne, coachens namn och kontaktuppgifter
+          //samt studentens namn och kontaktuppgifter
+          include "showBookings.php";
         }
       ?>
     </section>
@@ -113,23 +61,9 @@
         <input type="submit" value="Sök" name="btnSearch"/>
     </form>
 
-    <?php
-      //Om användaren trycker på sök-knappen
-      if(isset($_POST['btnSearch']))
-      {
-        // Lagrar vald dag i variabel
-        $_SESSION['selectedDay'] = $_POST['dayName'];
-        // Lagrar valt ämne i variabel
-        $_SESSION['selectedSubject'] = $_POST['name'];
-      }
-
-      //Lagrar sessionvariabler i nya variabler för att lägga in i query
-      $selectedDay = $_SESSION['selectedDay'];
-      $selectedSubject = $_SESSION['selectedSubject'];
-
-      //Hämtar tillgängliga studiecoacher genom funktion i queries.php och lagrar resultat i variabel
-      $resultAvailability = $connection->query(availableCoaches($selectedDay, $selectedSubject));
-
+      <?php
+        //Hämtar tillgängliga studiecoacher
+        include "availableCoaches.php";
       ?>
 
       <label for="resultAvailability"><b>
@@ -165,12 +99,12 @@
           ?>
               <!--Namn och beskrivning för varje tillgänglig coach matas ut på ny rad-->
               <tr>
+                <td style="visibility:hidden" name="coachId"><?php echo $row['coachId'] ?></td>
                 <td><?php echo $row['name'] ?></td>
                 <td><?php echo $row['description'] ?></td>
                 <td>
                   <!--Knapp för bokning som kopplar till booking.php-->
                   <form action="booking.php" method="post">
-                    <input type="hidden" value="<?php echo $row['coachId'] ?>" name="coachId">
                     <input type="submit" value="Boka" name="btnBook">
                   </form>
                 </td>
