@@ -56,6 +56,14 @@
     return $query;
   }
 
+  // Tar bort tillgänglighet för studiecoacher
+  function deleteAvailability($selectedDay, $coachId)
+  {
+    $query = "DELETE FROM `Availability` WHERE day='$selectedDay' AND coachId='$coachId'";
+
+    return $query;
+  }
+
   // Hämtar tillgängliga studiecoacher
   function availableCoaches($selectedDay, $selectedSubject)
   {
