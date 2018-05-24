@@ -66,6 +66,7 @@
         include "availableCoaches.php";
       ?>
 
+      <!--Skriver ut tillgängliga studiecoacher-->
       <label for="resultAvailability"><b>
         <?php
         echo "Tillgängliga coacher för den valda dagen ".$selectedDay." och det valda ämnet ".$selectedSubject.":"
@@ -88,6 +89,7 @@
         <table>
           <!--Tabellrubriker i fetstilt-->
           <tr>
+            <th></th>
             <th>Namn</th>
             <th>Beskrivning</th>
           </tr>
@@ -97,18 +99,19 @@
             {
 
           ?>
+              <!--Form med tabell över tillgängliga studiecoacher-->
+              <form action="booking.php" method="post">
               <!--Namn och beskrivning för varje tillgänglig coach matas ut på ny rad-->
               <tr>
+                <!--Skickar med den valda studiecoachens ID till booking.php-->
+                <td> <input type="hidden" name="coachId" value=<?php echo $row["coachId"]; ?></td>
+                <!--Skriver ut den valda coachens namn och beskrivning-->
                 <td><?php echo $row['name'] ?></td>
                 <td><?php echo $row['description'] ?></td>
-                <td>
-                  <!--Knapp för bokning som kopplar till booking.php-->
-                  <form action="booking.php" method="post">
-                    <input type="submit" value="Boka" name="btnBook">
-                    <input type="hidden" value="<?php echo $row['coachId'] ?>" name="coachId">
-                  </form>
-                </td>
+                <!--Knapp för bokning som kopplar till booking.php-->
+                <td><input type="submit" value="Boka" name="btnBook"></td>
               </tr>
+              </form>
           <?php
             }
           ?>
