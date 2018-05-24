@@ -14,7 +14,7 @@ $selectedSubject = $_SESSION['selectedSubject'];
 $currentCoachId = $_POST['coachId'];
 $currentStudentId = $_SESSION['studentId'];
 
-if ($connection ->query(addBooking($selectedDay, $selectedSubject, $currentCoachId, $currentStudentId)))
+if ($connection ->query(addBooking($selectedDay, $selectedSubject, $currentStudentId, $currentCoachId)))
 {
   echo "Du har lagt till en ny bokning!";
   echo '<a href="studentStartpage.php">Tillbaka till startsidan.</a>';

@@ -23,10 +23,6 @@
     <h1> <?php echo "Välkommen ".$_SESSION["name"]."!" ?> </h1>
     <!--Underrubrik-->
     <h2> Dina bokningar </h2>
-
-    <?php
-      echo "Du har id:".$_SESSION["studentId"];
-     ?>
     <!--Ruta med bokningar-->
     <section class="myBookings">
       <?php
