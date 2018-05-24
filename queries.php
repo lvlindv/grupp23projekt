@@ -69,9 +69,18 @@
     return $query;
   }
 
+  // Tar bort vald StudyCoach
   function deleteStudyCoach($coachId)
   {
     $query = "DELETE FROM `StudyCoach` WHERE coachId='$coachId'";
+
+    return $query;
+  }
+
+  // Plockar ut alla StudyCoaches ur databasen
+  function showStudieCoaches()
+  {
+    $query = "SELECT * FROM StudyCoach ORDER BY coachId DESC";
 
     return $query;
   }

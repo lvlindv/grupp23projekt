@@ -9,13 +9,16 @@ include "db_connect.php"
 <!DOCTYPE html>
 <html lang="sv" dir="ltr">
   <head>
+    <!--Koppling till js-fil med validering -->
     <script src="functions.js"></script>
     <meta charset="utf-8">
     <title>Startsida</title>
   </head>
       <body>
+        <!--Visar den inloggade admins epostadress-->
         <h1> <?php echo "Välkommen ".$_SESSION["email"]."!"; ?>  </h1>
         <h2> Registrera en ny studiecoach </h2>
+        <!--Ett formulär för att lähha till nya studiecoacher-->
         <form name="regHelper" action="registerToDBCoach.php" method="post" onsubmit="return validateStudycoach()" >
 
           <label for="name"><b>Fullständigt namn</b></label>
@@ -56,7 +59,7 @@ include "db_connect.php"
 
             <form action="adminDeletePage.php" method="post">
               <tr>
-                <td> <input type="hidden" name="coachId" value=<?php $row['coachId'] ?><?php echo $row["coachId"]; ?></td>
+                <td> <input type="hidden" name="coachId" value=<?php echo $row["coachId"]; ?></td>
                 <td><?php echo $row["name"]; ?></td>
                 <td><?php echo $row["email"]; ?></td>
                 <td><?php echo $row["password"]; ?></td>
