@@ -2,23 +2,23 @@
 // Start the session
 session_start();
 
-//Koppling till databas
+// Koppling till databas
 include "db_connect.php"
 ?>
 
 <!DOCTYPE html>
 <html lang="sv" dir="ltr">
   <head>
-    <!--Koppling till js-fil med validering -->
+    <!-- Koppling till js-fil med validering -->
     <script src="functions.js"></script>
     <meta charset="utf-8">
     <title>Startsida</title>
   </head>
       <body>
-        <!--Visar den inloggade admins epostadress-->
+        <!-- Visar den inloggade admins epostadress-->
         <h1> <?php echo "Välkommen ".$_SESSION["email"]."!"; ?>  </h1>
         <h2> Registrera en ny studiecoach </h2>
-        <!--Ett formulär för att lähha till nya studiecoacher-->
+        <!-- Ett formulär för att lähha till nya studiecoacher-->
         <form name="regHelper" action="registerToDBCoach.php" method="post" onsubmit="return validateStudycoach()" >
 
           <label for="name"><b>Fullständigt namn</b></label>
@@ -47,18 +47,20 @@ include "db_connect.php"
         ?>
 
         <h2> Ta bort eller Redigera info för studiecoach </h2>
-        <!--En tabell där alla Studycoaches ska placeras in-->
+        <!-- En tabell där alla Studycoaches ska placeras in-->
          <table boarder="0" cellpadding="10" cellspacing="1" width="700" class="tblListForm">
            <tr class="listheader"><th>Namn</th><th>E-post</th><th>Lösenord</th><th>Beskrivning</th><th>Telefonummer</th><th>Alternativ</th></tr>
 
             <?php
-             //Matar ut resultatet från queryn ovan
+             // Matar ut resultatet från queryn ovan
              while ($row = $result->fetch_assoc())
              {
             ?>
-            <!--Placerar in värdena från databasen i rätt kolumn-->
+            <!-- Placerar in värdena från databasen i rätt kolumn-->
             <form action="adminDeletePage.php" method="post">
               <tr>
+                <!-- Skickar med valt coachId till adminDeletePage.php-->
+                <!-- Väljer hidden som type så att det inte visas på sidan-->
                 <td> <input type="hidden" name="coachId" value=<?php echo $row["coachId"]; ?></td>
                 <td><?php echo $row["name"]; ?></td>
                 <td><?php echo $row["email"]; ?></td>
@@ -66,19 +68,20 @@ include "db_connect.php"
                 <td><?php echo $row["description"]; ?></td>
                 <td><?php echo $row["phoneNr"]; ?></td>
                 <input type="hidden" >
+                <!-- När inputen är "klickad" skickas coachId som ska med i formet -->
                 <td> <input type="submit" value="Ta Bort" name="btndel"></td>
               </tr>
             </form>
 
             <?php
+            // Fortsätter itterationen tills alla StudyCoaches lagts till i tabellen.
              $i++;
              }
             ?>
 
-
           </table>
          <?php
-          //Länk för att logga ut användare
+          // Länk för att logga ut användare
            echo '<a href="logoutUser.php">Logga ut</a>';
           ?>
       </body>
