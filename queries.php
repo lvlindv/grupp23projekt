@@ -1,21 +1,9 @@
 <?php
-  session_start();
-
-  // Hämtar alla bokningar som lagts in i databasen
-  $queryShowBookings = "SELECT Booking.day,
-                  Booking.subject,
-                  StudyCoach.name AS coachName,
-                  StudyCoach.phoneNr AS coachNr,
-                  StudyCoach.email AS coachEmail,
-                  Student.name AS studentName,
-                  Student.phoneNr AS studentNr,
-                  Student.email AS studentEmail
-            FROM Booking
-            INNER JOIN Student ON Student.studentId=Booking.studentId
-            INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId";
 
   // Hämtar ut enskilda studenters bokningar
-  $queryStudentBookings = "SELECT Booking.day,
+  function showStudentBookings($email)
+  {
+    $query = "SELECT Booking.day,
                   Booking.subject,
                   StudyCoach.name AS coachName,
                   StudyCoach.phoneNr AS coachNr,
@@ -23,10 +11,13 @@
                   Student.name AS studentName,
                   Student.phoneNr AS studentNr,
                   Student.email AS studentEmail
-            FROM Booking
-            INNER JOIN Student ON Student.studentId=Booking.studentId
-            INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId
-            WHERE Student.email='{$_SESSION["email"]}'";
+                  FROM Booking
+                  INNER JOIN Student ON Student.studentId=Booking.studentId
+                  INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId
+                  WHERE Student.email='$email'";
+
+    return $query;
+  }
 
   // Hämtar ut enskilda studiecoachers bokningar
   $queryCoachBookings = "SELECT Booking.day,
@@ -37,16 +28,18 @@
                   Student.name AS studentName,
                   Student.phoneNr AS studentNr,
                   Student.email AS studentEmail
-            FROM Booking
-            INNER JOIN Student ON Student.studentId=Booking.studentId
-            INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId
-            WHERE StudyCoach.email='{$_SESSION["email"]}'";
-
-  // Hämtar alla veckodagar i ordning
-  $queryShowDays = "SELECT name FROM Days ORDER BY dayOrder ASC";
+                  FROM Booking
+                  INNER JOIN Student ON Student.studentId=Booking.studentId
+                  INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId
+                  WHERE StudyCoach.email='{$_SESSION["email"]}'";
 
   // Hämtar alla ämnen
-  $queryShowSubjects ="SELECT name FROM Subjects";
+  function showSubjects()
+  {
+    $query ="SELECT name FROM Subjects";
+
+    return $query;
+  }
 
   // Lägger till tillgänglighet för studiecoacher
   function addAvailability($selectedDay, $coachId)
