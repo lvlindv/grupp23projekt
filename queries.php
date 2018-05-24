@@ -1,8 +1,9 @@
 <?php
-  session_start();
 
-  //Visar alla bokningar som lagts in i databasen
-  $queryShowBookings = "SELECT Booking.day,
+  // Hämtar ut enskilda studenters bokningar
+  function showStudentBookings($email)
+  {
+    $query = "SELECT Booking.day,
                   Booking.subject,
                   StudyCoach.name AS coachName,
                   StudyCoach.phoneNr AS coachNr,
@@ -10,25 +11,15 @@
                   Student.name AS studentName,
                   Student.phoneNr AS studentNr,
                   Student.email AS studentEmail
-            FROM Booking
-            INNER JOIN Student ON Student.studentId=Booking.studentId
-            INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId";
+                  FROM Booking
+                  INNER JOIN Student ON Student.studentId=Booking.studentId
+                  INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId
+                  WHERE Student.email='$email'";
 
-  //Query för att få ut enskilda studenters bokningar
-  $queryStudentBookings = "SELECT Booking.day,
-                  Booking.subject,
-                  StudyCoach.name AS coachName,
-                  StudyCoach.phoneNr AS coachNr,
-                  StudyCoach.email AS coachEmail,
-                  Student.name AS studentName,
-                  Student.phoneNr AS studentNr,
-                  Student.email AS studentEmail
-            FROM Booking
-            INNER JOIN Student ON Student.studentId=Booking.studentId
-            INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId
-            WHERE Student.email='{$_SESSION["email"]}'";
+    return $query;
+  }
 
-  //Query för att få ut enskilda studiecoachers bokningar
+  // Hämtar ut enskilda studiecoachers bokningar
   $queryCoachBookings = "SELECT Booking.day,
                   Booking.subject,
                   StudyCoach.name AS coachName,
@@ -37,18 +28,36 @@
                   Student.name AS studentName,
                   Student.phoneNr AS studentNr,
                   Student.email AS studentEmail
-            FROM Booking
-            INNER JOIN Student ON Student.studentId=Booking.studentId
-            INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId
-            WHERE StudyCoach.email='{$_SESSION["email"]}'";
+                  FROM Booking
+                  INNER JOIN Student ON Student.studentId=Booking.studentId
+                  INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId
+                  WHERE StudyCoach.email='{$_SESSION["email"]}'";
 
-  //Visar alla veckodagar i ordning
-  $queryShowDays = "SELECT name FROM Days ORDER BY dayOrder ASC";
+  // Hämtar alla ämnen
+  function showSubjects()
+  {
+    $query ="SELECT name FROM Subjects";
 
-  //Visar alla ämnen
-  $queryShowSubjects ="SELECT name FROM Subjects";
+    return $query;
+  }
 
-  //Visar tillgängliga studiecoacher
+  // Lägger till tillgänglighet för studiecoacher
+  function addAvailability($selectedDay, $coachId)
+  {
+    $query = "INSERT INTO Availability(day, coachId) VALUES ('$selectedDay', '$coachId')";
+
+    return $query;
+  }
+
+  // Tar bort tillgänglighet för studiecoacher
+  function deleteAvailability($selectedDay, $coachId)
+  {
+    $query = "DELETE FROM `Availability` WHERE day='$selectedDay' AND coachId='$coachId'";
+
+    return $query;
+  }
+
+  // Hämtar tillgängliga studiecoacher
   function availableCoaches($selectedDay, $selectedSubject)
   {
     $query = "SELECT StudyCoach.name, StudyCoach.description, StudyCoach.coachId
@@ -60,7 +69,7 @@
     return $query;
 }
 
-  //Lägger till ny bokning
+  // Lägger till ny bokning
   function addBooking($day, $subject, $studentId, $coachId)
   {
     $query = "INSERT INTO `Booking`(`day`, `subject`, `studentId`, `coachId`, `bookingId`)
@@ -69,7 +78,7 @@
     return $query;
   }
 
-  // Tar bort vald StudyCoach
+  // Tar bort vald studiecoach
   function deleteStudyCoach($coachId)
   {
     $query = "DELETE FROM `StudyCoach` WHERE coachId='$coachId'";
@@ -77,7 +86,7 @@
     return $query;
   }
 
-  // Plockar ut alla StudyCoaches ur databasen
+  // Hämtar ut alla studiecoacher ur databasen
   function showStudyCoaches()
   {
     $query = "SELECT * FROM StudyCoach ORDER BY coachId DESC";

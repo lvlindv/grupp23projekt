@@ -5,6 +5,9 @@
   //Koppling till databas
   include 'db_connect.php';
 
+  //Koppling till fil med queries
+  include "queries.php";
+
   if(isset($_POST['btnAdd']))
   {
     // Lagrar vald dag i sessionvariabeln
@@ -16,10 +19,7 @@
   $coachId = $_SESSION['coachId'];
 
   //Query för att lägga till tillgänglig studiecoach i databasen
-  $query = "INSERT INTO Availability(day, coachId)
-  VALUES ('$selectedDay', '$coachId')";
-
-  if ($connection->query($query)) {
+  if ($connection->query(addAvailability($selectedDay, $coachId))) {
     echo "Du har nu angett att du är tillgänglig på ".$_SESSION['selectedDay'].".";
     echo '<a href="coachStartpage.php">Tillbaka till din sida.</a>';
     }
