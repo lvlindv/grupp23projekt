@@ -20,43 +20,40 @@ color: #fff;
   left: 50%;
   transform: translate(-50%,-50%);
   width: 350px;
-  height: 400px;
+  height: 450px;
   padding: 80px 100px;
   box-sizing: border-box;
   background: rgba(0,0,0,.5);
-  box-shadow: 5px 5px 4px rgba(0,0,0, 0.3);
+  box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
 }
 
 .gubbe{
   width: 100px;
   height: 100px;
-  border-radius: 50%;
+  border-radius: 50%; /* Runda hörn på "gubben" ovanför inlogg */
   overflow: hidden;
   position: absolute;
   top: calc(-50px/2); /* Justerar höjden på bilden */
   left: calc(50% - 50px);
 }
 h2{
-  margin: 0;
-  padding: 200px
+  margin: 0;   /* Justerar texten upp eller ner */
+  padding: 0;
   color: #fff;
   text-align: center;
+  text-shadow: 2px 2px 7px rgba(0,0,0, 0.5);
+  border-radius: 20px;
 }
 
 button{
   color: rgba(66,48,1,1);
-  border-radius: 10px; /*Runda hörn på knapparna*/
+  border-radius: 5px; /*Runda hörn på knapparna*/
   border: 2px solid #fff;
-  background: rgba(255, 0, 0, 0.10);
-  font-size: 13px;
-  padding: 10px 15px;
-  width: 140px;
-  height: 30px;
+  font-size: 15px;  /* Storleken på texten i knapparna */
   box-shadow: 5px 5px 10px 5px rgba(0,0,0, 0.4);
-
 }
 :hover
-button {
+button{
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
@@ -69,4 +66,55 @@ p.rubrik{  /* Centrerar rubriken (p) "STUDIEHJÄLPEN" till mitten*/
   margin-right: auto;
   margin-left: auto;
   width: 38%;
+  transform: translate(0%,-45%);
+}
+.loginbox input[type="text"], input[type="password"]{
+  border: none;
+  border-bottom: 2px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 30px;
+  width: 165%;
+  font-size: 15px; /* Storleken på texten där man uppger e-post och lösenord */
+  transform: translate(-18%,-20%);
+}
+.loginbtn{
+  position: absolute;
+  transform: translate(-20%,10%);/* -20% justerar knappen vågrät, 10% justerar knappen lodrät */
+  margin: 0;
+  padding: 0;
+  background: rgba(255, 0, 0, 0.10);
+  padding: 10px 15px;
+  width: 250px;
+  height: 40px;
+}
+.signupbtn{
+  left: 13%;
+  width: 110px;
+  position: absolute;
+  top: 100%;
+  transform: translate(5%,-400%);
+}
+.studybtn{
+  right: 15%;
+  position: absolute;
+  top: 100%;
+  transform: translate(5%,-400%);
+}
+.forgot{
+  position: absolute;
+  top: 100%;
+  transform: translate(5%,-270%);
+}
+.epost{
+  margin: 0;
+  padding: 0;
+  transform: translate(-15%,-20%);
+  width: 200%;
+}
+.passw{
+  margin: 0;
+  padding: 0;
+  transform: translate(-15%,-10%);
+  width: 200%;
 }
