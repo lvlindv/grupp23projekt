@@ -12,14 +12,14 @@
   if(isset($_POST['btnSearch']))
   {
     // Lagrar vald dag i sessionvariabeln
-    $_SESSION["selectedDay"] = $_POST['dayName'];
+    $_SESSION['selectedDay'] = $_POST['dayName'];
     // Lagrar valt ämne i sessionvariabeln
-    $_SESSION["selectedSubject"] = $_POST['name'];
+    $_SESSION['selectedSubject'] = $_POST['name'];
   }
 
   //Lagrar värdena av sessionvariablerna i nya varibler som ska sättas in i query
-  $selectedDay = $_SESSION["selectedDay"];
-  $selectedSubject = $_SESSION["selectedSubject"];
+  $selectedDay = $_SESSION['selectedDay'];
+  $selectedSubject = $_SESSION['selectedSubject'];
 
   //SQL-query som hämtar tillgängliga studiecoacher
   $queryAvailableCoaches = "SELECT StudyCoach.name, StudyCoach.description
@@ -29,7 +29,7 @@
                               WHERE Availability.day='$selectedDay' AND CoachSubjects.subjectName='$selectedSubject'";
 
   //Lagrar queryresultat i en sessionsvariabel
-  $_SESSION["resultAvailability"] = $connection->query($queryAvailableCoaches);
+  $_SESSION['resultAvailability'] = $connection->query($queryAvailableCoaches);
 
   print_r($_SESSION);
 

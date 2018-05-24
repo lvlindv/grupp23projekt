@@ -10,8 +10,6 @@
 
   //Koppling till fil som skapar dropdowns och tabeller från data i db
   include "htmlgenerator.php";
-
-  echo $_SESSION["studentId"];
 ?>
 <!doctype html>
 <html>
@@ -120,14 +118,14 @@
       if(isset($_POST['btnSearch']))
       {
         // Lagrar vald dag i variabel
-        $_SESSION["selectedDay"] = $_POST['dayName'];
+        $_SESSION['selectedDay'] = $_POST['dayName'];
         // Lagrar valt ämne i variabel
-        $_SESSION["selectedSubject"] = $_POST['name'];
+        $_SESSION['selectedSubject'] = $_POST['name'];
       }
 
       //Lagrar sessionvariabler i nya variabler för att lägga in i query
-      $selectedDay = $_SESSION["selectedDay"];
-      $selectedSubject = $_SESSION["selectedSubject"];
+      $selectedDay = $_SESSION['selectedDay'];
+      $selectedSubject = $_SESSION['selectedSubject'];
 
       //Hämtar tillgängliga studiecoacher genom funktion i queries.php och lagrar resultat i variabel
       $resultAvailability = $connection->query(availableCoaches($selectedDay, $selectedSubject));

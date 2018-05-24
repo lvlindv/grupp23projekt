@@ -9,12 +9,10 @@ include "db_connect.php";
 //Koppling till fil med queries
 include "queries.php";
 
-$selectedDay = $_SESSION["selectedDay"];
-$selectedSubject = $_SESSION["selectedSubject"];
+$selectedDay = $_SESSION['selectedDay'];
+$selectedSubject = $_SESSION['selectedSubject'];
 $currentCoachId = $_POST['coachId'];
-$currentStudentId = $_SESSION["studentId"];
-
-echo $_SESSION["studentId"];
+$currentStudentId = $_SESSION['studentId'];
 
 if ($connection ->query(addBooking($selectedDay, $selectedSubject, $currentCoachId, $currentStudentId)))
 {
@@ -29,6 +27,6 @@ else
 $connection->close();
 
 //Skickar vidare till startsida
-//header("Location: studentStartpage.php");
+header("Location: studentStartpage.php");
 
 ?>
