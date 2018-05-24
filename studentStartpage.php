@@ -23,6 +23,10 @@
     <h1> <?php echo "Välkommen ".$_SESSION["name"]."!" ?> </h1>
     <!--Underrubrik-->
     <h2> Dina bokningar </h2>
+
+    <?php
+      echo "Du har id:".$_SESSION["studentId"];
+     ?>
     <!--Ruta med bokningar-->
     <section class="myBookings">
       <?php
@@ -99,13 +103,13 @@
           ?>
               <!--Namn och beskrivning för varje tillgänglig coach matas ut på ny rad-->
               <tr>
-                <td style="visibility:hidden" name="coachId"><?php echo $row['coachId'] ?></td>
                 <td><?php echo $row['name'] ?></td>
                 <td><?php echo $row['description'] ?></td>
                 <td>
                   <!--Knapp för bokning som kopplar till booking.php-->
                   <form action="booking.php" method="post">
                     <input type="submit" value="Boka" name="btnBook">
+                    <input type="hidden" value="<?php echo $row['coachId'] ?>" name="coachId">
                   </form>
                 </td>
               </tr>
