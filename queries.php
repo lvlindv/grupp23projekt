@@ -69,4 +69,12 @@
     return $query;
   }
 
+  function deleteStudyCoach($coachId)
+  {
+    $query = "DELETE FROM `StudyCoach` WHERE coachId='$coachId'";
+
+    return $query;
+  }
+
+
 ?>

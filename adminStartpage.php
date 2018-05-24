@@ -56,12 +56,13 @@ include "db_connect.php"
 
             <form action="adminDeletePage.php" method="post">
               <tr>
-                <td style="visibility:hidden" name="coachId"> <?php echo $row["coachId"]; ?></td>
+                <td> <input type="hidden" name="coachId" value=<?php $row['coachId'] ?><?php echo $row["coachId"]; ?></td>
                 <td><?php echo $row["name"]; ?></td>
                 <td><?php echo $row["email"]; ?></td>
                 <td><?php echo $row["password"]; ?></td>
                 <td><?php echo $row["description"]; ?></td>
                 <td><?php echo $row["phoneNr"]; ?></td>
+                <input type="hidden" >
                 <td> <input type="submit" value="Ta Bort" name="btndel"></td>
               </tr>
             </form>
