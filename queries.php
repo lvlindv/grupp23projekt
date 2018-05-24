@@ -1,5 +1,30 @@
 <?php
 
+  // Hämtar studenter som motsvarar inmatad email och lösenord
+  function getStudent($email, $psw)
+  {
+    $query = "SELECT * FROM Student WHERE email='$email' AND password='$psw'";
+
+    return $query;
+  }
+
+  // Hämtar studiecoacher som motsvarar inmatad email och lösenord
+  function getStudyCoach($email, $psw)
+  {
+    $query = "SELECT * FROM StudyCoach WHERE email='$email' AND password='$psw'";
+
+    return $query;
+  }
+
+  // Hämtar admins som motsvarar inmatad email och lösenord
+  function getAdmin($email, $psw)
+  {
+    $query = "SELECT * FROM Admin WHERE email='$email' AND password='$psw'";
+
+    return $query;
+  }
+
+
   // Hämtar ut enskilda studenters bokningar
   function showStudentBookings($email)
   {
