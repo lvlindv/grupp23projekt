@@ -78,7 +78,7 @@
   }
 
   // Plockar ut alla StudyCoaches ur databasen
-  function showStudieCoaches()
+  function showStudyCoaches()
   {
     $query = "SELECT * FROM StudyCoach ORDER BY coachId DESC";
 

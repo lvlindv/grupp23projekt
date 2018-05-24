@@ -40,14 +40,14 @@ include "db_connect.php"
 
        </form>
 
+
         <?php
-
-        $sql = "SELECT * FROM StudyCoach ORDER BY coachId DESC";
-        $result = mysqli_query($connection, $sql);
-
+        // Plockar ut alla Study Coches ur databasen
+        $result = mysqli_query($connection, showStudyCoaches());
         ?>
-        <h2> Ta bort eller Redigera info för studiecoach </h2>
 
+        <h2> Ta bort eller Redigera info för studiecoach </h2>
+        <!--En tabell där alla Studycoaches ska placeras in-->
          <table boarder="0" cellpadding="10" cellspacing="1" width="700" class="tblListForm">
            <tr class="listheader"><th>Namn</th><th>E-post</th><th>Lösenord</th><th>Beskrivning</th><th>Telefonummer</th><th>Alternativ</th></tr>
 
@@ -56,7 +56,7 @@ include "db_connect.php"
              while ($row = $result->fetch_assoc())
              {
             ?>
-
+            <!--Placerar in värdena från databasen i rätt kolumn-->
             <form action="adminDeletePage.php" method="post">
               <tr>
                 <td> <input type="hidden" name="coachId" value=<?php echo $row["coachId"]; ?></td>
