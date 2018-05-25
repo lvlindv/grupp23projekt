@@ -4,6 +4,8 @@ session_start();
 
 // Koppling till databas
 include "db_connect.php";
+
+// Koppling till fil med queries
 include "queries.php";
 ?>
 
@@ -47,7 +49,7 @@ include "queries.php";
         $result = mysqli_query($connection, showStudyCoaches());
         ?>
 
-        <h2> Ta bort eller Redigera info för studiecoach </h2>
+        <h2> Ta bort eller redigera info för studiecoach </h2>
         <!-- En tabell där alla Studycoaches ska placeras in-->
          <table boarder="0" cellpadding="10" cellspacing="1" width="700" class="tblListForm">
            <tr class="listheader"><th>Namn</th><th>E-post</th><th>Lösenord</th><th>Beskrivning</th><th>Telefonummer</th><th>Alternativ</th></tr>
@@ -71,7 +73,7 @@ include "queries.php";
                 <input type="hidden" >
                 <!-- När inputen är "klickad" skickas coachId som ska med i formet -->
                 <td> <input type="submit" value="Ta Bort" name="btndel"></td>
-                <td> <input type="submit" value="Registrera" name="btnedit"></td>
+                <td> <input type="submit" value="Redigera" name="btnedit"></td>
               </tr>
             </form>
 
