@@ -76,9 +76,29 @@ button:hover
   box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
 }
 
+.loginLabel
+{
+  margin: 0px 150px 0px 25px;
+  width: 100%;
+  color: white;
+}
+
+.loginInput
+{
+  margin: 0px 160px 15px 25px;
+  border: none;
+  border-bottom: 2px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 30px;
+  width: 298px;
+  font-size: 15px; /* Storleken på texten där man uppger e-post och lösenord */
+  color: white;
+}
+
 .btnLogin
 {
-  margin: 10px 100px 0px 15px;
+  margin: 10px 100px 0px 25px;
   background: rgba(255, 0, 0, 0.10);
   padding: 10px 15px;
   width: 300px;
@@ -89,21 +109,36 @@ button:hover
 .btnSignup
 {
   margin-top: 60px;
-  margin-left: 175px;
+  margin-left: 185px;
   width: 140px;
 }
 
 .btnRegister
 {
-  margin: 60px 0px 0px 15px;
+  margin: 60px 0px 0px 25px;
   width: 140px;
 }
 
-.forgot
+.divForgottenPassword
 {
-  margin: 10px 50px 0px 90px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+
+.linkForgottenPassword
+{
+  margin: 100px 10px 0px 100px;
   top: 85%;
   color: white;
+}
+
+.divLoginImg
+{
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 125px;
+  padding-top: 20px;
 }
 
 .loginImg
@@ -111,7 +146,4 @@ button:hover
   width: 100px;
   height: 100px;
   border-radius: 50%; /* Runda hörn på "gubben" ovanför inlogg */
-  overflow: hidden;
-  top: calc(-50px/2); /* Justerar höjden på bilden */
-  left: calc(50% - 50px);
 }
