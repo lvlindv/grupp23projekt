@@ -7,12 +7,12 @@ function validateLogin()
     // Kollar om fälten är ifyllda
     if (email == "")
       {
-        alert("Fyll i E-post");
+        alert("Fyll i e-post");
         return false;
       }
     else if (psw == "")
       {
-        alert("Fyll i Lösenord");
+        alert("Fyll i lösenord");
         return false;
       }
 }
