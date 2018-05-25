@@ -1,13 +1,16 @@
 <?php
-  // Start the session
+  // Startar sessionen
   session_start();
 
   //Koppling till databas
   include "db_connect.php";
   //Fil med sql-queries
   include "queries.php";
-  //Fil som skapar dropdown listor och tabeller baserat på data från db
-  include "htmlgenerator.php";
+  // Koppling till fil med funktioner
+  include "functions.php";
+
+  // Kollar om studiecoach är inloggad
+  loggedInAsStudyCoach();
 
 ?>
 <!DOCTYPE html>
@@ -25,7 +28,7 @@
   <section class="myBookings"><!--ruta med bokningar-->
     <?php
       //Lagrar resultat från query som hämtar studiecoachens bokningar och matar ut varje bokning
-      $resultBookings = $connection->query(showCoachBookings($_SESSION['email']));
+      $resultBookings = $connection->query(showCoachBookings($_SESSION['coachEmail']));
       while ($row = $resultBookings->fetch_assoc())
       {
         //Skriver ut bokningens dag, ämne, coachens namn och kontaktuppgifter

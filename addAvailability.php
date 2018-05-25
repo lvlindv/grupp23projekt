@@ -8,6 +8,12 @@
   // Koppling till fil med queries
   include "queries.php";
 
+  // Koppling till fil med funktioner
+  include "functions.php";
+
+  // Kollar om studiecoach är inloggad
+  loggedInAsStudyCoach();
+
   if(isset($_POST['btnAdd']))
   {
     // Lagrar vald dag i sessionvariabeln

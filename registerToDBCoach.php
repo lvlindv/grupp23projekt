@@ -4,6 +4,11 @@ session_start();
 include 'db_connect.php';
 // Kopplar till queries.php
 include 'queries.php';
+// Koppling till fil med funktioner
+include "functions.php";
+// Kollar om användare är inloggad som admin
+loggedInAsAdmin();
+
 // Skapar variabler
 $name = $_POST['name'];
 $email = $_POST['email'];
