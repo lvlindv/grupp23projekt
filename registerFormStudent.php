@@ -16,24 +16,24 @@
 
    <body>
      <h1>STUDIEHJÄLPEN </h1>
-      <div class="loginbox">
+      <div class="box">
 
       <h2>REGISTRERA DIG</h2>
 
       <!--Formulär för användarregistrering-->
       <form name="regForm" action="registerToDBStudent.php" method="post" onsubmit="return validateReg()" >
        <div class="loginForm">
-          <label for="namn"><b>Ditt fullständiga namn</b></label>
-          <input type="text" placeholder="Skriv in ditt namn..." name="namn" >
+          <label class="boxLabel" for="namn"><b>Ditt fullständiga namn</b></label>
+          <input class="boxInput" type="text" placeholder="Skriv in ditt namn..." name="namn" >
 
-          <label for="email"><b>Email</b></label>
-          <input type="text" placeholder="Skriv in din email..." name="email" >
+          <label class="boxLabel" for="email"><b>Email</b></label>
+          <input class="boxInput" type="text" placeholder="Skriv in din email..." name="email" >
 
-          <label for="mnr"><b>Mobilnummer</b></label>
-          <input type="text" placeholder="Skriv in ditt mobilnummer..." name="mnr" >
+          <label class="boxLabel" for="mnr"><b>Mobilnummer</b></label>
+          <input class="boxInput" type="text" placeholder="Skriv in ditt mobilnummer..." name="mnr" >
 
-          <label for="psw"><b>Lösenord</b></label>
-          <input type="password" placeholder="Välj ett lösenord..." name="psw" >
+          <label class="boxLabel" for="psw"><b>Lösenord</b></label>
+          <input class="boxInput" type="password" placeholder="Välj ett lösenord..." name="psw" >
       </div>
       <!--Knapp för registrering som skickar vidare användaren till mina sidor-->
       <button type="submit" class="btnRegister">Registrera dig</button>
