@@ -70,6 +70,7 @@ include "db_connect.php"
                 <input type="hidden" >
                 <!-- När inputen är "klickad" skickas coachId som ska med i formet -->
                 <td> <input type="submit" value="Ta Bort" name="btndel"></td>
+                <td> <input type="submit" value="Registrera" name="btnedit"></td>
               </tr>
             </form>
 

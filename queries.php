@@ -125,12 +125,28 @@
   }
 
   // Lägger till ny studiecoach
-  function regStudyCoach($name, $email, $password, $description, $phoneNr)
+  function addStudyCoach($name, $email, $psw, $des, $phnr)
   {
-    $query = "INSERT INTO StudyCoach(name, email, password, description, phoneNr)
+    $query = "INSERT INTO `StudyCoach`(`name`, `email`, `password`, `description`, `phoneNr`)
     VALUES ('$name', '$email', '$psw', '$des', '$phnr')";
 
     return $query;
+  }
+
+  function checkemail($email)
+  {
+    $query = "SELECT * FROM Student WHERE email='$email'";
+
+    return $query;
+  }
+
+  function addStudent($name, $email, $password, $phoneNr)
+  {
+    $query = "INSERT INTO Student(name, email, password, phoneNr)
+            VALUES ('$name', '$email', '$password', '$phoneNr')";
+
+    return $query;
+
   }
 
 

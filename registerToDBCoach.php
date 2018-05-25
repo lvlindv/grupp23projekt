@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Kopplar till databasen
 include 'db_connect.php';
 // Kopplar till queries.php
@@ -11,9 +12,9 @@ $des = $_POST['description'];
 $phnr = $_POST['phoneNr'];
 
 // Använder funktionen regStudyCoach från queries.php med variablerna som parametrar.
-$connection->query(regStudyCoach($name, $email, $psw, $des, $phnr));
+
 // Sätter in SQL-satsen i databasen.
-if ($connection ->query($sql))
+if ($connection->query(addStudyCoach($name, $email, $psw, $des, $phnr)))
 {
   // Visar att en ny studiecoach har lagts till i databasen
   echo "Du har lagt till en ny studiecoach!";
