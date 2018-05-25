@@ -46,11 +46,8 @@
       <button type="submit" class="btnCreateUser">Registrera dig</button>
 
       <!--Knapp för att avbryta registrering OBS! LÄGG TILL KOPPLING TILLBAKA TILL STARTSIDA-->
-      <button type="button" class="btnCancel">Avbryt</button>
-
-
-
-
+      <button type="button" class="btnCancel" onclick="location.href='startpage.php';">Avbryt</button>
+      
       </div>
 
     </form>
