@@ -43,10 +43,10 @@
       </div>
 
       <!--Knapp för registrering som skickar vidare användaren till mina sidor-->
-      <button type="submit" class="btnRegister">Registrera dig</button>
+      <button type="submit" class=".btnRegistration">Registrera dig</button>
 
       <!--Knapp för att avbryta registrering OBS! LÄGG TILL KOPPLING TILLBAKA TILL STARTSIDA-->
-      <button type="button" class="btnSignup">Avbryt</button>
+      <button type="button" class="btnCancel">Avbryt</button>
 
 
 
