@@ -64,7 +64,7 @@ button
 
 button:hover
 {
-  background-color: #FF9933;
+  background-color: #cc2900;
   color: white;
   transition-duration: 0.4s;
 }
@@ -117,7 +117,7 @@ link
 
 .btnRegister
 {
-  margin: 20px 0px 0px 25px;
+  margin: 60px 0px 0px 25px;
 }
 
 .btnCancel
@@ -171,4 +171,14 @@ link
   margin: auto;
   width: 300px;
   overflow: hidden;
+}
+
+.userTermsText
+{
+  color: white;
+}
+
+.userTermsLink
+{
+  color: #cc2900;
 }

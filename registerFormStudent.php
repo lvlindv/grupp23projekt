@@ -39,7 +39,7 @@
       </div>
       <div class="agreeTerms">
         <input class="boxCheckbox" type="checkbox" name="Godkänn">
-        <p><b>Godkänn våra <a href="#">användarvillkor</a></b></p>
+        <p class="userTermsText"><b>Godkänn våra <a class="userTermsLink" href="#">användarvillkor</a></b></p>
       </div>
 
       <!--Knapp för registrering som skickar vidare användaren till mina sidor-->
