@@ -17,8 +17,10 @@
    <body>
      <h1>STUDIEHJÄLPEN </h1>
       <div class="box">
-
+      <div class="boxTitle">
       <h2>REGISTRERA DIG</h2>
+      </div>
+
 
       <!--Formulär för användarregistrering-->
       <form name="regForm" action="registerToDBStudent.php" method="post" onsubmit="return validateReg()" >
@@ -35,16 +37,19 @@
           <label class="boxLabel" for="psw"><b>Lösenord</b></label>
           <input class="boxInput" type="password" placeholder="Välj ett lösenord..." name="psw" >
       </div>
+      <div class="agreeTerms">
+        <p><b>Godkänn våra <a href="#">användarvillkor</a></b></p>
+        <input class="boxCheckbox" type="checkbox" name="Godkänn">
+      </div>
+
       <!--Knapp för registrering som skickar vidare användaren till mina sidor-->
       <button type="submit" class="btnRegister">Registrera dig</button>
 
       <!--Knapp för att avbryta registrering OBS! LÄGG TILL KOPPLING TILLBAKA TILL STARTSIDA-->
       <button type="button" class="btnSignup">Avbryt</button>
 
-      <div class="divBoxLink">
-        <p><b>Godkänn våra <a class="boxLink" href="#">användarvillkor</a></b></p>
-        <input type="checkbox" name="Godkänn">
-      </div>
+
+
 
       </div>
 

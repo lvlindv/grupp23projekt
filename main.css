@@ -143,3 +143,18 @@ link
   height: 100px;
   border-radius: 50%; /* Runda hörn på "gubben" ovanför inlogg */
 }
+
+.boxCheckbox
+{
+  margin: auto;
+}
+
+.boxTitle
+{
+  padding-top: 15px;
+}
+
+.agreeTerms
+{
+
+}
