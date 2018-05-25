@@ -24,7 +24,6 @@
     return $query;
   }
 
-
   // Hämtar ut enskilda studenters bokningar
   function showStudentBookings($email)
   {
@@ -67,6 +66,14 @@
   function showSubjects()
   {
     $query ="SELECT name FROM Subjects";
+
+    return $query;
+  }
+
+  // Hämtar studiecoachers tillgänglighet
+  function checkAvailability($selectedDay, $coachId)
+  {
+    $query = "SELECT * FROM Availability WHERE day='$selectedDay' AND coachId='$coachId'";
 
     return $query;
   }
