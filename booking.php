@@ -9,6 +9,12 @@ include "db_connect.php";
 // Koppling till fil med queries
 include "queries.php";
 
+// Koppling till fil med funktioner
+include "functions.php";
+
+// Kollar om student är inloggad
+loggedInAsStudent();
+
 // Tilldelar variblerna(selectedDay, selectedSubject, studentId) värdet av sessionsvariabler.
 $selectedDay = $_SESSION['selectedDay'];
 $selectedSubject = $_SESSION['selectedSubject'];
