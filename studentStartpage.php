@@ -13,6 +13,25 @@
 
   // Kollar om student är inloggad
   loggedInAsStudent();
+
+  if (isset($_GET["msg"])) {
+    switch ($_GET["msg"]) {
+      case 'bokningfinns':
+        echo "<script type='text/javascript'>alert('Du har redan studiehjälp bokat på den valda dagen.')</script>";
+        break;
+
+      case 'nybokning':
+        echo "<script type='text/javascript'>alert('Du har lagt till en ny bokning!')</script>";
+        break;
+
+      case 'felmeddelande':
+        echo "<script type='text/javascript'>alert('Något gick fel. Försök igen.')</script>";
+        break;
+
+      default:
+        break;
+    }
+  }
 ?>
 <!doctype html>
 <html>
@@ -73,7 +92,7 @@
       <!-- Skriver ut tillgängliga studiecoacher -->
       <label for="resultAvailability"><b>
         <?php
-        echo "Tillgängliga coacher för den valda dagen ".$selectedDay." och det valda ämnet ".$selectedSubject.":"
+        echo "Tillgängliga coacher för den valda dagen ".$selectedDay." och det valda ämnet ".$selectedSubject.":";
         ?>
       </b></label>
       <br><br>

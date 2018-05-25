@@ -106,6 +106,15 @@
     return $query;
 }
 
+  // Hämtar studenters bokningar en vald dagen
+  function checkBooking($selectedDay, $studentId)
+  {
+    $query = "SELECT * FROM Booking WHERE day='$selectedDay' AND studentId='$studentId'";
+
+    return $query;
+  }
+
+
   // Lägger till ny bokning
   function addBooking($day, $subject, $studentId, $coachId)
   {

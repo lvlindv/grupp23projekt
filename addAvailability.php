@@ -24,7 +24,7 @@
   $selectedDay = $_SESSION['selectedDay'];
   $coachId = $_SESSION['coachId'];
 
-  // Hämtar studiecoacherstillgänglighet
+  // Hämtar studiecoachers tillgänglighet
   $result = mysqli_query($connection, checkAvailability($selectedDay, $coachId));
 
   // Kollar om studiecoach redan markerat sig som tillgänglig den valda dagen

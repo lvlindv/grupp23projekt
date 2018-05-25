@@ -1,9 +1,6 @@
 <?php
-  // Koppling till fil med funktioner
-  include "functions.php";
-
-  // Kollar om student är inloggad
-  loggedInAsStudent();
+  // Startar sessionen
+  session_start();
 
   //Om användaren trycker på sök-knappen
   if(isset($_POST['btnSearch']))
