@@ -45,9 +45,9 @@ include "db_connect.php";
       <!--Knapp som kopplar användaren till ett form? för att bli studycoach. (EJ I FUNKTION) -->
       <button name="btnStudyCoach" type="submit" class="btnSignup" value="Button">Bli studiecoach</button>
 
-      <div class="divForgottenPassword">
+      <div class="divBoxLink">
         <!-- Referens för glömt lösenord -->
-        <a href="glomtlosenord" class="linkForgottenPassword">Glömt ditt lösenord?</a>
+        <a href="glomtlosenord" class="boxLink">Glömt ditt lösenord?</a>
       </div>
 
 

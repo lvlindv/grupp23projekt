@@ -69,6 +69,11 @@ button:hover
   transition-duration: 0.4s;
 }
 
+link
+{
+
+}
+
 .box
 {
   margin-left: auto;
@@ -76,7 +81,7 @@ button:hover
   width: 350px;
   height: 450px;
   box-sizing: border-box;
-  background: rgba(0,0,0,.5);
+  background: #808080;
   box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
 }
 
@@ -110,14 +115,14 @@ button:hover
   margin: 60px 0px 0px 25px;
 }
 
-.divForgottenPassword
+.divBoxLink
 {
   margin-left: auto;
   margin-right: auto;
   margin-top: 100px;
 }
 
-.linkForgottenPassword
+.boxLink
 {
   margin: 100px 10px 0px 100px;
   top: 85%;
