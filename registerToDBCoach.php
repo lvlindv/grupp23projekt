@@ -14,7 +14,7 @@ $phnr = $_POST['phoneNr'];
 echo $name;
 // Använder funktionen regStudyCoach från queries.php med variablerna som parametrar.
 
-// Sätter in SQL-satsen i databasen.
+// Sätter in/kör SQL-satsen i databasen.
 if ($connection->query(addStudyCoach($name, $email, $psw, $des, $phnr)))
 {
   // Visar att en ny studiecoach har lagts till i databasen

@@ -133,13 +133,13 @@
     return $query;
   }
 
-  function checkemail($email)
+  function checkEmail($email)
   {
     $query = "SELECT * FROM Student WHERE email='$email'";
 
     return $query;
   }
-
+// Lägger till ny student
   function addStudent($name, $email, $password, $phoneNr)
   {
     $query = "INSERT INTO Student(name, email, password, phoneNr)
@@ -148,7 +148,7 @@
     return $query;
 
   }
-
+// Uppdaterar en Studiecoach
   function updateStudyCoach($name, $email, $psw, $des, $coachId, $phnr)
   {
     $query = "UPDATE StudyCoach SET name='$name', email='$email', password='$psw', description='$des', phoneNr='$phnr' WHERE coachId='$coachId'";

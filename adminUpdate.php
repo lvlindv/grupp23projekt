@@ -1,8 +1,11 @@
 <?php
+// startar sessionen på sidan
 session_start();
+// Kopplar till databasen
 include "db_connect.php";
+// Kopplar till queries.php
 include "queries.php";
-
+// sätter variabler
 $coachId = $_POST['coachId'];
 $name = $_POST['name'];
 $email = $_POST['email'];
@@ -11,7 +14,7 @@ $des = $_POST['description'];
 $phnr = $_POST['phoneNr'];
 
 
-
+// Sätter in/kör SQL-satsen i databasen.
 if ($connection->query(updateStudyCoach($name, $email, $psw, $des, $coachId, $phnr)))
 {
   // Visar att en ny studiecoach har lagts till i databasen
