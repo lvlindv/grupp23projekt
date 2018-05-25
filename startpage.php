@@ -14,39 +14,26 @@ include "db_connect.php";
     <meta charset="utf-8">
     <title>Startsida</title>
     <script src="functions.js"></script>
-    <link rel="stylesheet" href="startpage.css">
+    <link rel="stylesheet" href="main.css">
   </head>
 
       <body>
 
-      <p class="rubrik">STUDIEHJÄLPEN </p>
-      <div class="loginbox">
-      <img src="img/gubbe.png" class="gubbe">
-      </br>
-      <h2>LOGGA IN</h2>
-      </br>
+      <h1>STUDIEHJÄLPEN </h1>
+
+      <div class="loginBox">
+        <img src="img/gubbe.png" class="loginImg">
+        <h2>LOGGA IN</h2>
 
       <form name="loginForm" action="loginUser.php" method="post" onsubmit="validateLogin()">
-      <div class="epost"> <!-- Skapar en klass ensklit för texten "E-post" för att justera designen/positionen för texten i css -->
-      <label for="uname"><b>E-post</b></label>
-      </div>
-      <input type="text" placeholder="Ange din e-post..." name="email">
-
-      </br>
-      </br>
-
-      <div class="passw"> <!-- Skapar en klass ensklit för texten "E-post" för att justera designen/positionen för texten i css -->
-      <label for="psw"><b>Lösenord</b></label>
-      </div>
-      <input type="password" placeholder="Ange ditt lösenord..." name="psw">
-
-      </br>
-      </br>
-
-      <!--Knapp som kopplar användaren till loginUser.php -->
-      <button name="btnLogin" type="submit" class="loginbtn" value="Button" >Logga in</button>
-
-
+        <div class="loginForm">
+          <label for="uname"><b>E-post</b></label>
+          <input type="text" placeholder="Ange din e-post..." name="email">
+          <label for="psw"><b>Lösenord</b></label>
+          <input type="password" placeholder="Ange ditt lösenord..." name="psw">
+        </div>
+        <!--Knapp som kopplar användaren till loginUser.php -->
+        <button name="btnLogin" class="btnLogin" type="submit" value="Button" >Logga in</button>
       </form>
 
       <!--Kopplar användaren till registreraFormStudent.php sidan. -->
@@ -57,9 +44,6 @@ include "db_connect.php";
       <!--Knapp som kopplar användaren till ett form? för att bli studycoach. (EJ I FUNKTION) -->
       <button name="btnSC" type="submit" class="studybtn" value="Button">Bli studiecoach</button>
 
-
-      </br>
-      </br>
       <!-- Referens för glömt lösenord -->
       <a href="glomtlosenord" class="forgot">Glömt ditt lösenord?</a>
 
