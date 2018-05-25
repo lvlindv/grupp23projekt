@@ -64,7 +64,7 @@ button
 
 button:hover
 {
-  background-color: #FF9933;
+  background-color: #cc2900;
   color: white;
   transition-duration: 0.4s;
 }
@@ -110,9 +110,19 @@ link
   margin-left: 185px;
 }
 
+.btnCreateUser
+{
+  margin-left: 30px;
+}
+
 .btnRegister
 {
   margin: 60px 0px 0px 25px;
+}
+
+.btnCancel
+{
+  margin-left: 185px;
 }
 
 .divBoxLink
@@ -146,7 +156,9 @@ link
 
 .boxCheckbox
 {
-  margin: 10px 0px 0px 0px;
+  margin-top: 9px;
+  float: left;
+  width: 25px;
 }
 
 .boxTitle
@@ -156,15 +168,17 @@ link
 
 .agreeTerms
 {
-  padding-bottom: 1px;
+  margin: auto;
+  width: 300px;
+  overflow: hidden;
 }
 
-.btnRegistration
+.userTermsText
 {
-  margin: 20px 0px 0px 25px;
+  color: white;
 }
 
-.btnCancel
+.userTermsLink
 {
-  margin: 60px 25px 0px 0px;
+  color: #cc2900;
 }
