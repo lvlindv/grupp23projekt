@@ -146,7 +146,9 @@ link
 
 .boxCheckbox
 {
-  margin: auto;
+  margin-top: 9px;
+  float: left;
+  width: 25px;
 }
 
 .boxTitle
@@ -156,5 +158,7 @@ link
 
 .agreeTerms
 {
-
+  margin: auto;
+  width: 300px;
+  overflow: hidden;
 }

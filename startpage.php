@@ -37,11 +37,10 @@ include "db_connect.php";
           <!--Knapp som kopplar användaren till loginUser.php -->
           <button name="btnLogin" class="btnLogin" type="submit" value="Button" >Logga in</button>
       </form>
-        <!--Kopplar användaren till registreraFormStudent.php sidan. -->
-        <form name="btnRegister" action="registerFormStudent.php" method="post" >
-          <button name="btnRegister" type="submit" class="btnRegister" value="Button">Registrera</button>
-        </form>
-
+      <!--Kopplar användaren till registreraFormStudent.php sidan. -->
+      <form name="btnRegister" action="registerFormStudent.php" method="post" >
+        <button name="btnRegister" type="submit" class="btnRegister" value="Button">Registrera</button>
+      </form>
       <!--Knapp som kopplar användaren till ett form? för att bli studycoach. (EJ I FUNKTION) -->
       <button name="btnStudyCoach" type="submit" class="btnSignup" value="Button">Bli studiecoach</button>
 
