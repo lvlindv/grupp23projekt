@@ -78,8 +78,6 @@ include "queries.php";
             </form>
 
             <?php
-            // Fortsätter itterationen tills alla StudyCoaches lagts till i tabellen.
-             $i++;
              }
             ?>
 
