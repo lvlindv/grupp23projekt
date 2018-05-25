@@ -11,9 +11,6 @@ $psw = $_POST['psw'];
 $des = $_POST['description'];
 $phnr = $_POST['phoneNr'];
 
-echo $name;
-// Använder funktionen regStudyCoach från queries.php med variablerna som parametrar.
-
 // Sätter in/kör SQL-satsen i databasen.
 if ($connection->query(addStudyCoach($name, $email, $psw, $des, $phnr)))
 {
