@@ -72,7 +72,7 @@ include "queries.php";
                 <td><?php echo $row["phoneNr"]; ?></td>
                 <input type="hidden" >
                 <!-- När inputen är "klickad" skickas coachId som ska med i formet -->
-                <td> <input type="submit" value="Ta Bort" name="btndel"></td>
+                <td> <input type="submit" value="Ta bort" name="btndel"></td>
                 <td> <input type="submit" value="Redigera" name="btnedit"></td>
               </tr>
             </form>
