@@ -1,0 +1,29 @@
+
+
+table
+{
+    border-collapse: collapse;
+    background-color: yellow;
+}
+
+table, td, th
+{
+    border: 2px
+    solid black;
+}
+
+td {
+    height: 50px;
+    vertical-align: bottom;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.formRegisterCoach
+{
+  background-color: blue;
+  width: 400px;
+}

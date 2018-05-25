@@ -21,11 +21,16 @@ loggedInAsAdmin();
     <!-- Koppling till js-fil med validering -->
     <script src="functions.js"></script>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="admin.css">
     <title>Startsida</title>
   </head>
       <body>
         <!-- Visar den inloggade admins epostadress-->
         <h1> <?php echo "Välkommen ".$_SESSION["adminEmail"]."!"; ?>  </h1>
+        <div class="formRegisterCoach">
+
+
         <h2> Registrera en ny studiecoach </h2>
         <!-- Ett formulär för att lähha till nya studiecoacher-->
         <form name="regHelper" action="registerToDBCoach.php" method="post" onsubmit="return validateStudyCoach()" >
@@ -48,7 +53,7 @@ loggedInAsAdmin();
           <input type="submit" value="Registrera">
 
        </form>
-
+        </div>
 
         <?php
         // Plockar ut alla Study Coches ur databasen
@@ -57,8 +62,8 @@ loggedInAsAdmin();
 
         <h2> Ta bort eller redigera info för studiecoach </h2>
         <!-- En tabell där alla Studycoaches ska placeras in-->
-         <table boarder="0" cellpadding="10" cellspacing="1" width="700" class="tblListForm">
-           <tr class="listheader"><th>Namn</th><th>E-post</th><th>Lösenord</th><th>Beskrivning</th><th>Telefonummer</th><th>Alternativ</th></tr>
+         <table class="studieCoachTable">
+           <tr class="listheader"><th></th><th>Namn</th><th>E-post</th><th>Lösenord</th><th>Beskrivning</th><th>Telefonummer</th><th>Alternativ</th><th></th></tr>
 
             <?php
              // Matar ut resultatet från queryn ovan
@@ -70,7 +75,7 @@ loggedInAsAdmin();
               <tr>
                 <!-- Skickar med valt coachId till adminDeletePage.php-->
                 <!-- Väljer hidden som type så att det inte visas på sidan-->
-                <td> <input type="hidden" name="coachId" value=<?php echo $row["coachId"]; ?></td>
+                <td> <input type="hidden" name="coachId"value=<?php echo $row["coachId"]; ?></td>
                 <td><?php echo $row["name"]; ?></td>
                 <td><?php echo $row["email"]; ?></td>
                 <td><?php echo $row["password"]; ?></td>
