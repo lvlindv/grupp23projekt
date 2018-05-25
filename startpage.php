@@ -22,8 +22,11 @@ include "db_connect.php";
       <h1>STUDIEHJÄLPEN </h1>
 
       <div class="loginBox">
-        <img src="img/gubbe.png" class="loginImg">
+
+      <!--<img src="img/gubbe.png" class="loginImg">-->
+      <div class="loginTitle">
         <h2>LOGGA IN</h2>
+      </div>
 
       <form name="loginForm" action="loginUser.php" method="post" onsubmit="validateLogin()">
         <div class="loginForm">
@@ -38,11 +41,11 @@ include "db_connect.php";
 
       <!--Kopplar användaren till registreraFormStudent.php sidan. -->
       <form name="btnRegister" action="registerFormStudent.php" method="post" >
-        <button name="btnRegister" type="submit" class="signupbtn" value="Button">Registrera</button>
+        <button name="btnRegister" type="submit" class="btnRegister" value="Button">Registrera</button>
       </form>
 
       <!--Knapp som kopplar användaren till ett form? för att bli studycoach. (EJ I FUNKTION) -->
-      <button name="btnSC" type="submit" class="studybtn" value="Button">Bli studiecoach</button>
+      <button name="btnStudyCoach" type="submit" class="btnSignup" value="Button">Bli studiecoach</button>
 
       <!-- Referens för glömt lösenord -->
       <a href="glomtlosenord" class="forgot">Glömt ditt lösenord?</a>

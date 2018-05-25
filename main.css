@@ -23,35 +23,29 @@ h2
   border-radius: 20px;
 }
 
+form
+{
+  margin: auto;
+}
+
 input
 {
-  margin: 0px 150px 15px 30px;
+  margin: 0px 160px 15px 15px;
   border: none;
   border-bottom: 2px solid #fff;
   background: transparent;
   outline: none;
   height: 30px;
-  width: 250px;
+  width: 298px;
   font-size: 15px; /* Storleken på texten där man uppger e-post och lösenord */
   color: white;
 }
 
 label
 {
-  margin: 0px 150px 0px 30px;
+  margin: 0px 150px 0px 15px;
   width: 100%;
-}
-
-form
-{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  width: 350px;
-  height: 450px;
-  padding: 80px 10px;
-  box-sizing: border-box;
+  color: white;
 }
 
 button
@@ -71,53 +65,53 @@ button:hover
   transition-duration: 0.4s;
 }
 
-.loginBtn
-{
-  margin: 10px 150px 15px 30px;
-  background: rgba(255, 0, 0, 0.10);
-  width: 250px;
-  height: 40px;
-}
-
-.signupbtn
-{
-  margin: 30px 0px 15px 30px;
-  width: 110px;
-}
-
-.studybtn
-{
-  margin: 30px 0px 15px 30px;
-  top: 70%;
-}
-
-.forgot
-{
-  position: absolute;
-  top: 85%;
-}
-
 .loginBox
 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  margin-left: auto;
+  margin-right: auto;
   width: 350px;
   height: 450px;
-  padding: 80px 10px;
   box-sizing: border-box;
   background: rgba(0,0,0,.5);
   box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
 }
 
-  .loginImg
-  {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Runda hörn på "gubben" ovanför inlogg */
-    overflow: hidden;
-    position: absolute;
-    top: calc(-50px/2); /* Justerar höjden på bilden */
-    left: calc(50% - 50px);
-  }
+.btnLogin
+{
+  margin: 10px 100px 0px 15px;
+  background: rgba(255, 0, 0, 0.10);
+  padding: 10px 15px;
+  width: 300px;
+  height: 40px;
+  color: white;
+}
+
+.btnSignup
+{
+  margin-top: 60px;
+  margin-left: 175px;
+  width: 140px;
+}
+
+.btnRegister
+{
+  margin: 60px 0px 0px 15px;
+  width: 140px;
+}
+
+.forgot
+{
+  margin: 10px 50px 0px 90px;
+  top: 85%;
+  color: white;
+}
+
+.loginImg
+{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Runda hörn på "gubben" ovanför inlogg */
+  overflow: hidden;
+  top: calc(-50px/2); /* Justerar höjden på bilden */
+  left: calc(50% - 50px);
+}
