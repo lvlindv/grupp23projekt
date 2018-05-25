@@ -165,6 +165,7 @@
             <th>Beskrivning</th>
           </tr>
           <?php
+          
             //Matar ut resultatet från queryn ovan
             while ($row = $_SESSION['resultAvailability']->fetch_assoc())
             {

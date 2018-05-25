@@ -1,0 +1,51 @@
+ body{
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  background-size: cover;
+  font-family: sans-serif;
+  position: static;
+}
+.frame1{
+  background-color:  #808080;
+  padding: 40px 10px 20px 10px;
+  margin: 10px 0;
+  width: 100%;
+  height: 70px;
+}
+ .frame2{
+  background-color: #808080;
+  margin-bottom: 10px 20px 30px 40px;
+  padding: 20px;
+  width: 100%;
+  height: 70px;
+}
+.booking{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+.booking tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+ tr:hover{
+  background-color: #ddd;
+}
+
+  th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #CC9966;
+    color: white;
+}
