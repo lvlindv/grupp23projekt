@@ -46,7 +46,7 @@ include "db_connect.php";
 
       <div class="divBoxLink">
         <!-- Referens för glömt lösenord -->
-        <a href="glomtlosenord" class="boxLink">Glömt ditt lösenord?</a>
+        <a href="startpage.php" class="boxLink">Glömt ditt lösenord?</a>
       </div>
 
 
