@@ -1,6 +1,13 @@
 <?php
 
 include "db_connect.php";
+
+// Koppling till fil med funktioner
+include "functions.php";
+
+// Kollar om användare är inloggad som admin
+loggedInAsAdmin();
+
 // Hämtar ur variabeln ur URL:en
 $coachId = $_GET['id'];
 

@@ -7,6 +7,12 @@ include "db_connect.php";
 
 // Koppling till fil med queries
 include "queries.php";
+
+// Koppling till fil med funktioner
+include "functions.php";
+
+// Kollar om användare är inloggad som admin
+loggedInAsAdmin();
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +25,7 @@ include "queries.php";
   </head>
       <body>
         <!-- Visar den inloggade admins epostadress-->
-        <h1> <?php echo "Välkommen ".$_SESSION["email"]."!"; ?>  </h1>
+        <h1> <?php echo "Välkommen ".$_SESSION["adminEmail"]."!"; ?>  </h1>
         <h2> Registrera en ny studiecoach </h2>
         <!-- Ett formulär för att lähha till nya studiecoacher-->
         <form name="regHelper" action="registerToDBCoach.php" method="post" onsubmit="return validateStudyCoach()" >
