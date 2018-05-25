@@ -40,6 +40,11 @@ input
   color: white;
 }
 
+::placeholder
+{
+  color: #A4A4A4;
+}
+
 label
 {
   width: 100%;
