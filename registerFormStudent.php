@@ -1,5 +1,5 @@
 <?php
-  //Koppling till databas
+  // Koppling till databas
   include ('db_connect.php')
 ?>
 
@@ -7,7 +7,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <!--Koppling till javascript-fil-->
+    <!-- Koppling till javascript-fil -->
     <script src="functions.js"></script>
     <!-- Koppling till css-fil -->
     <link rel="stylesheet" href="main.css">
@@ -22,7 +22,7 @@
       </div>
 
 
-      <!--Formulär för användarregistrering-->
+      <!-- Formulär för användarregistrering -->
       <form name="regForm" action="registerToDBStudent.php" method="post" onsubmit="return validateReg()" >
        <div class="loginForm">
           <label class="boxLabel" for="namn"><b>Ditt fullständiga namn</b></label>
@@ -37,17 +37,18 @@
           <label class="boxLabel" for="psw"><b>Lösenord</b></label>
           <input class="boxInput" type="password" placeholder="Välj ett lösenord..." name="psw" >
       </div>
+      <!-- Checkbox och "länk" för att godkänna användaravtal -->
       <div class="agreeTerms">
         <input class="boxCheckbox" type="checkbox" name="Godkänn">
-        <p class="userTermsText"><b>Godkänn våra <a class="userTermsLink" href="#">användarvillkor</a></b></p>
+        <p class="userTermsText"><b>Godkänn våra <a class="userTermsLink" href="registerFormStudent">användarvillkor</a></b></p>
       </div>
 
-      <!--Knapp för registrering som skickar vidare användaren till mina sidor-->
+      <!-- Knapp för registrering av användare i databasen -->
       <button type="submit" class="btnCreateUser">Registrera dig</button>
 
-      <!--Knapp för att avbryta registrering OBS! LÄGG TILL KOPPLING TILLBAKA TILL STARTSIDA-->
+      <!-- Knapp för att avbryta registrering -->
       <button type="button" class="btnCancel" onclick="location.href='startpage.php';">Avbryt</button>
-      
+
       </div>
 
     </form>
