@@ -1,6 +1,7 @@
 <?php
 
 include "db_connect.php";
+// Hämtar ur variabeln ur URL:en
 $coachId = $_GET['id'];
 
 $coach = $connection->query("SELECT * FROM StudyCoach WHERE coachId = '$coachId' LIMIT 1")->fetch_assoc();
@@ -15,7 +16,7 @@ $coach = $connection->query("SELECT * FROM StudyCoach WHERE coachId = '$coachId'
   </head>
   <body>
 
-    <form name="regHelper" action="registerToDBCoach.php" method="post" onsubmit="return validateStudyCoach()" >
+    <form name="regHelper" action="adminUpdate.php" method="post" onsubmit="return validateStudyCoach()" >
 
       <label for="name"><b>Fullständigt namn</b></label>
       <input value="<?php echo $coach['name'] ?>" type="text" placeholder="Ange fullständigt namn på StudyCoachen" name="name">
