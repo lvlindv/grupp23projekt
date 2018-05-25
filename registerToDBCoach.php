@@ -3,7 +3,7 @@ session_start();
 // Kopplar till databasen
 include 'db_connect.php';
 // Kopplar till queries.php
-include 'queries.php'
+include 'queries.php';
 // Skapar variabler
 $name = $_POST['name'];
 $email = $_POST['email'];
@@ -11,6 +11,7 @@ $psw = $_POST['psw'];
 $des = $_POST['description'];
 $phnr = $_POST['phoneNr'];
 
+echo $name;
 // Använder funktionen regStudyCoach från queries.php med variablerna som parametrar.
 
 // Sätter in SQL-satsen i databasen.
