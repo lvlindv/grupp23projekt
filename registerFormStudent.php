@@ -41,10 +41,11 @@
       <!--Knapp för att avbryta registrering OBS! LÄGG TILL KOPPLING TILLBAKA TILL STARTSIDA-->
       <button type="button" class="btnSignup">Avbryt</button>
 
-      <div class="godkann">
-      <p><b>Godkänn våra <a href="#">användarvillkor</a></b></p>
-      <input type="checkbox" name="Godkänn">
+      <div class="divBoxLink">
+        <p><b>Godkänn våra <a class="boxLink" href="#">användarvillkor</a></b></p>
+        <input type="checkbox" name="Godkänn">
       </div>
+
       </div>
 
     </form>
