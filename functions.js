@@ -1,9 +1,11 @@
-//Funktion som säkerställer att båda inloggningsfält är ifyllda
+
+// Funktion som säkerställer att båda inloggningsfält är ifyllda
 function validateLogin()
 {
-    // skapar variabler från formet loginForm av nuvarande inskrivet email och lösenord
+    // Skapar variabler från formuläret loginForm
     var email = document.forms["loginForm"]["email"].value;
     var psw = document.forms["loginForm"]["psw"].value;
+
     // Kollar om fälten är ifyllda
     if (email == "")
       {
@@ -20,11 +22,12 @@ function validateLogin()
 //Funktion som säkerställer att alla registreringsfälten är ifyllda
 function validateReg()
 {
-  // skapar variabler från regForm(formulär)
+  // Skapar variabler från formuläret regForm
   var name = document.forms["regForm"]["namn"].value;
   var email = document.forms["regForm"]["email"].value;
   var mnr = document.forms["regForm"]["mnr"].value;
   var psw = document.forms["regForm"]["psw"].value;
+
   // Kollar så alla fält är ifyllda
   if ((name == "") || (email == "") || (mnr == "") || (psw == ""))
     {
@@ -36,12 +39,13 @@ function validateReg()
 //Funktion som säkerställer att alla registreringsfälten är ifyllda
 function validateStudyCoach()
 {
-  // skapar variabler från regHelper
+  // Skapar variabler från formuläret regHelper
   var name = document.forms["regHelper"]["name"].value;
   var email = document.forms["regHelper"]["email"].value;
   var psw = document.forms["regHelper"]["password"].value;
   var des = document.forms["regHelper"]["description"].value;
   var pNr = document.forms["regHelper"]["phoneNr"].value;
+
   // Kollar om alla fält är ifyllda
   if ((name == "") || (email == "") || (psw == "") || (des == "") ||(pNr == ""))
     {
