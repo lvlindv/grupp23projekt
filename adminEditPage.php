@@ -4,6 +4,7 @@ include "db_connect.php";
 // Hämtar ur variabeln ur URL:en
 $coachId = $_GET['id'];
 
+// Tar ut alla värden från tabellen, som ska ha samma som get-variabeln, det id nummer som coachen har på den raden kan klickar
 $coach = $connection->query("SELECT * FROM StudyCoach WHERE coachId = '$coachId' LIMIT 1")->fetch_assoc();
 
 ?>
@@ -15,7 +16,7 @@ $coach = $connection->query("SELECT * FROM StudyCoach WHERE coachId = '$coachId'
     <title>Edit page</title>
   </head>
   <body>
-
+<!--Först visas alla fälten man hämtat från tabellen (med det id man valt) sedan skickas man vidare till update när man klickar på redigera knappen-->
     <form name="regHelper" action="adminUpdate.php" method="post" onsubmit="return validateStudyCoach()" >
 
       <label for="name"><b>Fullständigt namn</b></label>
@@ -33,6 +34,7 @@ $coach = $connection->query("SELECT * FROM StudyCoach WHERE coachId = '$coachId'
       <label for="phoneNr"><b>Mobilnummer</b></label>
       <input value="<?php echo $coach['phoneNr'] ?>" type="text" placeholder="Ange mobilnummer" name="phoneNr" >
 
+<!-- coachid är en hidden typ, denna visas ej men finns med och skickas då vidare till adminUpdate.php men inte synligt-->
       <input type="hidden" name="coachId" value="<?php echo $coachId; ?>">
       <input type="submit" value="Spara">
 
