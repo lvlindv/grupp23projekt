@@ -29,10 +29,10 @@ include "db_connect.php";
 
       <form name="loginForm" action="loginUser.php" method="post" onsubmit="return validateLogin()">
         <div class="loginForm">
-          <label for="uname" class="loginLabel"><b>E-post</b></label>
-          <input type="text" class="loginInput" placeholder="Ange din e-post..." name="email">
-          <label for="psw" class="loginLabel"><b>Lösenord</b></label>
-          <input type="password" class="loginInput" placeholder="Ange ditt lösenord..." name="psw">
+          <label for="uname" class="boxLabel"><b>E-post</b></label>
+          <input type="text" class="boxInput" placeholder="Ange din e-post..." name="email">
+          <label for="psw" class="boxLabel"><b>Lösenord</b></label>
+          <input type="password" class="boxInput" placeholder="Ange ditt lösenord..." name="psw">
         </div>
           <!--Knapp som kopplar användaren till loginUser.php -->
           <button name="btnLogin" class="btnLogin" type="submit" value="Button" >Logga in</button>

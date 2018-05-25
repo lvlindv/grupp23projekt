@@ -75,12 +75,12 @@ button:hover
   box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
 }
 
-.loginLabel
+.boxLabel
 {
   margin: 0px 150px 0px 25px;
 }
 
-.loginInput
+.boxInput
 {
   margin: 0px 160px 15px 25px;
 }
