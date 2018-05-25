@@ -30,7 +30,7 @@
     <section class="myBookings">
       <?php
         // Hämtar studentens bokningar från databasen
-        $resultBookings = $connection->query(showStudentBookings($_SESSION['email']));
+        $resultBookings = $connection->query(showStudentBookings($_SESSION['studentEmail']));
         while ($row = $resultBookings->fetch_assoc())
         {
           // Skriver ut bokningens dag, ämne, coachens namn och kontaktuppgifter
@@ -65,10 +65,10 @@
         <input type="submit" value="Sök" name="btnSearch"/>
     </form>
 
-      <?php
-        // Hämtar tillgängliga studiecoacher
-        include "availableCoaches.php";
-      ?>
+    <?php
+      // Hämtar tillgängliga studiecoacher
+      include "availableCoaches.php";
+    ?>
 
       <!-- Skriver ut tillgängliga studiecoacher -->
       <label for="resultAvailability"><b>
@@ -101,7 +101,6 @@
             // Matar ut resultatet från queryn ovan
             while ($row = $resultAvailability->fetch_assoc())
             {
-
           ?>
               <!-- Form med tabell över tillgängliga studiecoacher -->
               <form action="booking.php" method="post">
@@ -123,7 +122,6 @@
           </table>
     <?php
       }
-
       // Länk för att logga ut användaren
       echo "<br/><br/>";
       echo '<a href="logoutUser.php">Logga ut</a>';
