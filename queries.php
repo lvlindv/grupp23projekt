@@ -124,5 +124,14 @@
     return $query;
   }
 
+  // Lägger till ny studiecoach
+  function regStudyCoach($name, $email, $password, $description, $phoneNr)
+  {
+    $query = "INSERT INTO StudyCoach(name, email, password, description, phoneNr)
+    VALUES ('$name', '$email', '$psw', '$des', '$phnr')";
+
+    return $query;
+  }
+
 
 ?>

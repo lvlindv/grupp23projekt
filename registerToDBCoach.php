@@ -12,24 +12,21 @@ $phnr = $_POST['phoneNr'];
 
 // Använder funktionen regStudyCoach från queries.php med variablerna som parametrar.
 $connection->query(regStudyCoach($name, $email, $psw, $des, $phnr));
-//
+// Sätter in SQL-satsen i databasen.
 if ($connection ->query($sql))
 {
+  // Visar att en ny studiecoach har lagts till i databasen
   echo "Du har lagt till en ny studiecoach!";
+  // Länk tillbaka till adminstartpage.php
   echo '<a href="adminStartpage.php">Tillbaka till startsidan.</a>';
 }
 else
 {
+  // Visar att SQL-satsen inte lyckades läggas till
   echo "Något gick fel.". $sql. "<br>". $connection->error;
+  // Länk tillbaka till adminstartpage
   echo '<a href="adminStartpage.php">Försök igen.</a>';
 }
+// avslutar
 $connection->close();
 ?>
-
-function regStudyCoach($name, $email, $password, $description, $phoneNr)
-{
-  $query = "INSERT INTO StudyCoach(name, email, password, description, phoneNr)
-  VALUES ('$name', '$email', '$psw', '$des', '$phnr')";
-
-  return $query;
-}
