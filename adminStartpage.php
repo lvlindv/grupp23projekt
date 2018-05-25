@@ -3,7 +3,8 @@
 session_start();
 
 // Koppling till databas
-include "db_connect.php"
+include "db_connect.php";
+include "queries.php";
 ?>
 
 <!DOCTYPE html>
