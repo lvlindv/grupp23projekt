@@ -29,7 +29,7 @@ include "db_connect.php";
         <h2>LOGGA IN</h2>
       </div>
 
-      <form name="loginForm" action="loginUser.php" method="post" onsubmit="validateLogin()">
+      <form name="loginForm" action="loginUser.php" method="post" onsubmit="return validateLogin()">
         <div class="loginForm">
           <label for="uname" class="loginLabel"><b>E-post</b></label>
           <input type="text" class="loginInput" placeholder="Ange din e-post..." name="email">
