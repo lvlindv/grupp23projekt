@@ -149,5 +149,13 @@
 
   }
 
+  function updateStudyCoach($name, $email, $psw, $des, $coachId, $phnr)
+  {
+    $query = "UPDATE StudyCoach SET name='$name', email='$email', password='$psw', description='$des', phoneNr='$phnr' WHERE coachId='$coachId'";
+
+    return $query;
+
+  }
+
 
 ?>

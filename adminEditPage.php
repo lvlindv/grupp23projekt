@@ -33,6 +33,7 @@ $coach = $connection->query("SELECT * FROM StudyCoach WHERE coachId = '$coachId'
       <label for="phoneNr"><b>Mobilnummer</b></label>
       <input value="<?php echo $coach['phoneNr'] ?>" type="text" placeholder="Ange mobilnummer" name="phoneNr" >
 
+      <input type="hidden" name="coachId" value="<?php echo $coachId; ?>">
       <input type="submit" value="Spara">
 
    </form>

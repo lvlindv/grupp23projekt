@@ -73,6 +73,7 @@ include "queries.php";
                 <input type="hidden" >
                 <!-- När inputen är "klickad" skickas coachId som ska med i formet -->
                 <td> <input type="submit" value="Ta bort" name="btndel"></td>
+                <!-- coahID skickas med url:n när användaren klickar på länken-->
                 <td><a href="adminEditPage.php?id=<?php echo $row["coachId"]; ?>">Redigera</a></td>
               </tr>
             </form>
