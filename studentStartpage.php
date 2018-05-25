@@ -8,8 +8,11 @@
   // Koppling till fil med queries
   include "queries.php";
 
-  // Koppling till fil som skapar dropdowns och tabeller från data i db
+  // Koppling till fil med funktioner
   include "functions.php";
+
+  // Kollar om student är inloggad
+  loggedInAsStudent();
 ?>
 <!doctype html>
 <html>

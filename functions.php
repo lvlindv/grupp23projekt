@@ -16,4 +16,34 @@ function make_select_from_result($select_name, $result_options)
 	}
 }
 
+// Kollar om användare är inloggad som student
+function loggedInAsStudent()
+{
+  // Om användaren inte är inloggad skickas man till startsidan
+  if(!isset($_SESSION["studentEmail"]))
+  {
+    header("Location: startpage.php");
+  }
+}
+
+// Kollar om användare är inloggad som studiecoach
+function loggedInAsStudyCoach()
+{
+  // Om användaren inte är inloggad skickas man till startsidan
+  if(!isset($_SESSION["coachEmail"]))
+  {
+    header("Location: startpage.php");
+  }
+}
+
+// Kollar om användare är inloggad som admin
+function loggedInAsAdmin()
+{
+  // Om användaren inte är inloggad skickas man till startsidan
+  if(!isset($_SESSION["adminEmail"]))
+  {
+    header("Location: startpage.php");
+  }
+}
+
 ?>

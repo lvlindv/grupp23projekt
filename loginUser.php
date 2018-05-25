@@ -28,7 +28,7 @@
       // Hämtar rader ur tabell
       $row = $resultStudyCoach->fetch_assoc();
       // Sätter sessionsvariabler
-      $_SESSION["email"] = $_POST['email'];
+      $_SESSION["coachEmail"] = $_POST['email'];
       $_SESSION["name"] = $row["name"];
       $_SESSION["coachId"] = $row["coachId"];
       // Skickar vidare till startsida
@@ -40,7 +40,7 @@
       // Hämtar rader ur tabell
       $row = $resultStudent->fetch_assoc();
       // Sätter sessionsvariabler
-      $_SESSION["email"] = $_POST['email'];
+      $_SESSION["studentEmail"] = $_POST['email'];
       $_SESSION["name"] = $row["name"];
       $_SESSION["studentId"] = $row["studentId"];
       // Skickar vidare till startsida
@@ -51,7 +51,7 @@
       // Hämtar rader ur tabell
       $row = $resultAdmin->fetch_assoc();
       // Sätter sessionsvariabler
-      $_SESSION["email"] = $_POST['email'];
+      $_SESSION["adminEmail"] = $_POST['email'];
       $_SESSION["name"] = $row["name"];
       // Skickar vidare till startsida
       header("Location: adminStartpage.php");
