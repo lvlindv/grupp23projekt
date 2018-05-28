@@ -24,18 +24,18 @@ table
 
 .btnDelete
 {
-  margin: -62px 5px 4px 10px;
+  margin: -62px 5px 4px 30px;
 
 }
 
 .btnEdit
 {
-  margin: -28px 5px 4px 10px;
+  margin: -28px 5px 4px 30px;
 }
 
 table, td, th
 {
-    border: 5px
+    border: 2px
     solid white;
 }
 
@@ -47,7 +47,7 @@ td, th
 
 td {
     width: 60px;
-    height: 60px;
+    height: 80px;
     vertical-align: bottom;
 }
 
