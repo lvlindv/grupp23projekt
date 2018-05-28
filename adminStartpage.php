@@ -95,8 +95,8 @@ loggedInAsAdmin();
                 <!-- När inputen är "klickad" skickas coachId som ska med i formet -->
 
                 <!-- coahID skickas med url:n när användaren klickar på länken-->
-                <td><button onclick="location.href='adminDeletePage.php?id=<?php echo $row["coachId"]; ?>';">Ta bort</button></td>
-                <td><button onclick="location.href='adminEditPage.php?id=<?php echo $row["coachId"]; ?>';">Redigera</button></td>
+                <td><button class="" onclick="location.href='adminDeletePage.php?id=<?php echo $row["coachId"]; ?>';">Ta bort</button></td>
+                <td><button class="" onclick="location.href='adminEditPage.php?id=<?php echo $row["coachId"]; ?>';">Redigera</button></td>
 
               </tr>
 
