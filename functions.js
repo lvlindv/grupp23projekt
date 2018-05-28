@@ -42,7 +42,7 @@ function validateStudyCoach()
   // Skapar variabler från formuläret regHelper
   var name = document.forms["regHelper"]["name"].value;
   var email = document.forms["regHelper"]["email"].value;
-  var psw = document.forms["regHelper"]["password"].value;
+  var psw = document.forms["regHelper"]["psw"].value;
   var des = document.forms["regHelper"]["description"].value;
   var pNr = document.forms["regHelper"]["phoneNr"].value;
 
@@ -51,5 +51,8 @@ function validateStudyCoach()
     {
       alert("Fyll i alla fälten i formuläret");
       return false;
+    }
+    else{
+      return true;
     }
 }
