@@ -11,6 +11,7 @@
     <script src="functions.js"></script>
     <!-- Koppling till css-fil -->
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="startpage.css">
     <title>Registrering</title>
   </head>
 
