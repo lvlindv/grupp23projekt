@@ -76,11 +76,10 @@
       <option value="Torsdag">Torsdag</option>
       <option value="Fredag">Fredag</option>
     </select>
+    <!-- Knapp för att lägga till tillgänglighet -->
+    <button class="addDay" type="submit" name="btnAdd">Lägg till</button>
 
-<!-- Sök-knapp -->
-<button type="submit" value="Sök" name="btnSearch">Sök </button>
-<!-- <button class="addDay" type="submit" name="btnAdd">Lägg till</button> knappen lägg till dag-->
-      </form>
+    </form>
 
 
 
