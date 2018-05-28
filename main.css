@@ -45,12 +45,11 @@ label
 
 button
 {
-  background-color: ##D8D8D8;
+  background-color: #D8D8D8;
   color: #000000;
-  border-radius: 5px; /*Runda hörn på knapparna*/
+  border-radius: 5px;
   border: 2px solid #A4A4A4;
-  font-size: 15px;  /* Storleken på texten i knapparna */
-  position: absolute;
+  font-size: 15px;
   width: 140px;
 }
 

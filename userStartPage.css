@@ -9,12 +9,13 @@ table
     border-collapse: collapse;
     background-color: grey;
 }
-
+/*Studentstartpage.php Tabell med tillgängliga Studiecocher */
 .availableCoachesTable
 {
   width: 95%;
 }
 
+/*Studentstartpage Vit text som visas när inga studiecoacher finns tillgängliga */
 .noAvailability
 {
   color: white;
@@ -22,6 +23,7 @@ table
   text-decoration: underline;
 }
 
+/*Hittar inte */
 .studyCoachTable
 {
   width: 1200px;
@@ -31,7 +33,7 @@ table
 table, td, th
 {
     border-bottom: 2px
-    solid white;
+    solid white; /* Vita linjer kring tabellerna */
     margin: auto;
     text-align: left;
 }
@@ -42,17 +44,20 @@ td, th
 
 }
 
-td {
+td /*  */
+{
     width: 60px;
     height: 70px;
     position: center;
 }
 
-th {
+th
+{
     background-color: rgba(0,0,0,.5);
     color: white;
 }
 
+/* Studentstartpage knappen Boka */
 .btnBook
 {
   padding-top: 20px;
@@ -60,26 +65,39 @@ th {
   margin-right: auto;
 }
 
-.loginBtn
+/*Studentstartpage logga ut knapp*/
+.logoutBtn
 {
   margin-top: 20px;
   margin-bottom: 10px;
   margin-left: 575px;
 }
 
-.bookingTitle
+/*Adminstartpage*/
+.btnDelete
 {
-  width: 100%;
-  margin: 25px 25px 25px 25px;
+  margin: 0px 5px 4px 30px;
+
 }
 
-.btnSearch
+.btnEdit
+{
+  margin: 10px 5px 4px 30px;
+}
+
+.saveEdit
+{
+  padding-left: 30px;
+}
++.btnSearch
 {
   margin: 25px 200px 25px 0px;
 }
 
+.btnDelete
 .btnBook
 {
+  margin: -62px 5px 4px 30px;
   margin: -40px 20px 5px 10px;
 }
 
@@ -90,6 +108,7 @@ th {
 
 .boxNewBookings
 {
+  margin: -28px 5px 4px 30px;
   width: 1200px;
   height: auto;
   box-sizing: border-box;
@@ -97,6 +116,7 @@ th {
   box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
   padding-left:15px;
   margin-left: 25px;
+  padding-top: 5px;
   padding-bottom: 20px;
 }
 .boxCoachAvalible

@@ -70,7 +70,6 @@ include "db_connect.php";
           <div class="divStudentbokhandeln">
           <!-- "Reklambanner" till Studentbokhandeln som öppnas i ny flik -->
           <a target="_blank" href="https://www.studentbokhandeln.se/"><img src="img/studentbokhandeln.jpg" class="studentbokhandeln"></a>
-
         </div>
       </div>
     </div>

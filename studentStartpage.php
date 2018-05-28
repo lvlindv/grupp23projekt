@@ -148,7 +148,7 @@
     ?>
     </div>
     <!-- Knapp för att logga ut användare -->
-    <div class="loginBtn">
+    <div class="logoutBtn">
       <button onclick="location.href='logoutUser.php';">Logga ut</button>
     </div>
   </body>

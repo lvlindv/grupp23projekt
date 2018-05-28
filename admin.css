@@ -51,20 +51,7 @@
   padding-top: 10px;
 }
 
-.btnDelete
+.saveEdit
 {
-  margin: -62px 5px 4px 30px;
-
-}
-
-.btnEdit
-{
-  margin: -28px 5px 4px 30px;
-}
-
-.loginBtn
-{
-  margin-top: 20px;
-  margin-bottom: 10px;
-  margin-left: 575px;
+  margin-left: 100px;
 }
