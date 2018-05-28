@@ -45,7 +45,7 @@
   <body>
     <!-- Länk för att logga ut användare -->
     <div class="logout">
-    <button href="logoutUser.php">Logga ut</button>
+    <button onclick="location.href='logoutUser.php';">Logga ut</button>
     </div>
     <!-- Rubrik med användarens namn -->
     <h1> <?php echo "Välkommen ".$_SESSION["name"]."!" ?> </h1>
