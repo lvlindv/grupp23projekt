@@ -1,5 +1,4 @@
-<!-- Skriver ut bokningens dag, ämne, coachens namn och kontaktuppgifter
-    samt studentens namn och kontaktuppgifter -->
+<!-- Skriver ut bokningens dag, ämne, coachens namn och kontaktuppgifter-->
 <div class="booking">
   <div class="bookingDay">
     <?php
