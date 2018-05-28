@@ -15,26 +15,26 @@
     ?>
   </div>
 
-<div class="coachInfo">
-  <?php
-  echo "<b>Studiecoach: </b>";
-   ?>
-  <div class="coachName">
+  <div class="coachInfo">
     <?php
-    echo $row["coachName"];
+    echo "<b>Studiecoach: </b>";
     ?>
-  </div>
+    <div class="coachName">
+      <?php
+      echo $row["coachName"];
+      ?>
+    </div>
 
-  <div class="coachNr">
-    <?php
-    echo $row["coachNr"];
-    ?>
-  </div>
+    <div class="coachNr">
+      <?php
+      echo $row["coachNr"];
+      ?>
+    </div>
 
-  <div class="coachEmail">
-    <?php
-    echo $row["coachEmail"];
-    ?>
+    <div class="coachEmail">
+      <?php
+      echo $row["coachEmail"];
+      ?>
+    </div>
   </div>
-</div>
 </div>

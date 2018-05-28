@@ -11,8 +11,8 @@
       <link rel="stylesheet" href="popUp.css">
 
       <title>Registrering</title>
-    </head>
-    <body>
+  </head>
+  <body>
     <div class="popUp">
       <?php
       session_start();
@@ -25,7 +25,7 @@
       // Kollar om användare är inloggad som admin
       loggedInAsAdmin();
 
-      // Skapar variabler
+      // Skapar variabler som används i funktionen addStudyCoach för att lägga till ny input för studiecoach till databas
       $name = $_POST['name'];
       $email = $_POST['email'];
       $psw = $_POST['psw'];
@@ -55,13 +55,13 @@
         }
 
       }
-      else
-      {
+        else
+        {
         // Visar att studiecoachen inte lyckades läggas till
         echo "Något gick fel.". $sql. "<br>". $connection->error;
         // Länk tillbaka till adminstartpage
         echo '<a href="adminStartpage.php">Försök igen.</a>';
-      }
+        }
       // Avslutar databaskoppling
       $connection->close();
       ?>
