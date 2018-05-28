@@ -29,7 +29,7 @@ session_start();
 loggedInAsAdmin();
 
 // Skapar en variabel för det valda coachId
-$currentCoachId = $_GET['coachId'];
+$currentCoachId = $_GET['id'];
 // Kopplar till databasen och använder functionen deleteStudyCoach på variabeln
 if ($connection ->query(deleteStudyCoach($currentCoachId)))
 {
