@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <!-- Koppling till javascript-fil -->
     <script src="functions.js"></script>
-    <!-- Koppling till css-fil -->
+    <!-- Koppling till css-filer -->
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="startpage.css">
     <link rel="stylesheet" href="popUp.css">
@@ -34,7 +34,7 @@
       if ($connection->query(updateStudyCoach($name, $email, $psw, $des, $coachId, $phnr)))
       {
         // Visar att en ny studiecoach har lagts till i databasen
-        echo '<a class="userSaved">Studiecoach redigerad!</a>';
+        echo '<a class="userSaved">Studiecoach registrerad!</a>';
         // Länk tillbaka till adminstartpage.php
         echo '<a href="adminStartpage.php" class="buttonBack">Tillbaka till startsidan</a>';
       }
