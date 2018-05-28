@@ -3,21 +3,21 @@
 <div class="booking">
   <div class="bookingDay">
     <?php
-    echo "Dag: ";
+    echo "<b>Dag: </b>";
     echo $row["day"];
     ?>
   </div>
 
   <div class="bookingSubject">
     <?php
-    echo "Ämne: ";
+    echo "<b>Ämne: </b>";
     echo $row["subject"];
     ?>
   </div>
 
 <div class="coachInfo">
   <?php
-  echo "Studiecoach: ";
+  echo "<b>Studiecoach: </b>";
    ?>
   <div class="coachName">
     <?php

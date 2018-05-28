@@ -2,21 +2,21 @@
 
   <div class="bookingDay">
     <?php
-    echo "Dag: ";
+    echo "<b>Dag: </b>";
     echo $row["day"];
     ?>
   </div>
 
   <div class="bookingSubject">
     <?php
-    echo "Ämne: ";
+    echo "<b>Ämne: </b>";
     echo $row["subject"];
     ?>
   </div>
 
   <div class="studentInfo">
     <?php
-    echo "Student: ";
+    echo "<b>Student: </b>";
      ?>
   <div class="studentName">
     <?php
