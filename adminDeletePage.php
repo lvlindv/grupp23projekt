@@ -1,3 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Koppling till javascript-fil -->
+    <script src="functions.js"></script>
+
+    <!-- Koppling till css-filer -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="startpage.css">
+    <link rel="stylesheet" href="popUp.css">
+
+    <title>Radera</title>
+    </head>
+
+    <body>
+    <!-- Skapar en klass  -->
+    <div class="popUp">
+
 <?php
 // Kopplar till databasen
 include 'db_connect.php';
@@ -15,17 +34,22 @@ $currentCoachId = $_GET['coachId'];
 if ($connection ->query(deleteStudyCoach($currentCoachId)))
 {
   // Visar att förfrågan gått igenom
-  echo "Du har raderat Studiecoachen!";
+  echo '<a class="userSaved">Studiecoach raderad!</a>';
   // Länk tillbaka till adminStartpage.php
-  echo '<a href="adminStartpage.php">Tillbaka till startsidan.</a>';
+  echo '<a href="adminStartpage.php" class="buttonBack">Tillbaka till startsidan</a>';
+
 }
 else
 {
   // Visar att förfrågan ej gick igenom och printar ut SQL-satsen.
   echo "Något gick fel.". $sql. "<br>". $connection->error;
   // Länk tillbaka till adminStartpage.php
-  echo '<a href="adminStartpage.php">Försök igen.</a>';
+  echo '<a href="adminStartpage.php">Försök igen</a>';
 }
 // Stänger databaskopplingen.
 $connection->close();
 ?>
+
+</div>
+</body>
+</html>
