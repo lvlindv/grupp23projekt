@@ -28,17 +28,19 @@
   function showStudentBookings($email)
   {
     $query = "SELECT Booking.day,
-                  Booking.subject,
-                  StudyCoach.name AS coachName,
-                  StudyCoach.phoneNr AS coachNr,
-                  StudyCoach.email AS coachEmail,
-                  Student.name AS studentName,
-                  Student.phoneNr AS studentNr,
-                  Student.email AS studentEmail
-                  FROM Booking
-                  INNER JOIN Student ON Student.studentId=Booking.studentId
-                  INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId
-                  WHERE Student.email='$email'";
+                      Booking.subject,
+                      StudyCoach.name AS coachName,
+                      StudyCoach.phoneNr AS coachNr,
+                      StudyCoach.email AS coachEmail,
+                      Student.name AS studentName,
+                      Student.phoneNr AS studentNr,
+                      Student.email AS studentEmail
+                      FROM Booking
+                      INNER JOIN Student ON Student.studentId=Booking.studentId
+                      INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId
+                      INNER JOIN Days ON Days.name=Booking.day
+                      WHERE Student.email='$email'
+                      ORDER BY Days.dayOrder";
 
     return $query;
   }
@@ -47,17 +49,19 @@
   function showCoachBookings($email)
   {
     $query = "SELECT Booking.day,
-                            Booking.subject,
-                            StudyCoach.name AS coachName,
-                            StudyCoach.phoneNr AS coachNr,
-                            StudyCoach.email AS coachEmail,
-                            Student.name AS studentName,
-                            Student.phoneNr AS studentNr,
-                            Student.email AS studentEmail
-                            FROM Booking
-                            INNER JOIN Student ON Student.studentId=Booking.studentId
-                            INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId
-                            WHERE StudyCoach.email='$email'";
+                      Booking.subject,
+                      StudyCoach.name AS coachName,
+                      StudyCoach.phoneNr AS coachNr,
+                      StudyCoach.email AS coachEmail,
+                      Student.name AS studentName,
+                      Student.phoneNr AS studentNr,
+                      Student.email AS studentEmail
+                      FROM Booking
+                      INNER JOIN Student ON Student.studentId=Booking.studentId
+                      INNER JOIN StudyCoach ON StudyCoach.coachId=Booking.coachId
+                      INNER JOIN Days ON Days.name=Booking.day
+                      WHERE StudyCoach.email='$email'
+                      ORDER BY Days.dayOrder";
     return $query;
   }
 

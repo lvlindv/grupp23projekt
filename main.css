@@ -28,7 +28,7 @@ input
 {
   border: none;
   border-bottom: 2px solid #fff;
-  background: transparent;
+  background-color: transparent;
   outline: none;
   height: 30px;
   width: 298px;
@@ -49,11 +49,11 @@ label
 
 button
 {
-  color: rgba(66,48,1,1);
+  background-color: ##D8D8D8;
+  color: #000000;
   border-radius: 5px; /*Runda hörn på knapparna*/
-  border: 2px solid #fff;
+  border: 2px solid #A4A4A4;
   font-size: 15px;  /* Storleken på texten i knapparna */
-  box-shadow: 5px 5px 10px 5px rgba(0,0,0, 0.4);
   position: absolute;
   width: 140px;
 }
