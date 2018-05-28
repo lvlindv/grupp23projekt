@@ -1,3 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Koppling till javascript-fil -->
+    <script src="functions.js"></script>
+
+    <!-- Koppling till css-fil -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="startpage.css">
+    <link rel="stylesheet" href="popUp.css">
+
+    <title>Registrering</title>
+    </head>
+
+    <body>
+
+    <div class="popUp">
+
 <?php
 session_start();
 // Kopplar till databasen
@@ -20,9 +39,9 @@ $phnr = $_POST['phoneNr'];
 if ($connection->query(addStudyCoach($name, $email, $psw, $des, $phnr)))
 {
   // Visar att en ny studiecoach har lagts till i databasen
-  echo "Du har lagt till en ny studiecoach!";
+  echo '<a class="userSaved">Studiecoachen sparad!</a>';
   // Länk tillbaka till adminstartpage.php
-  echo '<a href="adminStartpage.php">Tillbaka till startsidan.</a>';
+  echo '<a href="adminStartpage.php" class="buttonBack">Tillbaka till startsidan</a>';
 }
 else
 {
@@ -34,3 +53,7 @@ else
 // avslutar
 $connection->close();
 ?>
+
+    </div>
+  </body>
+</html>

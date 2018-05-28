@@ -1,3 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Koppling till javascript-fil -->
+    <script src="functions.js"></script>
+
+    <!-- Koppling till css-fil -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="startpage.css">
+    <link rel="stylesheet" href="popUp.css">
+
+    <title>Registrering</title>
+    </head>
+
+    <body>
+
+    <div class="popUp">
+
+
 <?php
 // Start the session
 session_start();
@@ -21,10 +41,15 @@ else
 {
   // Lägger in studenten i databasen
   $connection->query(addStudent($name, $email, $password, $phoneNr));
-  echo "Användare sparad!";
-  echo '<a href="startpage.php">Tillbaka till startsidan.</a>';
+  echo '<a class="userSaved">Användaren sparad!</a>';
+  echo '<a href="startpage.php" class="buttonBack">Tillbaka till startsidan</a>';
+
 
 
 }
 $connection->close();
 ?>
+
+    </div>
+  </body>
+</html>

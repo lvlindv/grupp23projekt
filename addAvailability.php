@@ -1,3 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Koppling till javascript-fil -->
+    <script src="functions.js"></script>
+
+    <!-- Koppling till css-fil -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="startpage.css">
+    <link rel="stylesheet" href="popUp.css">
+
+    <title>Felmeddelande</title>
+    </head>
+
+    <body>
+
+    <div class="popUp">
+
+
 <?php
   // Startar sessionen
   session_start();
@@ -30,23 +50,29 @@
   // Kollar om studiecoach redan markerat sig som tillgänglig den valda dagen
   if(mysqli_num_rows($result)>0)
   {
-    echo "Du har redan angett att du är tillgänglig på ".$selectedDay.".";
-    echo '<a href="coachStartpage.php">Tillbaka till din sida.</a>';
+    // DENNA ÄR EJ FULLSTÄNDIG - REDIGERA!
+    echo '<a class="already">Du har redan angett att du är tillgänglig på </a>'.$selectedDay."!";
+    echo '<a href="coachStartpage.php" class="buttonBack2">Tillbaka till din sida</a>';
   }
   else
   {
     // Query för att lägga till tillgänglig studiecoach i databasen
     if ($connection->query(addAvailability($selectedDay, $coachId)))
     {
-      echo "Du har nu angett att du är tillgänglig på ".$selectedDay.".";
-      echo '<a href="coachStartpage.php">Tillbaka till din sida.</a>';
+      // DENNA ÄR EJ FULLSTÄNDIG - REDIGERA!
+      echo '<a class="already">Du har nu angett att du är tillgänglig på </a>'.$selectedDay."!";
+      echo '<a href="coachStartpage.php" class="buttonBack2">Tillbaka till din sida</a>';
     }
     else
     {
-        echo "Något gick fel.";
-        echo '<a href="coachStartpage.php">Vänligen försök igen.</a>';
+        echo '<a class="wrong">Något gick fel...</a>';
+        echo '<a href="coachStartpage.php" class="tryAgain">Vänligen försök igen</a>';
     }
     $connection->close();
   }
 
 ?>
+
+</div>
+</body>
+</html>
