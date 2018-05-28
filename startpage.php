@@ -1,9 +1,9 @@
 
 <?php
-// Start the session
+// Startar sessionen
 session_start();
 
-//Kopplar till databasen via db_connect.php
+// Kopplar till databasen via db_connect.php
 include "db_connect.php";
 
  ?>
