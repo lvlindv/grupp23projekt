@@ -36,9 +36,9 @@
       if ($connection->query(addStudyCoach($name, $email, $psw, $des, $phnr)))
       {
         // Visar att en ny studiecoach har lagts till i databasen
-        echo '<a class="userSaved">Studiecoachen sparad!</a>';
+        echo '<div class="popUpMsg"><h2>Studiecoachen sparad.</h2></div>';
         // Länk tillbaka till adminstartpage.php
-        echo '<a href="adminStartpage.php" class="buttonBack">Tillbaka till startsidan</a>';
+        echo '<a href="adminStartpage.php" class="linkStartpage">Tillbaka till startsidan</a>';
 
         // Hämtar rader i tabellen StudyCoach som motsvarar den nya studiecoachen
         $resultNewStudyCoach = mysqli_query($connection, getStudyCoach($email, $psw));
