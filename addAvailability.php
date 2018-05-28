@@ -14,7 +14,7 @@
   // Kollar om studiecoach är inloggad
   loggedInAsStudyCoach();
 
-  ?>
+?>
 
 <!DOCTYPE html>
 <html>
@@ -28,8 +28,10 @@
     <link rel="stylesheet" href="startpage.css">
     <link rel="stylesheet" href="popUp.css">
 
+    <!-- Titel på flik -->
     <title>Felmeddelande</title>
-    </head>
+  </head>
+
     <body>
       <?php
 
@@ -57,19 +59,22 @@
           // Query för att lägga till tillgänglig studiecoach i databasen
           if ($connection->query(addAvailability($selectedDay, $coachId)))
           {
-          ?>
+        ?>
+        
+          <!-- Skapar en klass för att göra en ruta som ska ligga bakom nedanstående kod (information) -->
           <div class="popUp">
-            <?php
-              echo '<div class="popUpMsg"><h2>Du har nu angett att du är tillgänglig på '.$selectedDay.'</h2></div>';
-              echo '<a class="linkStartpage" href="coachStartpage.php">Tillbaka till din sida</a>';
-            ?>
+
+          <?php
+            echo '<div class="popUpMsg"><h2>Du har nu angett att du är tillgänglig på '.$selectedDay.'</h2></div>';
+            echo '<a class="linkStartpage" href="coachStartpage.php">Tillbaka till din sida</a>';
+          ?>
           </div>
           <?php
           }
           else
           {
-            // Skickar vidare till startsida + felmeddelande
-            header("Location: studentStartpage.php?msg=felmeddelande");
+          // Skickar vidare till startsida + felmeddelande
+          header("Location: studentStartpage.php?msg=felmeddelande");
           }
           $connection->close();
         }
