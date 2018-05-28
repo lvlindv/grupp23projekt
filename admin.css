@@ -24,6 +24,11 @@ th {
 
 .formRegisterCoach
 {
-  background-color: blue;
-  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 350px;
+  height: 450px;
+  box-sizing: border-box;
+  background-color: rgba(0,0,0,.5);
+  box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
 }

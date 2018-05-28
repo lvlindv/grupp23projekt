@@ -28,8 +28,8 @@ loggedInAsAdmin();
       <body>
         <!-- Visar den inloggade admins epostadress-->
         <h1> <?php echo "Välkommen ".$_SESSION["adminEmail"]."!"; ?>  </h1>
-        <div class="formRegisterCoach">
 
+        <div class="formRegisterCoach">
 
         <h2> Registrera en ny studiecoach </h2>
         <!-- Ett formulär för att lähha till nya studiecoacher-->
@@ -53,8 +53,8 @@ loggedInAsAdmin();
           <input type="submit" value="Registrera">
 
        </form>
-        </div>
 
+        </div>
         <?php
         // Plockar ut alla Study Coches ur databasen
         $result = mysqli_query($connection, showStudyCoaches());

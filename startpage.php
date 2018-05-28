@@ -15,6 +15,7 @@ include "db_connect.php";
     <title>Startsida</title>
     <script src="functions.js"></script>
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="startpage.css">
   </head>
 
       <body>
