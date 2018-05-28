@@ -42,8 +42,6 @@
 
   <h1> <?php echo "Välkommen ".$_SESSION["name"]."!"; ?> </h1><!--Rubrik med studiecoachens email-->
 
-
-
   <!-- underrubrik -->
   <h2> Dina bokningar </h2>
   <!-- ruta med bokningar -->
@@ -59,7 +57,7 @@
       }
     ?>
   </section>
-    <div class="boxCoachAvalible">
+    <div class="boxCoachAvailable">
     <!-- underrubrik -->
     <h2> Lägg till tillgängliga tider </h2>
       <form action="addAvailability.php" method="POST">
