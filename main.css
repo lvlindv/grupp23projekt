@@ -60,3 +60,16 @@ button:hover
   color: white;
   transition-duration: 0.4s;
 }
+
+select
+{
+  margin: 0px 60px 0px 25px;
+  border: none;
+  border-bottom: 2px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 60px;
+  width: 298px;
+  font-size: 15px;
+  color: white;
+}

@@ -82,7 +82,7 @@ loggedInAsAdmin();
               }
             ?>
           </div>
-          <button name="btnReg" class="registrera" type="submit" value="Button">Registrera</button>
+          <button name="btnReg" class="btnregister" type="submit" value="Button">Registrera</button>
 
        </form>
 

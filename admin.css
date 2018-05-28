@@ -30,33 +30,16 @@
   margin-left: 25px;
 }
 
-select
-{
-  margin: 0px 60px 0px 25px;
-  border: none;
-  border-bottom: 2px solid #fff;
-  background: transparent;
-  outline: none;
-  height: 60px;
-  width: 298px;
-  font-size: 15px;
-  color: white;
-}
-
-.dropdownInfo
-{
-  margin: 3px 75px 0px 0px;
-  color: white;
-  font-size: 10px;
-  font-weight: lighter;
-  float: right;
-}
-
-.registrera
+.btnregister
 {
   margin: 20px 100px 0px 25px;
   width: 300px;
   height: 40px;
+}
+
+.boxTitle
+{
+  padding-top: 10px;
 }
 
 .addDay{
@@ -65,10 +48,7 @@ select
   height: 40px;
 }
 
-.boxTitle
-{
-  padding-top: 10px;
-}
+
 
 .formBookings
 {
@@ -79,7 +59,6 @@ select
   box-sizing: border-box;
   background-color: rgba(0,0,0,.5);
   box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
-  float: left;
 }
 
 .formDay{
@@ -93,6 +72,13 @@ select
   box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
   /*float: right;*/
 
+}
+
+.newBooking
+{
+  margin: 30px 30px 20px 100px;
+  height: 120px;
+  width: 1300px;
 }
 
 .myBookings
@@ -123,12 +109,6 @@ select
   padding: 25px 25px 25px 0px;
 }
 
-.newBooking
-{
-  margin: 30px 30px 20px 100px;
-  height: 120px;
-  width: 1300px;
-}
 
 .btnSearch
 {
@@ -153,7 +133,6 @@ select
   box-sizing: border-box;
   background: rgba(0,0,0,.5);
   box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
-  float: left;
   padding-left:25px;
   margin-left: 350px;
 
@@ -166,7 +145,6 @@ select
   box-sizing: border-box;
   background: rgba(0,0,0,.5);
   box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
-  float: left;
   padding-left:15px;
   margin-left: 80px;
 

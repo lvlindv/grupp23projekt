@@ -10,18 +10,6 @@ table
     background-color: grey;
 }
 
-.bookingTitle
-{
-  width: 100%;
-  margin: 25px 25px 25px 25px;
-}
-
-.logoutBtn
-{
-  margin-top: 200px;
-  margin-left: 575px;
-}
-
 .availableCoachesTable
 {
   width: 900px;
@@ -32,17 +20,6 @@ table
 {
   width: 1200px;
   margin: 10px 30px 20px 10px;
-}
-
-.btnDelete
-{
-  margin: -62px 5px 4px 30px;
-
-}
-
-.btnEdit
-{
-  margin: -28px 5px 4px 30px;
 }
 
 table, td, th
@@ -79,4 +56,28 @@ tr:hover
 
 button.bookbtn{
   position: relative;
+}
+
+.logoutBtn
+{
+  margin-top: 200px;
+  margin-left: 575px;
+}
+
+.bookingTitle
+{
+  width: 100%;
+  margin: 25px 25px 25px 25px;
+}
+
+
+.btnDelete
+{
+  margin: -62px 5px 4px 30px;
+
+}
+
+.btnEdit
+{
+  margin: -28px 5px 4px 30px;
 }
