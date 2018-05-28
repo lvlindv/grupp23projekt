@@ -182,3 +182,17 @@ link
 {
   color: #cc2900;
 }
+.halebop {
+  width: 450;
+  height: 200;
+  float: right;
+}
+.studentbokhandeln{
+  width: 450;
+  height: 200;
+  float: left;
+
+}
+.banners{
+  overflow: hidden;
+}
