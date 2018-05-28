@@ -28,10 +28,6 @@ loggedInAsAdmin();
     <link rel="stylesheet" href="userStartPage.css">
   </head>
       <body>
-        <!-- Knapp för att logga ut användare -->
-        <div class="logout">
-          <button onclick="location.href='logoutUser.php';">Logga ut</button>
-        </div>
         <!-- Visar den inloggade admins e-postadress-->
         <h1> <?php echo "Välkommen ".$_SESSION["adminEmail"]."!"; ?>  </h1>
 
@@ -112,8 +108,7 @@ loggedInAsAdmin();
               <td><?php echo $row["password"]; ?></td>
               <td><?php echo $row["description"]; ?></td>
               <td><?php echo $row["phoneNr"]; ?></td>
-                <!-- Skickar coachId via URL med en GET-variabel-->
-
+              <!-- Skickar coachId via URL med en GET-variabel -->
               <td><button class="btnDelete" onclick="location.href='adminDeletePage.php?id=<?php echo $row["coachId"]; ?>';">Ta bort</button>
               <button class="btnEdit" onclick="location.href='adminEditPage.php?id=<?php echo $row["coachId"]; ?>';">Redigera</button></td>
             </tr>
@@ -121,5 +116,9 @@ loggedInAsAdmin();
              }
             ?>
         </table>
+        <!-- Knapp för att logga ut användare -->
+        <div class="logoutBtn">
+          <button onclick="location.href='logoutUser.php';">Logga ut</button>
+        </div>
     </body>
 </html>
