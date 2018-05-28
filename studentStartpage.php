@@ -56,7 +56,7 @@
         {
           // Skriver ut bokningens dag, ämne, coachens namn och kontaktuppgifter
           // samt studentens namn och kontaktuppgifter
-          include "showBookings.php";
+          include "showBookingsStudent.php";
         }
       ?>
     </section>
