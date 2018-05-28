@@ -120,7 +120,7 @@
       {
       ?>
         <!-- Tabell med tillgängliga studiecoacher -->
-        <table class"availableCoaches">
+        <table class"availableCoachesTable">
           <!-- Tabellrubriker i fetstilt -->
           <tr>
 
@@ -142,7 +142,7 @@
                 <td><?php echo $row['description'] ?></td>
                 <!-- Knapp för bokning som kopplar till booking.php -->
 
-                <td><div class="btnBook"><button onclick="location.href='booking.php?coachId=<?php echo $row["coachId"]; ?>';">Boka</button></div></td>
+                <td><div class="btnBook"><button class="bookbtn" onclick="location.href='booking.php?coachId=<?php echo $row["coachId"]; ?>';">Boka</button></div></td>
 
               </tr>
           <?php

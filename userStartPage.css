@@ -37,6 +37,8 @@ table, td, th
 {
     border: 2px
     solid white;
+    margin: auto;
+    width: 40%;
 }
 
 td, th
@@ -61,4 +63,8 @@ tr:hover
   background-color: #cc2900;
   color: white;
   transition-duration: 0.4s;
+}
+
+button.bookbtn{
+  position: relative;
 }
