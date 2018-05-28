@@ -31,11 +31,21 @@ th {
 {
   margin-left: auto;
   margin-right: auto;
-  width: 1100px;
-  height: 450px;
+  width: 350px;
+  height: 525px;
   box-sizing: border-box;
   background-color: rgba(0,0,0,.5);
   box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
+}
+
+.boxLabel
+{
+  margin: 0px 150px 0px 25px;
+}
+
+.boxInput
+{
+  margin: 0px 160px 15px 25px;
 }
 
 .boxLinkLogout
@@ -43,4 +53,16 @@ th {
   margin: 100px 10px 0px 100px;
   top: 85%;
   color: black;
+}
+
+.registrera
+{
+  margin: 10px 100px 0px 25px;
+  width: 300px;
+  height: 40px;
+}
+
+.boxTitle
+{
+  padding-top: 10px;
 }

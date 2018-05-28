@@ -30,27 +30,31 @@ loggedInAsAdmin();
         <h1> <?php echo "Välkommen ".$_SESSION["adminEmail"]."!"; ?>  </h1>
 
         <div class="formRegisterCoach">
-
-        <h2> Registrera en ny studiecoach </h2>
+<div class="boxTitle">
+  <h2> Registrera en ny studiecoach </h2>
+</div>
         <!-- Ett formulär för att lähha till nya studiecoacher-->
         <form name="regHelper" action="registerToDBCoach.php" method="post" onsubmit="return validateStudyCoach()" >
 
-          <label for="name"><b>Fullständigt namn</b></label>
-          <input type="text" placeholder="Ange fullständigt namn på StudyCoachen" name="name">
+          <label for="name" class="boxLabel"><b>Fullständigt namn</b></label>
+          <input type="text" class="boxInput" placeholder="Ange fullständigt namn på StudyCoachen" name="name">
 
-          <label for="email"><b>E-post</b></label>
-          <input type="text" placeholder="Ange epost" name="email" >
+          <label for="email" class="boxLabel"><b>E-post</b></label>
+          <input type="text" class="boxInput" placeholder="Ange epost" name="email" >
 
-          <label for="psw"><b>Lösenord</b></label>
-          <input type="password" placeholder="Ange lösenord" name="psw" >
+          <label for="phoneNr" class="boxLabel"><b>Mobilnummer</b></label>
+          <input type="text" class="boxInput" placeholder="Ange mobilnummer" name="phoneNr" >
 
-          <label for="description"><b>Beskrivning</b></label>
-          <input type="text" placeholder="Ange en beskrivning av StudyCoachen" name="description" >
+          <label for="psw" class="boxLabel"><b>Lösenord</b></label>
+          <input type="password" class="boxInput" placeholder="Ange lösenord" name="psw" >
 
-          <label for="phoneNr"><b>Mobilnummer</b></label>
-          <input type="text" placeholder="Ange mobilnummer" name="phoneNr" >
+          <label for="description" class="boxLabel"><b>Beskrivning</b></label>
+          <input type="text" class="boxInput" placeholder="Ange en beskrivning av StudyCoachen" name="description" >
 
-          <input type="submit" value="Registrera">
+          <label for="subjects" class="boxLabel"><b>Ämnen</b></label>
+          <input type="text" class="boxInput" placeholder="Ange ämnen" name="subject" >
+
+          <button type="submit" class="registrera">Registrera</button>
 
        </form>
 
