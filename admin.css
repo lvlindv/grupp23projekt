@@ -39,7 +39,7 @@ th {
   margin-left: auto;
   margin-right: auto;
   width: 350px;
-  height: 525px;
+  height: 575px;
   box-sizing: border-box;
   background-color: rgba(0,0,0,.5);
   box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
@@ -62,9 +62,42 @@ th {
   color: black;
 }
 
+.subjects
+{
+  overflow: hidden;
+  padding-top: 2px;
+}
+
+.labelSubjects
+{
+  margin-left: 25px;
+}
+
+select
+{
+  margin: 0px 160px 0px 25px;
+  border: none;
+  border-bottom: 2px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 60px;
+  width: 298px;
+  font-size: 15px;
+  color: white;
+}
+
+.dropdownInfo
+{
+  margin: 3px 75px 0px 0px;
+  color: white;
+  font-size: 10px;
+  font-weight: lighter;
+  float: right;
+}
+
 .registrera
 {
-  margin: 10px 100px 0px 25px;
+  margin: 20px 100px 0px 25px;
   width: 300px;
   height: 40px;
 }

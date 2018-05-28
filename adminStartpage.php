@@ -31,9 +31,9 @@ loggedInAsAdmin();
         <h1> <?php echo "Välkommen ".$_SESSION["adminEmail"]."!"; ?>  </h1>
 
         <div class="formRegisterCoach">
-<div class="boxTitle">
-  <h2> Registrera en ny studiecoach </h2>
-</div>
+        <div class="boxTitle">
+          <h2> Registrera en ny studiecoach </h2>
+        </div>
         <!-- Ett formulär för att lähha till nya studiecoacher-->
         <form name="regHelper" action="registerToDBCoach.php" method="post" onsubmit="return validateStudyCoach()">
 
@@ -52,29 +52,32 @@ loggedInAsAdmin();
           <label for="description" class="boxLabel"><b>Beskrivning</b></label>
           <input type="text" class="boxInput" placeholder="Ange en beskrivning av StudyCoachen" name="description" >
 
-          <?php
-          // Lista över valbara ämnen för en studiecoach att hjälpa till med
-          // Queryn hämtar ämnen från databasen
-          $result_options = $connection->query(showSubjects());
-          $select_name = "subject";
+          <div class="subjects">
+          <label for="description" class="labelSubjects"><b>Ämnen</b></label>
+          <p class="dropdownInfo">*Håll in ctrl eller ⌘ för att välja flera ämnen</p>
+            <?php
+            // Lista över valbara ämnen för en studiecoach att hjälpa till med
+            // Queryn hämtar ämnen från databasen
+            $result_options = $connection->query(showSubjects());
+            $select_name = "subject";
 
-            // Om tabellen har fler än 0 rader exekveras koden
-            if ($result_options->num_rows > 0)
-            {
-              //Skapar dropdown-lista med multiple choice
-              echo "<select multiple='multiple' name=".$select_name."[] >";
-              // Hämtar alla rader från resultatet av query
-              while ($row = $result_options->fetch_row())
+              // Om tabellen har fler än 0 rader exekveras koden
+              if ($result_options->num_rows > 0)
               {
-                // Matar ut options baserat på datan från tabellen
-                $val = $row[0];
-                echo utf8_encode("<option value=\"$val\">$val</option>\n");
+                //Skapar dropdown-lista med multiple choice
+                echo "<select multiple='multiple' name=".$select_name."[] >";
+                // Hämtar alla rader från resultatet av query
+                while ($row = $result_options->fetch_row())
+                {
+                  // Matar ut options baserat på datan från tabellen
+                  $val = $row[0];
+                  echo utf8_encode("<option value=\"$val\">$val</option>\n");
+                }
+                echo "</select>";
               }
-              echo "</select>";
-            }
-          ?>
-
-          <button name="btnReg" class="registrera" type="submit" value="Button">REGISTRERA</button>
+            ?>
+          </div>
+          <button name="btnReg" class="registrera" type="submit" value="Button">Registrera</button>
 
        </form>
 
