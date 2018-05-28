@@ -73,14 +73,84 @@ th {
   margin: 25px 25px 25px 25px;
 }
 
-
-.btnDelete
+.btnSearch
 {
-  margin: -62px 5px 4px 30px;
+  margin: 25px 200px 25px 0px;
+}
+
+.btnBook
+{
+  margin: -40px 20px 5px 10px;
+}
+
+.resultAvailability
+{
+  margin: 30px 0px 10px 0px;
+}
+
+.boxNewBookings
+{
+  width: 1200px;
+  height: auto;
+  box-sizing: border-box;
+  background: rgba(0,0,0,.5);
+  box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
+  padding-left:15px;
+  margin-left: 25px;
+  padding-bottom: 20px;
+}
+
+.descriptionStudyCoach
+{
+  width: 500px;
+}
+
+.addDay{
+  margin-bottom: 300px;
+  width: 100px;
+  height: 40px;
+}
+.formBookings
+{
+  margin-left: auto;
+  margin-right: auto;
+  width: 350px;
+  height: 525px;
+  box-sizing: border-box;
+  background-color: rgba(0,0,0,.5);
+  box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
+}
+
+.newBooking
+{
+  margin: 30px 30px 20px 25px;
+  width: 1300px;
+}
+
+.myBookings
+{
+  width: 1400px;
+  height: 250px;
+}
+
+.booking
+{
+  margin: 10px 10px 10px 25px;
+  background-color: white;
+  width: 250px;
+  height: 150px;
+  float: left;
+  border-radius: 25px;
+  padding: 15px;
 
 }
 
-.btnEdit
+.coachInfo
 {
-  margin: -28px 5px 4px 30px;
+  padding: 25px 25px 25px 0px;
 }
+
+.studentInfo
+{
+  padding: 25px 25px 25px 0px;
+} 
