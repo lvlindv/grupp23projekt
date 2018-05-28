@@ -87,9 +87,9 @@ loggedInAsAdmin();
                 <td><?php echo $row["phoneNr"]; ?></td>
                 <input type="hidden" >
                 <!-- När inputen är "klickad" skickas coachId som ska med i formet -->
-                <td> <input type="submit" value="Ta bort" name="btndel"></td>
+                <td> <button type="submit" value="Ta bort" name="btndel">Ta bort</button></td>
                 <!-- coahID skickas med url:n när användaren klickar på länken-->
-                <td><a href="adminEditPage.php?id=<?php echo $row["coachId"]; ?>">Redigera</a></td>
+                <td><button onclick="location.href='adminEditPage.php?id=<?php echo $row["coachId"]; ?>';">Redigera</button></td>
               </tr>
             </form>
 
