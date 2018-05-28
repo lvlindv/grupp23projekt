@@ -10,10 +10,27 @@ table
     background-color: grey;
 }
 
-.availableCoaches
+.availableCoachesTable
 {
   width: 900px;
   margin: 10px 30px 20px 100px;
+}
+
+.studyCoachTable
+{
+  width: 1200px;
+  margin: 10px 30px 20px 10px;
+}
+
+.btnDelete
+{
+  margin: -62px 5px 4px 10px;
+
+}
+
+.btnEdit
+{
+  margin: -28px 5px 4px 10px;
 }
 
 table, td, th

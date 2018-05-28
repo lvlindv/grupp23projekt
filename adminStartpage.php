@@ -94,7 +94,7 @@ loggedInAsAdmin();
 
         <h2> Ta bort eller redigera info för studiecoach </h2>
         <!-- En tabell där alla studiecoacher ska placeras in-->
-         <table class="studieCoachTable">
+         <table class="studyCoachTable">
            <tr class="listheader">
              <th>Namn</th>
              <th>E-post</th>
@@ -102,7 +102,6 @@ loggedInAsAdmin();
              <th>Beskrivning</th>
              <th>Telefonummer</th>
              <th>Alternativ</th>
-             <th></th>
            </tr>
 
             <?php
@@ -122,9 +121,12 @@ loggedInAsAdmin();
                 <td><?php echo $row["phoneNr"]; ?></td>
                 <!-- När inputen är "klickad" skickas coachId som ska med i formet -->
 
+
+
                 <!-- coahID skickas med url:n när användaren klickar på länken-->
-                <td><button class="" onclick="location.href='adminDeletePage.php?id=<?php echo $row["coachId"]; ?>';">Ta bort</button></td>
-                <td><button class="" onclick="location.href='adminEditPage.php?id=<?php echo $row["coachId"]; ?>';">Redigera</button></td>
+
+                <td><button class="btnDelete" onclick="location.href='adminDeletePage.php?id=<?php echo $row["coachId"]; ?>';">Ta bort</button>
+                <button class="btnEdit" onclick="location.href='adminEditPage.php?id=<?php echo $row["coachId"]; ?>';">Redigera</button></td>
 
               </tr>
 
