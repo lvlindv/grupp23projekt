@@ -64,54 +64,50 @@
 
     <!-- Ruta för sökning och bokning av studiecoacher -->
     <div class="boxNewBookings">
-
-    <!-- Formulär för bokning av studiehjälp -->
-        <h2> Boka ny tid </h2>
-    <div class="newBooking">
-    <!-- Kopplar tillbaka till startsidan vid sökning -->
-    <form action="studentStartpage.php" method="POST">
-      <!-- Rubrik -->
-      <label for="dayDropdown"><b>Välj dag</b></label>
-      <!-- Dropdown-lista med vardagar -->
-      <select name="dayName">
-        <option value="Måndag">Måndag</option>
-        <option value="Tisdag">Tisdag</option>
-        <option value="Onsdag">Onsdag</option>
-        <option value="Torsdag">Torsdag</option>
-        <option value="Fredag">Fredag</option>
-      </select>
-
-      <!-- Rubrik -->
-      <label for="subjectDropdown"><b>Välj ämne</b></label>
-          <?php
-            // Dropdown-lista med ämnen hämtade från databasen
-            $resultSubjects = $connection->query(showSubjects());
-            makeDropdownFromResult("name", $resultSubjects);
-          ?>
-        <!-- Sök-knapp -->
-        <button class="btnSearch" type="submit" value="Sök" name="btnSearch">Sök </button>
-    </form>
-
-    <?php
-      // Hämtar tillgängliga studiecoacher
-      include "availableCoaches.php";
-    ?>
-
-      <!-- Skriver ut tillgängliga studiecoacher -->
-      <div class="resultAvailability">
-      <label for="resultAvailability"><b>
+      <!-- Formulär för bokning av studiehjälp -->
+      <h2> Boka ny tid </h2>
+      <div class="newBooking">
+        <!-- Kopplar tillbaka till startsidan vid sökning -->
+        <form action="studentStartpage.php" method="POST">
+          <!-- Rubrik -->
+          <label for="dayDropdown"><b>Välj dag</b></label>
+          <!-- Dropdown-lista med vardagar -->
+          <select name="dayName">
+            <option value="Måndag">Måndag</option>
+            <option value="Tisdag">Tisdag</option>
+            <option value="Onsdag">Onsdag</option>
+            <option value="Torsdag">Torsdag</option>
+            <option value="Fredag">Fredag</option>
+          </select>
+          <!-- Rubrik -->
+          <label for="subjectDropdown"><b>Välj ämne</b></label>
+            <?php
+              // Dropdown-lista med ämnen hämtade från databasen
+              $resultSubjects = $connection->query(showSubjects());
+              makeDropdownFromResult("name", $resultSubjects);
+            ?>
+            <!-- Sök-knapp -->
+          <button class="btnSearch" type="submit" value="Sök" name="btnSearch">Sök </button>
+        </form>
         <?php
-        echo "Tillgängliga coacher för den valda dagen ".$selectedDay." och det valda ämnet ".$selectedSubject.":";
+          // Hämtar tillgängliga studiecoacher
+          include "availableCoaches.php";
         ?>
-      </b></label>
+        <!-- Skriver ut tillgängliga studiecoacher -->
+        <div class="resultAvailability">
+        <label for="resultAvailability"><b>
+          <?php
+          echo "Tillgängliga coacher för den valda dagen ".$selectedDay." och det valda ämnet ".$selectedSubject.":";
+          ?>
+        </b></label>
+        </div>
       </div>
-</div>
       <?php
 
       // Om query inte resulterar i några rader så finns ingen tillgänglig coach
       if(mysqli_num_rows($resultAvailability)<1)
       {
-        echo "Det finns inga tillgängliga studiecoacher för den valda dagen/ämnet. Vänligen gör om din sökning.";
+        echo '<p class="noAvailability">Det finns inga tillgängliga studiecoacher för den valda dagen/ämnet. Vänligen gör om din sökning.</p>';
       }
       //Annars matas resultatet ut i tabellform
       else
@@ -121,41 +117,35 @@
         <table class="availableCoachesTable">
           <!-- Tabellrubriker i fetstilt -->
           <tr>
-
             <th>Namn</th>
-
             <th>Beskrivning</th>
-
             <th></th>
           </tr>
           <?php
-            // Matar ut resultatet från queryn ovan
-            while ($row = $resultAvailability->fetch_assoc())
-            {
-          ?>
-              <!-- Form med tabell över tillgängliga studiecoacher -->
-              <!-- Namn och beskrivning för varje tillgänglig coach matas ut på ny rad -->
-              <tr>
-                <!-- Skickar med den valda studiecoachens ID till booking.php -->
-                <!-- Skriver ut den valda coachens namn och beskrivning -->
-                <td><?php echo $row['name'] ?></td>
-                <div class="descriptionStudyCoach">
-                  <td><?php echo $row['description'] ?></td>
-                </div>
-                <!-- Knapp för bokning som kopplar till booking.php -->
-
-                <td><div class="btnBook"><button onclick="location.href='booking.php?coachId=<?php echo $row["coachId"]; ?>';">Boka</button></div></td>
-
-              </tr>
-          <?php
-            }
-          ?>
-          <!-- Slut på tabell -->
-          </table>
-          <?php
-            }
-          ?>
-        </div>
+          // Matar ut resultatet från queryn ovan
+          while ($row = $resultAvailability->fetch_assoc())
+          {
+        ?>
+            <!-- Form med tabell över tillgängliga studiecoacher -->
+            <!-- Namn och beskrivning för varje tillgänglig coach matas ut på ny rad -->
+            <tr>
+              <!-- Skickar med den valda studiecoachens ID till booking.php -->
+              <!-- Skriver ut den valda coachens namn och beskrivning -->
+              <td><?php echo $row['name'] ?></td>
+              <div class="descriptionStudyCoach">
+                <td><?php echo $row['description'] ?></td>
+              </div>
+              <!-- Knapp för bokning som kopplar till booking.php -->
+              <td><div class="btnBook"><button onclick="location.href='booking.php?coachId=<?php echo $row["coachId"]; ?>';">Boka</button></div></td>
+            </tr>
+        <?php
+          }
+        ?>
+        <!-- Slut på tabell -->
+        </table>
+    <?php
+      }
+    ?>
     </div>
     <!-- Knapp för att logga ut användare -->
     <div class="loginBtn">
