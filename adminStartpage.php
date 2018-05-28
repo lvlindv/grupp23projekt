@@ -94,9 +94,9 @@ loggedInAsAdmin();
             ?>
 
           </table>
-         <?php
-          // Länk för att logga ut användare
-           echo '<a href="logoutUser.php">Logga ut</a>';
-          ?>
+
+          <!-- Länk för att logga ut användare -->
+          <a href="logoutUser.php" class="boxLinkLogout">Logga ut</a>
+
       </body>
 </html>

@@ -32,3 +32,10 @@ th {
   background-color: rgba(0,0,0,.5);
   box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
 }
+
+.boxLinkLogout
+{
+  margin: 100px 10px 0px 100px;
+  top: 85%;
+  color: black;
+}
