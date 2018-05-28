@@ -114,9 +114,6 @@ select
   padding-top: 10px;
 }
 
-
-
-
 .formBookings
 {
   margin-left: auto;
@@ -166,6 +163,11 @@ select
 }
 
 .coachInfo
+{
+  padding: 25px 25px 25px 0px;
+}
+
+.studentInfo
 {
   padding: 25px 25px 25px 0px;
 }
