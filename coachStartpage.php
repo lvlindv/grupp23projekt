@@ -19,11 +19,14 @@
     <meta charset="utf-8">
     <title>Startsida StudieCoach</title>
     <script src="functions.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="admin.css">
   </head>
 
 <body>
   <h1> <?php echo "Välkommen ".$_SESSION["name"]."!"; ?> </h1><!--Rubrik med studiecoachens email-->
 
+<div class="formBookings"> <!-- class för "dina bokningar" finns i admin.css-->
   <h2> Dina bokningar </h2><!--underrubrik-->
   <section class="myBookings"><!--ruta med bokningar-->
     <?php
@@ -37,7 +40,9 @@
       }
     ?>
   </section>
+</div>
 
+<div class="formDay"> <!-- klass för alla dagarna i rulllistan, formet finns i admin.css-->
   <h2> Lägg till tillgängliga tider </h2><!--underrubrik-->
   <form action="addAvailability.php" method="POST">
     <label for="dayDropdown"><b>Välj dag</b></label><!--Label för dropdown med dagar-->
@@ -49,8 +54,9 @@
       <option value="Fredag">Fredag</option>
     </select>
 
-    <input type="submit" value="Lägg till" name="btnAdd"/><!--Knapp för att lägga till tillgänglighet-->
-  </form>
+<button class="addDay" type="submit" name="btnAdd">Lägg till</button> <!--knappen lägg till dag-->
+      </form>
+</div>
     <?php
     //Länk för att logga ut användare
     echo '<a href="logoutUser.php">Logga ut</a>';

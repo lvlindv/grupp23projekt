@@ -38,6 +38,8 @@
   <head>
     <meta http-equiv="content-type" content="text/html" charset="utf-8" />
     <title>Startsida</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="admin.css">
   </head>
 
   <body>
@@ -81,7 +83,7 @@
             makeDropdownFromResult("name", $resultSubjects);
           ?>
         <!-- Sök-knapp -->
-        <input type="submit" value="Sök" name="btnSearch"/>
+        <button type="submit" value="Sök" name="btnSearch">Sök </button>
     </form>
 
     <?php
@@ -131,7 +133,7 @@
                 <td><?php echo $row['name'] ?></td>
                 <td><?php echo $row['description'] ?></td>
                 <!-- Knapp för bokning som kopplar till booking.php -->
-                <td><input type="submit" value="Boka" name="btnBook"></td>
+                <td><button class="btnBook" type="submit" value="Boka" name="btnBook">Boka</button></td>
               </tr>
               </form>
           <?php
@@ -139,11 +141,9 @@
           ?>
           <!-- Slut på tabell -->
           </table>
-    <?php
-      }
-      // Länk för att logga ut användaren
-      echo "<br/><br/>";
-      echo '<a href="logoutUser.php">Logga ut</a>';
-    ?>
+          <?php
+            }
+          ?>
+          <button><a href="logoutUser.php">Logga ut</a></button>
   </body>
 </html>
