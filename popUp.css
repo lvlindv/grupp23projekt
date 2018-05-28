@@ -9,7 +9,7 @@ margin: 270px auto 0 auto;
 }
 .buttonBack{
   color: black;
-  font-size: 18px;  /* Storleken på texten i knapparna */
+  font-size: 18px;
   position: absolute;
   width: 240px;
   height: 20px;
@@ -23,7 +23,7 @@ margin: 270px auto 0 auto;
 }
 .tryAgain{
   color: black;
-  font-size: 18px;  /* Storleken på texten i knapparna */
+  font-size: 18px;
   position: absolute;
   width: 240px;
   height: 20px;
@@ -35,18 +35,16 @@ margin: 270px auto 0 auto;
   position: absolute;
   margin: 20px auto 100px 50px;
 }
-.already{
+.alreadyAvailable{
   color: white;
-  font-size: 20px;
-  position: relative;
-  margin: 30px auto 100px 8px;
-
+  padding-top: 10px;
 }
-.buttonBack2{
-  color: black;
-  font-size: 18px;  /* Storleken på texten i knapparna */
-  position: absolute;
+.linkStartpage{
+  color: white;
+  font-size: 18px;
   width: 240px;
   height: 20px;
-  margin: 50px auto 100px -112px;
+  margin-left: 80px;
+  margin-bottom: 5px;
+
 }
