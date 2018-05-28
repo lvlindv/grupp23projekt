@@ -128,8 +128,6 @@ loggedInAsAdmin();
 
               </tr>
 
-
-
             <?php
              }
             ?>

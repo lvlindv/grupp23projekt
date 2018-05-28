@@ -120,7 +120,7 @@
       {
       ?>
         <!-- Tabell med tillgängliga studiecoacher -->
-        <table>
+        <table class"availableCoaches">
           <!-- Tabellrubriker i fetstilt -->
           <tr>
 
