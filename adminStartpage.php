@@ -127,8 +127,6 @@ loggedInAsAdmin();
 
               </tr>
 
-
-
             <?php
              }
             ?>
