@@ -10,12 +10,13 @@
     <link rel="stylesheet" href="startpage.css">
     <link rel="stylesheet" href="popUp.css">
 
+    <!-- Titel på flik -->
     <title>Registrering</title>
-    </head>
+  </head>
 
-  <body>
-  <!--klass för sidan som användaren kommer till från registerFormStudent-->
-    <div class="popUp">
+      <body>
+      <!--klass för sidan som användaren kommer till från registerFormStudent-->
+      <div class="popUp">
 
 
       <?php
@@ -26,19 +27,20 @@
       include 'db_connect.php';
       include 'queries.php';
 
+      //Definierar variabler som används i funktionen checkEmail för att kolla om emailadressen redan finns i databasen
       $name = $_POST['namn'];
       $email = $_POST['email'];
       $password = $_POST['psw'];
       $phoneNr = $_POST['mnr'];
 
-      // Kollar om email inte finns i databasen
+      // Kollar om email finns i databasen
       if (!$connection->query(checkEmail($email)))
       {
       echo "Tyvärr, emailadressen finns redan registrerad!";
       }
       else
       {
-      // Lägger in studenten i databasen
+      // Om inte email finns i databasen, läggs den nya studenten in i databasen
       $connection->query(addStudent($name, $email, $password, $phoneNr));
       echo '<a class="userSaved">Användaren sparad!</a>';
       echo '<a href="startpage.php" class="buttonBack">Tillbaka till startsidan</a>';
