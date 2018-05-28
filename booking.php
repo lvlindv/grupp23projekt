@@ -19,7 +19,7 @@ $selectedDay = $_SESSION['selectedDay'];
 $selectedSubject = $_SESSION['selectedSubject'];
 $currentStudentId = $_SESSION['studentId'];
 // Sätter coachId till en variabel.
-$currentCoachId = $_POST['coachId'];
+$currentCoachId = $_GET['coachId'];
 
 // Hämtar studenters bokningar
 $result = mysqli_query($connection, checkBooking($selectedDay, $currentStudentId));
@@ -35,25 +35,24 @@ else
 {
   // Lägger till en bokning i databasen, med hjälp av funktionen addBooking från queries.php
   // Placerar in sessionsvariablerna och variabeln som parametrar.
-  if ($connection ->query(addBooking($selectedDay, $selectedSubject, $currentStudentId, $currentCoachId)))
+  if ($connection->query(addBooking($selectedDay, $selectedSubject, $currentStudentId, $currentCoachId)))
   {
     // Skickar vidare till startsida + meddelande om att bokning lyckades
     header("Location: studentStartpage.php?msg=nybokning");
 
-    if ($connection ->query(deleteAvailability($selectedDay, $currentCoachId)))
+    if ($connection->query(deleteAvailability($selectedDay, $currentCoachId)))
     {
       echo "Tillgänglighet borttagen.";
     }
     else
     {
+      // Visar att förfrågan ej gick igenom och printar ut SQL-satsen.
       echo "Något gick fel.". $sql. "<br>". $connection->error;
     }
 
   }
   else
   {
-    // Visar att förfrågan ej gick igenom och printar ut SQL-satsen.
-    echo "Något gick fel.". $sql. "<br>". $connection->error;
     // Skickar vidare till startsida + felmeddelande
     header("Location: studentStartpage.php?msg=felmeddelande");
   }

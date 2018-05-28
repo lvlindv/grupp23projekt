@@ -52,8 +52,27 @@ loggedInAsAdmin();
           <label for="description" class="boxLabel"><b>Beskrivning</b></label>
           <input type="text" class="boxInput" placeholder="Ange en beskrivning av StudyCoachen" name="description" >
 
-          <label for="subjects" class="boxLabel"><b>Ämnen</b></label>
-          <input type="text" class="boxInput" placeholder="Ange ämnen" name="subject" >
+          <?php
+          // Lista över valbara ämnen för en studiecoach att hjälpa till med
+          // Queryn hämtar ämnen från databasen
+          $result_options = $connection->query(showSubjects());
+          $select_name = "subject";
+
+            // Om tabellen har fler än 0 rader exekveras koden
+            if ($result_options->num_rows > 0)
+            {
+              //Skapar dropdown-lista med multiple choice
+              echo "<select multiple='multiple' name=".$select_name."[] >";
+              // Hämtar alla rader från resultatet av query
+              while ($row = $result_options->fetch_row())
+              {
+                // Matar ut options baserat på datan från tabellen
+                $val = $row[0];
+                echo utf8_encode("<option value=\"$val\">$val</option>\n");
+              }
+              echo "</select>";
+            }
+          ?>
 
           <button name="btnReg" class="registrera" type="submit" value="Button">REGISTRERA</button>
 
