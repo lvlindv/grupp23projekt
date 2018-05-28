@@ -11,7 +11,7 @@ body
 
 .box
 {
-  margin-left: 450px;
+  margin-left: 530px;
   width: 350px;
   height: 450px;
   box-sizing: border-box;
@@ -123,7 +123,9 @@ body
 .banners
 {
   float: right;
-  margin-right: 50px;
+  margin-right: 130px;
+  margin-top: 70px;
+
 }
 
 .halebop
