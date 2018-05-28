@@ -48,9 +48,17 @@ include "db_connect.php";
       <div class="divBoxLink">
         <!-- Referens för glömt lösenord -->
         <a href="startpage.php" class="boxLink">Glömt ditt lösenord?</a>
+
       </div>
 
 
+
     </div>
+
+    <div class="banners">
+    <a href="https://www.halebop.se/"><img src="hale.jpg" alt="halebop" class="halebop"></a>
+    <a href="https://www.studentbokhandeln.se/"><img src="Beg.jpg" alt="studentbokhandeln" class="studentbokhandeln"></a>
+    </div>
+
   </body>
 </html>
