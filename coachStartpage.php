@@ -15,7 +15,7 @@
   if (isset($_GET["msg"])) {
     switch ($_GET["msg"]) {
       case 'alreadyAvailable':
-        echo "<script type='text/javascript'>alert('Du har redan att du är tillgänglig den dagen.')</script>";
+        echo "<script type='text/javascript'>alert('Du har redan angett att du är tillgänglig den dagen.')</script>";
         break;
 
       case 'felmeddelande':

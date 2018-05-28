@@ -59,7 +59,7 @@
     if ($connection->query(addAvailability($selectedDay, $coachId)))
     {
       // DENNA ÄR EJ FULLSTÄNDIG - REDIGERA!
-      echo '<a class="already">Du har nu angett att du är tillgänglig på </a>'.$selectedDay."!";
+      echo '<div class="already">Du har nu angett att du är tillgänglig på'.$selectedDay."!";
       echo '<a href="coachStartpage.php" class="buttonBack2">Tillbaka till din sida</a>';
     }
     else
