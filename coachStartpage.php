@@ -26,6 +26,12 @@
 <body>
   <h1> <?php echo "Välkommen ".$_SESSION["name"]."!"; ?> </h1><!--Rubrik med studiecoachens email-->
 
+
+  <div class="loggOut"> <!--just nu används diven ej-->
+  <button><a href="logoutUser.php">Logga ut</a></button>
+  </div>
+
+
 <!-- <div class="formBookings"> class för "dina bokningar" finns i admin.css-->
   <h2> Dina bokningar </h2><!--underrubrik-->
 
@@ -63,6 +69,7 @@
 <!-- <button class="addDay" type="submit" name="btnAdd">Lägg till</button> knappen lägg till dag-->
       </form>
 
-    <button><a href="logoutUser.php">Logga ut</a></button>
+
+
 </body>
 </html>
