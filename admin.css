@@ -63,7 +63,50 @@ th {
   height: 40px;
 }
 
+.addDay{
+  margin-bottom: 300px;
+  width: 100px;
+  height: 40px;
+}
+
+
 .boxTitle
 {
   padding-top: 10px;
+}
+
+.myBookings
+{
+  background-color: red;
+}
+
+section {
+    background-color: red;
+
+}
+
+
+.formBookings
+{
+  margin-left: auto;
+  margin-right: auto;
+  width: 350px;
+  height: 525px;
+  box-sizing: border-box;
+  background-color: rgba(0,0,0,.5);
+  box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
+  float: left;
+}
+
+.formDay{
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 400px;
+  height: 100px;
+  box-sizing: border-box;
+  background-color: rgba(0,0,0,.5);
+  box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
+  /*float: right;*/
+
 }
