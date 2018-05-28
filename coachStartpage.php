@@ -12,6 +12,20 @@
   // Kollar om studiecoach är inloggad
   loggedInAsStudyCoach();
 
+  if (isset($_GET["msg"])) {
+    switch ($_GET["msg"]) {
+      case 'alreadyAvailable':
+        echo "<script type='text/javascript'>alert('Du har redan att du är tillgänglig den dagen.')</script>";
+        break;
+
+      case 'felmeddelande':
+        echo "<script type='text/javascript'>alert('Något gick fel. Försök igen.')</script>";
+        break;
+
+      default:
+        break;
+    }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="sv" dir="ltr">
@@ -24,8 +38,8 @@
   </head>
 
 <body>
-  <div class="loggOut"> <!--loggaut högst upp till höger-->
-  <button href="logoutUser.php">Logga ut</button>
+  <div class="logout"> <!--loggaut högst upp till höger-->
+    <button onclick="location.href='logoutUser.php';">Logga ut</button>
   </div>
   <h1> <?php echo "Välkommen ".$_SESSION["name"]."!"; ?> </h1><!--Rubrik med studiecoachens email-->
 
