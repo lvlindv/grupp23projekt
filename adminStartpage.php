@@ -27,6 +27,10 @@ loggedInAsAdmin();
     <link rel="stylesheet" href="admin.css">
   </head>
       <body>
+        <!-- Länk för att logga ut användare -->
+        <div class="logout">
+          <button href="logoutUser.php">Logga ut</button>
+        </div>
         <!-- Visar den inloggade admins epostadress-->
         <h1> <?php echo "Välkommen ".$_SESSION["adminEmail"]."!"; ?>  </h1>
 
@@ -130,9 +134,5 @@ loggedInAsAdmin();
             ?>
 
           </table>
-
-          <!-- Länk för att logga ut användare -->
-          <a href="logoutUser.php" class="boxLinkLogout">Logga ut</a>
-
       </body>
 </html>

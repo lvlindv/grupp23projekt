@@ -43,7 +43,8 @@
   </head>
 
   <body>
-    <div class="loggOut"> <!--loggaut högst upp till höger-->
+    <!-- Länk för att logga ut användare -->
+    <div class="logout">
     <button href="logoutUser.php">Logga ut</button>
     </div>
     <!-- Rubrik med användarens namn -->

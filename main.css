@@ -22,7 +22,6 @@ h2
 
 form
 {
-  margin: auto;
 }
 
 input
@@ -65,7 +64,7 @@ button:hover
   color: white;
   transition-duration: 0.4s;
 }
-.loggOut
+.logout
 {
   float: right;
   margin-right: 170px;
