@@ -5,8 +5,7 @@ session_start();
 
 // Kopplar till databasen via db_connect.php
 include "db_connect.php";
-
- ?>
+?>
 
 <!DOCTYPE HTML>
 <html lang="sv" dir="ltr">
