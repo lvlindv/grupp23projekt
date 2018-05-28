@@ -53,7 +53,7 @@ $coach = $connection->query("SELECT * FROM StudyCoach WHERE coachId = '$coachId'
 
 <!-- coachid är en hidden typ, denna visas ej men finns med och skickas då vidare till adminUpdate.php men inte synligt-->
       <input type="hidden" name="coachId" value="<?php echo $coachId; ?>">
-      <button type="submit" class="registrera">Spara redigering</button>
+      <button type="submit" class="registrera">Spara</button>
 
    </form>
 
