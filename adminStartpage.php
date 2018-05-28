@@ -13,17 +13,18 @@ include "functions.php";
 
 // Kollar om användare är inloggad som admin
 loggedInAsAdmin();
+
 ?>
 
 <!DOCTYPE html>
 <html lang="sv" dir="ltr">
   <head>
     <!-- Koppling till js-fil med validering -->
-    <script src="functions.js"></script>
     <meta charset="utf-8">
+    <title>Startsida</title>
+    <script src="functions.js"></script>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="admin.css">
-    <title>Startsida</title>
   </head>
       <body>
         <!-- Visar den inloggade admins epostadress-->
@@ -34,7 +35,7 @@ loggedInAsAdmin();
   <h2> Registrera en ny studiecoach </h2>
 </div>
         <!-- Ett formulär för att lähha till nya studiecoacher-->
-        <form name="regHelper" action="registerToDBCoach.php" method="post" onsubmit="return validateStudyCoach()" >
+        <form name="regHelper" action="registerToDBCoach.php" method="post" onsubmit="return validateStudyCoach()">
 
           <label for="name" class="boxLabel"><b>Fullständigt namn</b></label>
           <input type="text" class="boxInput" placeholder="Ange fullständigt namn på StudyCoachen" name="name">
@@ -54,7 +55,7 @@ loggedInAsAdmin();
           <label for="subjects" class="boxLabel"><b>Ämnen</b></label>
           <input type="text" class="boxInput" placeholder="Ange ämnen" name="subject" >
 
-          <button type="submit" class="registrera">Registrera</button>
+          <button name="btnReg" class="registrera" type="submit" value="Button">REGISTRERA</button>
 
        </form>
 
