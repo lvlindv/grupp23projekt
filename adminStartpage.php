@@ -27,14 +27,18 @@ loggedInAsAdmin();
     <link rel="stylesheet" href="admin.css">
   </head>
       <body>
-        <!-- Visar den inloggade admins epostadress-->
+        <!-- Länk för att logga ut användare -->
+        <div class="logout">
+          <button onclick="location.href='logoutUser.php';">Logga ut</button>
+        </div>
+        <!-- Visar den inloggade admins e-postadress-->
         <h1> <?php echo "Välkommen ".$_SESSION["adminEmail"]."!"; ?>  </h1>
 
         <div class="formRegisterCoach">
         <div class="boxTitle">
           <h2> Registrera en ny studiecoach </h2>
         </div>
-        <!-- Ett formulär för att lähha till nya studiecoacher-->
+        <!-- Ett formulär för att lägga till nya studiecoacher-->
         <form name="regHelper" action="registerToDBCoach.php" method="post" onsubmit="return validateStudyCoach()">
 
           <label for="name" class="boxLabel"><b>Fullständigt namn</b></label>
@@ -83,12 +87,12 @@ loggedInAsAdmin();
 
         </div>
         <?php
-        // Plockar ut alla Study Coches ur databasen
+        // Plockar ut alla studiecoacher ur databasen
         $result = mysqli_query($connection, showStudyCoaches());
         ?>
 
         <h2> Ta bort eller redigera info för studiecoach </h2>
-        <!-- En tabell där alla Studycoaches ska placeras in-->
+        <!-- En tabell där alla studiecoacher ska placeras in-->
          <table class="studieCoachTable">
            <tr class="listheader">
              <th>Namn</th>
@@ -130,9 +134,5 @@ loggedInAsAdmin();
             ?>
 
           </table>
-
-          <!-- Länk för att logga ut användare -->
-          <a href="logoutUser.php" class="boxLinkLogout">Logga ut</a>
-
       </body>
 </html>

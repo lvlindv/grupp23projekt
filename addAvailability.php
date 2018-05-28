@@ -50,9 +50,8 @@
   // Kollar om studiecoach redan markerat sig som tillgänglig den valda dagen
   if(mysqli_num_rows($result)>0)
   {
-    // DENNA ÄR EJ FULLSTÄNDIG - REDIGERA!
-    echo '<a class="already">Du har redan angett att du är tillgänglig på </a>'.$selectedDay."!";
-    echo '<a href="coachStartpage.php" class="buttonBack2">Tillbaka till din sida</a>';
+    // Skickar vidare till startsida + meddelande om att den valda dagen redan markerats som tillgänglig
+    header("Location: coachStartpage.php?msg=alreadyAvailable");
   }
   else
   {
@@ -60,13 +59,13 @@
     if ($connection->query(addAvailability($selectedDay, $coachId)))
     {
       // DENNA ÄR EJ FULLSTÄNDIG - REDIGERA!
-      echo '<a class="already">Du har nu angett att du är tillgänglig på </a>'.$selectedDay."!";
+      echo '<div class="already">Du har nu angett att du är tillgänglig på'.$selectedDay."!";
       echo '<a href="coachStartpage.php" class="buttonBack2">Tillbaka till din sida</a>';
     }
     else
     {
-        echo '<a class="wrong">Något gick fel...</a>';
-        echo '<a href="coachStartpage.php" class="tryAgain">Vänligen försök igen</a>';
+      // Skickar vidare till startsida + felmeddelande
+      header("Location: studentStartpage.php?msg=felmeddelande");
     }
     $connection->close();
   }
