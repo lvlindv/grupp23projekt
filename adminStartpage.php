@@ -67,7 +67,15 @@ loggedInAsAdmin();
         <h2> Ta bort eller redigera info för studiecoach </h2>
         <!-- En tabell där alla Studycoaches ska placeras in-->
          <table class="studieCoachTable">
-           <tr class="listheader"><th></th><th>Namn</th><th>E-post</th><th>Lösenord</th><th>Beskrivning</th><th>Telefonummer</th><th>Alternativ</th><th></th></tr>
+           <tr class="listheader">
+             <th>Namn</th>
+             <th>E-post</th>
+             <th>Lösenord</th>
+             <th>Beskrivning</th>
+             <th>Telefonummer</th>
+             <th>Alternativ</th>
+             <th></th>
+           </tr>
 
             <?php
              // Matar ut resultatet från queryn ovan
@@ -75,23 +83,24 @@ loggedInAsAdmin();
              {
             ?>
             <!-- Placerar in värdena från databasen i rätt kolumn-->
-            <form action="adminDeletePage.php" method="post">
               <tr>
                 <!-- Skickar med valt coachId till adminDeletePage.php-->
                 <!-- Väljer hidden som type så att det inte visas på sidan-->
-                <td> <input type="hidden" name="coachId"value=<?php echo $row["coachId"]; ?></td>
+
                 <td><?php echo $row["name"]; ?></td>
                 <td><?php echo $row["email"]; ?></td>
                 <td><?php echo $row["password"]; ?></td>
                 <td><?php echo $row["description"]; ?></td>
                 <td><?php echo $row["phoneNr"]; ?></td>
-                <input type="hidden" >
                 <!-- När inputen är "klickad" skickas coachId som ska med i formet -->
-                <td> <button type="submit" value="Ta bort" name="btndel">Ta bort</button></td>
+
                 <!-- coahID skickas med url:n när användaren klickar på länken-->
+                <td><button onclick="location.href='adminDeletePage.php?id=<?php echo $row["coachId"]; ?>';">Ta bort</button></td>
                 <td><button onclick="location.href='adminEditPage.php?id=<?php echo $row["coachId"]; ?>';">Redigera</button></td>
+
               </tr>
-            </form>
+
+
 
             <?php
              }

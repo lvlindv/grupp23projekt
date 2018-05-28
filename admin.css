@@ -18,7 +18,8 @@ table, td, th
 }
 
 td {
-    height: 50px;
+    width: 100px;
+    height: 60px;
     vertical-align: bottom;
 }
 

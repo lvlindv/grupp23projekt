@@ -8,7 +8,7 @@ include "db_connect.php";
 include "functions.php";
 
 // Kollar om användare är inloggad som admin
-//loggedInAsAdmin();
+loggedInAsAdmin();
 
 // Hämtar ur variabeln ur URL:en
 $coachId = $_GET['id'];

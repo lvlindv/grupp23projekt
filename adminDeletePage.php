@@ -6,10 +6,11 @@ include 'queries.php';
 // Koppling till fil med funktioner
 include "functions.php";
 // Kollar om användare är inloggad som admin
+session_start();
 loggedInAsAdmin();
 
 // Skapar en variabel för det valda coachId
-$currentCoachId = $_POST['coachId'];
+$currentCoachId = $_GET['coachId'];
 // Kopplar till databasen och använder functionen deleteStudyCoach på variabeln
 if ($connection ->query(deleteStudyCoach($currentCoachId)))
 {
