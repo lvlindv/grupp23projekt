@@ -62,6 +62,7 @@
     </section>
     <!-- Formulär för bokning av stydiehjälp -->
     <div class="newBooking">
+<div class="bookDaySubject">
 
     <h2> Boka ny tid </h2>
     <!-- Kopplar tillbaka till startsidan vid sökning -->
@@ -87,7 +88,7 @@
         <!-- Sök-knapp -->
         <button type="submit" value="Sök" name="btnSearch">Sök </button>
     </form>
-
+</div>
     <?php
       // Hämtar tillgängliga studiecoacher
       include "availableCoaches.php";
@@ -99,7 +100,6 @@
         echo "Tillgängliga coacher för den valda dagen ".$selectedDay." och det valda ämnet ".$selectedSubject.":";
         ?>
       </b></label>
-      <br><br>
 
       <?php
 
