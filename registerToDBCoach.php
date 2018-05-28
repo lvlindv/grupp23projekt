@@ -40,29 +40,29 @@
         // Länk tillbaka till adminstartpage.php
         echo '<a href="adminStartpage.php" class="buttonBack">Tillbaka till startsidan</a>';
 
-        // Hämtar rader i tabellen StudyCoach som motsvarar angiven email och lösenord
+        // Hämtar rader i tabellen StudyCoach som motsvarar den nya studiecoachen
         $resultNewStudyCoach = mysqli_query($connection, getStudyCoach($email, $psw));
 
         $row = $resultNewStudyCoach->fetch_assoc();
 
+        // Hämtar den nya studiecoachens ID
         $coachId = $row["coachId"];
 
+        // Lägger till varje valt ämne och coachID i tabellen CoachSubjects
         foreach ($_POST['subject'] as $subject)
         {
-          $query = "INSERT INTO CoachSubjects(subjectName, coachId) VALUES ('$subject', '$coachId')";
-
-          $connection->query($query);
+          $connection->query(addCoachStubject($subject, $coachId));
         }
 
       }
       else
       {
-        // Visar att SQL-satsen inte lyckades läggas till
+        // Visar att studiecoachen inte lyckades läggas till
         echo "Något gick fel.". $sql. "<br>". $connection->error;
         // Länk tillbaka till adminstartpage
         echo '<a href="adminStartpage.php">Försök igen.</a>';
       }
-      // avslutar
+      // Avslutar databaskoppling
       $connection->close();
       ?>
     </div>
