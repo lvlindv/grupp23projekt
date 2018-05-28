@@ -78,7 +78,7 @@
           <?php
             // Dropdown-lista med ämnen hämtade från databasen
             $resultSubjects = $connection->query(showSubjects());
-            make_select_from_result("name", $resultSubjects);
+            makeDropdownFromResult("name", $resultSubjects);
           ?>
         <!-- Sök-knapp -->
         <input type="submit" value="Sök" name="btnSearch"/>

@@ -1,7 +1,7 @@
 <?php
 
 // Skapar en dropdown meny av data från databasen
-function make_select_from_result($select_name, $result_options)
+function makeDropdownFromResult($select_name, $result_options)
 {
 	// Om tabellen har fler än 0 rader exekveras koden
 	if ($result_options->num_rows > 0)
