@@ -42,47 +42,42 @@
 
   <h1> <?php echo "Välkommen ".$_SESSION["name"]."!"; ?> </h1><!--Rubrik med studiecoachens email-->
 
-  <div class="logout"> <!--loggaut högst upp till höger-->
-    <button onclick="location.href='logoutUser.php';">Logga ut</button>
-  </div>
-
-<!-- <div class="formBookings"> class för "dina bokningar" finns i admin.css-->
-  <h2> Dina bokningar </h2><!--underrubrik-->
-
-
-  <section class="myBookings"><!--ruta med bokningar-->
+  <!-- underrubrik -->
+  <h2> Dina bokningar </h2>
+  <!-- ruta med bokningar -->
+  <section class="myBookings">
     <?php
       //Lagrar resultat från query som hämtar studiecoachens bokningar och matar ut varje bokning
       $resultBookings = $connection->query(showCoachBookings($_SESSION['coachEmail']));
       while ($row = $resultBookings->fetch_assoc())
       {
-        //Skriver ut bokningens dag, ämne, coachens namn och kontaktuppgifter
-        //samt studentens namn och kontaktuppgifter
+        // Skriver ut bokningens dag, ämne, coachens namn och kontaktuppgifter
+        // samt studentens namn och kontaktuppgifter
         include "showBookingsStudyCoach.php";
       }
     ?>
   </section>
-
-<div class="boxCoachAvalible">
- <!-- <div class="formDay"> klass för alla dagarna i rulllistan, formet finns i admin.css-->
-  <h2> Lägg till tillgängliga tider </h2><!--underrubrik-->
-  <form action="addAvailability.php" method="POST">
-    <!--rubrik för alla dagar-->
-    <label for="dayDropdown"><b>Välj dag</b></label><!--Label för dropdown med dagar-->
-    <!-- Dropdown-lista med vardagar -->
-    <select name="dayName">
-      <option value="Måndag">Måndag</option>
-      <option value="Tisdag">Tisdag</option>
-      <option value="Onsdag">Onsdag</option>
-      <option value="Torsdag">Torsdag</option>
-      <option value="Fredag">Fredag</option>
-    </select>
-    <!-- Knapp för att lägga till tillgänglighet -->
-    <button class="addDay" type="submit" name="btnAdd">Lägg till</button>
-
-    </form>
-</div>
-
-
-</body>
+    <div class="boxCoachAvalible">
+    <!-- underrubrik -->
+    <h2> Lägg till tillgängliga tider </h2>
+      <form action="addAvailability.php" method="POST">
+        <!-- Label för dropdown med dagar -->
+        <label for="dayDropdown"><b>Välj dag</b></label>
+        <!-- Dropdown-lista med vardagar -->
+        <select name="dayName">
+          <option value="Måndag">Måndag</option>
+          <option value="Tisdag">Tisdag</option>
+          <option value="Onsdag">Onsdag</option>
+          <option value="Torsdag">Torsdag</option>
+          <option value="Fredag">Fredag</option>
+        </select>
+        <!-- Knapp för att lägga till tillgänglighet -->
+        <button class="addDay" type="submit" name="btnAdd">Lägg till</button>
+      </form>
+    </div>
+    <!-- Knapp för utloggning av användare -->
+    <div class="logoutBtn">
+      <button onclick="location.href='logoutUser.php';">Logga ut</button>
+    </div>
+  </body>
 </html>
