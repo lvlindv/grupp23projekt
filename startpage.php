@@ -20,6 +20,7 @@ include "db_connect.php";
       <body>
       <!-- Rubrik -->
       <h1>STUDIEHJÄLPEN </h1>
+
       <!-- Inloggningsruta och reklambanners -->
       <div class="content">
         <!-- Ruta för inloggning m.m. -->
@@ -51,11 +52,11 @@ include "db_connect.php";
       <div class="banners">
         <div class"divHalebop">
           <!-- "Reklambanner" till Halebop som öppnas i ny flik -->
-          <a target="_blank" href="https://www.halebop.se/"><img src="hale.jpg" class="halebop"></a>
+          <a target="_blank" href="https://www.halebop.se/"><img src="img/halebop.jpg" class="halebop"></a>
         </div>
         <div class="divStudentbokhandeln">
           <!-- "Reklambanner" till Studentbokhandeln som öppnas i ny flik -->
-          <a target="_blank" href="https://www.studentbokhandeln.se/"><img src="Beg.jpg" class="studentbokhandeln"></a>
+          <a target="_blank" href="https://www.studentbokhandeln.se/"><img src="img/studentbokhandeln.jpg" class="studentbokhandeln"></a>
         </div>
       </div>
     </div>

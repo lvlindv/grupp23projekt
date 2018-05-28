@@ -149,6 +149,14 @@
     return $query;
   }
 
+  // Lägger till ämne som coach hjälper till med
+  function addCoachStubject($subject, $coachId)
+  {
+    $query = "INSERT INTO CoachSubjects(subjectName, coachId) VALUES ('$subject', '$coachId')";
+
+    return $query;
+  }
+
   function checkEmail($email)
   {
     $query = "SELECT * FROM Student WHERE email='$email'";
