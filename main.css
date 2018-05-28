@@ -65,7 +65,8 @@ button:hover
   color: white;
   transition-duration: 0.4s;
 }
-.loggOut{
+.loggOut
+{
   float: right;
   margin-right: 170px;
   margin-top: -20px;
