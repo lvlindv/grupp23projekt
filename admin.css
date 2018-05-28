@@ -8,13 +8,19 @@ body
 table
 {
     border-collapse: collapse;
-    background-color: yellow;
+    background-color: grey;
+    width: 800px;
 }
 
 table, td, th
 {
     border: 2px
     solid black;
+}
+
+td, th
+{
+      padding: 10px;
 }
 
 td {
@@ -24,7 +30,7 @@ td {
 }
 
 th {
-    background-color: #4CAF50;
+    background-color: green;
     color: white;
 }
 
@@ -105,7 +111,7 @@ th {
 
 .btnBook
 {
-  margin: 60px 0px 0px 25px;
+  margin: 0px 0px 0px 0px;
 }
 
 .myBookings
@@ -129,4 +135,13 @@ th {
 .coachInfo
 {
   padding: 25px 25px 25px 0px;
+}
+
+.newBooking
+{
+  height: 600px;
+  width: 1400px;
+  margin: 10px 10px 10px 10px;
+  border-radius: 25px;
+  padding: 15px;
 }

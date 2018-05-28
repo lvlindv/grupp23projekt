@@ -61,6 +61,8 @@
       ?>
     </section>
     <!-- Formulär för bokning av stydiehjälp -->
+    <div class="newBooking">
+
     <h2> Boka ny tid </h2>
     <!-- Kopplar tillbaka till startsidan vid sökning -->
     <form action="studentStartpage.php" method="POST">
@@ -114,9 +116,10 @@
         <table>
           <!-- Tabellrubriker i fetstilt -->
           <tr>
-            <th></th>
+
             <th>Namn</th>
             <th>Beskrivning</th>
+            <th></th>
           </tr>
           <?php
             // Matar ut resultatet från queryn ovan
@@ -124,18 +127,16 @@
             {
           ?>
               <!-- Form med tabell över tillgängliga studiecoacher -->
-              <form action="booking.php" method="post">
               <!-- Namn och beskrivning för varje tillgänglig coach matas ut på ny rad -->
               <tr>
                 <!-- Skickar med den valda studiecoachens ID till booking.php -->
-                <td> <input type="hidden" name="coachId" value=<?php echo $row["coachId"]; ?></td>
+
                 <!-- Skriver ut den valda coachens namn och beskrivning -->
                 <td><?php echo $row['name'] ?></td>
                 <td><?php echo $row['description'] ?></td>
                 <!-- Knapp för bokning som kopplar till booking.php -->
-                <td><button class="btnBook" type="submit" value="Boka" name="btnBook">Boka</button></td>
+              <td><button class="btnBook" onclick="location.href='booking.php?coachId=<?php echo $row["coachId"]; ?>';">Boka</button></td>
               </tr>
-              </form>
           <?php
             }
           ?>
@@ -145,5 +146,7 @@
             }
           ?>
           <button><a href="logoutUser.php">Logga ut</a></button>
+        </div>
+
   </body>
 </html>
