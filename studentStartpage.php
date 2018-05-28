@@ -40,6 +40,7 @@
     <title>Startsida</title>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="userStartPage.css">
   </head>
 
   <body>
@@ -64,10 +65,10 @@
       ?>
     </section>
     <!-- Formulär för bokning av stydiehjälp -->
+        <h2> Boka ny tid </h2>
     <div class="newBooking">
-<div class="bookDaySubject">
 
-    <h2> Boka ny tid </h2>
+
     <!-- Kopplar tillbaka till startsidan vid sökning -->
     <form action="studentStartpage.php" method="POST">
       <!-- Rubrik -->
@@ -89,21 +90,23 @@
             makeDropdownFromResult("name", $resultSubjects);
           ?>
         <!-- Sök-knapp -->
-        <button type="submit" value="Sök" name="btnSearch">Sök </button>
+        <button class="btnSearch" type="submit" value="Sök" name="btnSearch">Sök </button>
     </form>
-</div>
+
     <?php
       // Hämtar tillgängliga studiecoacher
       include "availableCoaches.php";
     ?>
 
       <!-- Skriver ut tillgängliga studiecoacher -->
+      <div class="resultAvailability">
       <label for="resultAvailability"><b>
         <?php
         echo "Tillgängliga coacher för den valda dagen ".$selectedDay." och det valda ämnet ".$selectedSubject.":";
         ?>
       </b></label>
-
+      </div>
+</div>
       <?php
 
       // Om query inte resulterar i några rader så finns ingen tillgänglig coach
@@ -133,12 +136,13 @@
               <!-- Namn och beskrivning för varje tillgänglig coach matas ut på ny rad -->
               <tr>
                 <!-- Skickar med den valda studiecoachens ID till booking.php -->
-
                 <!-- Skriver ut den valda coachens namn och beskrivning -->
                 <td><?php echo $row['name'] ?></td>
                 <td><?php echo $row['description'] ?></td>
                 <!-- Knapp för bokning som kopplar till booking.php -->
-              <td><button class="btnBook" onclick="location.href='booking.php?coachId=<?php echo $row["coachId"]; ?>';">Boka</button></td>
+
+                <td><div class="btnBook"><button onclick="location.href='booking.php?coachId=<?php echo $row["coachId"]; ?>';">Boka</button></div></td>
+
               </tr>
           <?php
             }
