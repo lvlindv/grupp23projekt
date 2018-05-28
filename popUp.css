@@ -15,24 +15,6 @@ margin: 270px auto 0 auto;
   color: white;
 }
 
-.tryAgain
-{
-  color: black;
-  font-size: 18px;
-  position: absolute;
-  width: 240px;
-  height: 20px;
-  margin: 80px auto 100px 60px;
-}
-
-.wrong
-{
-  color: white;
-  font-size: 30px;
-  position: absolute;
-  margin: 20px auto 100px 50px;
-}
-
 .linkStartpage
 {
   color: white;
