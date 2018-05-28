@@ -39,12 +39,12 @@
   </head>
 
 <body>
+
+  <h1> <?php echo "Välkommen ".$_SESSION["name"]."!"; ?> </h1><!--Rubrik med studiecoachens email-->
+
   <div class="logout"> <!--loggaut högst upp till höger-->
     <button onclick="location.href='logoutUser.php';">Logga ut</button>
   </div>
-  <h1> <?php echo "Välkommen ".$_SESSION["name"]."!"; ?> </h1><!--Rubrik med studiecoachens email-->
-
-
 
 <!-- <div class="formBookings"> class för "dina bokningar" finns i admin.css-->
   <h2> Dina bokningar </h2><!--underrubrik-->
@@ -63,7 +63,7 @@
     ?>
   </section>
 
-
+<div class="boxCoachAvalible">
  <!-- <div class="formDay"> klass för alla dagarna i rulllistan, formet finns i admin.css-->
   <h2> Lägg till tillgängliga tider </h2><!--underrubrik-->
   <form action="addAvailability.php" method="POST">
@@ -81,7 +81,7 @@
     <button class="addDay" type="submit" name="btnAdd">Lägg till</button>
 
     </form>
-
+</div>
 
 
 </body>
