@@ -43,6 +43,9 @@
   </head>
 
   <body>
+    <div class="loggOut"> <!--loggaut högst upp till höger-->
+    <button href="logoutUser.php">Logga ut</button>
+    </div>
     <!-- Rubrik med användarens namn -->
     <h1> <?php echo "Välkommen ".$_SESSION["name"]."!" ?> </h1>
     <!-- Underrubrik -->
@@ -145,7 +148,7 @@
           <?php
             }
           ?>
-          <button><a href="logoutUser.php">Logga ut</a></button>
+
         </div>
 
   </body>

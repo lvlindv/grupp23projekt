@@ -25,7 +25,7 @@
 
 <body>
   <div class="loggOut"> <!--loggaut högst upp till höger-->
-  <button><a href="logoutUser.php">Logga ut</a></button>
+  <button href="logoutUser.php">Logga ut</button>
   </div>
   <h1> <?php echo "Välkommen ".$_SESSION["name"]."!"; ?> </h1><!--Rubrik med studiecoachens email-->
 
