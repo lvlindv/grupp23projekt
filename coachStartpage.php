@@ -35,6 +35,7 @@
     <script src="functions.js"></script>
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="userStartPage.css">
   </head>
 
 <body>
