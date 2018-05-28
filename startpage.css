@@ -11,7 +11,7 @@ body
 
 .box
 {
-  margin-left: 100px;
+  margin-left: 450px;
   width: 350px;
   height: 450px;
   box-sizing: border-box;
@@ -89,13 +89,6 @@ body
   border-radius: 50%; /* Runda hörn på "gubben" ovanför inlogg */
 }
 
-.boxCheckbox
-{
-  margin-top: 9px;
-  float: left;
-  width: 25px;
-}
-
 .boxTitle
 {
   padding-top: 15px;
@@ -103,14 +96,23 @@ body
 
 .agreeTerms
 {
-  margin: auto;
   width: 300px;
   overflow: hidden;
 }
 
+.boxCheckbox
+{
+  float: left;
+  width: 25px;
+  margin-left: 25px;
+}
+
 .userTermsText
 {
+  float: right;
   color: white;
+  margin-top: 10px;
+  margin-right: 15px;
 }
 
 .userTermsLink
@@ -118,15 +120,21 @@ body
   color: #cc2900;
 }
 
+.banners
+{
+  float: right;
+  margin-right: 50px;
+}
+
 .halebop
 {
-  width: 450;
-  height: 200;
+  width: 250;
+  height: 125;
 }
 
 .studentbokhandeln
 {
-  width: 300;
-  height: 50;
-
+  margin-top: 50px;
+  width: 250;
+  height: 125;
 }

@@ -49,10 +49,14 @@ include "db_connect.php";
           </div>
       </div>
       <div class="banners">
-        <!-- "Reklambanner" till Halebop som öppnas i ny flik -->
-        <a target="_blank" href="https://www.halebop.se/"><img src="hale.jpg" class="halebop"></a>
-        <!-- "Reklambanner" till Studentbokhandeln som öppnas i ny flik -->
-        <a target="_blank" href="https://www.studentbokhandeln.se/"><img src="Beg.jpg" class="studentbokhandeln"></a>
+        <div class"divHalebop">
+          <!-- "Reklambanner" till Halebop som öppnas i ny flik -->
+          <a target="_blank" href="https://www.halebop.se/"><img src="hale.jpg" class="halebop"></a>
+        </div>
+        <div class="divStudentbokhandeln">
+          <!-- "Reklambanner" till Studentbokhandeln som öppnas i ny flik -->
+          <a target="_blank" href="https://www.studentbokhandeln.se/"><img src="Beg.jpg" class="studentbokhandeln"></a>
+        </div>
       </div>
     </div>
   </body>
