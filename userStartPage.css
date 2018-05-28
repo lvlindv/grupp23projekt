@@ -10,6 +10,18 @@ table
     background-color: grey;
 }
 
+.bookingTitle
+{
+  width: 100%;
+  margin: 25px 25px 25px 25px;
+}
+
+.logoutBtn
+{
+  margin-top: 200px;
+  margin-left: 575px;
+}
+
 .availableCoachesTable
 {
   width: 900px;
