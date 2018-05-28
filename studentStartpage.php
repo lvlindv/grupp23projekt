@@ -44,10 +44,6 @@
   </head>
 
   <body>
-    <!-- Länk för att logga ut användare -->
-    <div class="logout">
-    <button onclick="location.href='logoutUser.php';">Logga ut</button>
-    </div>
     <!-- Rubrik med användarens namn -->
     <h1> <?php echo "Välkommen ".$_SESSION["name"]."!" ?> </h1>
     <!-- Underrubrik -->
@@ -66,14 +62,12 @@
       ?>
     </section>
 
+    <!-- Ruta för sökning och bokning av studiecoacher -->
     <div class="boxNewBookings">
 
-
-    <!-- Formulär för bokning av stydiehjälp -->
+    <!-- Formulär för bokning av studiehjälp -->
         <h2> Boka ny tid </h2>
     <div class="newBooking">
-
-
     <!-- Kopplar tillbaka till startsidan vid sökning -->
     <form action="studentStartpage.php" method="POST">
       <!-- Rubrik -->
@@ -124,14 +118,14 @@
       {
       ?>
         <!-- Tabell med tillgängliga studiecoacher -->
-        <table class"availableCoachesTable">
+        <table class="availableCoachesTable">
           <!-- Tabellrubriker i fetstilt -->
           <tr>
 
             <th>Namn</th>
-            <div class="descriptionStudyCoach">
+
             <th>Beskrivning</th>
-            </div>
+
             <th></th>
           </tr>
           <?php
@@ -145,10 +139,12 @@
                 <!-- Skickar med den valda studiecoachens ID till booking.php -->
                 <!-- Skriver ut den valda coachens namn och beskrivning -->
                 <td><?php echo $row['name'] ?></td>
-                <td><?php echo $row['description'] ?></td>
+                <div class="descriptionStudyCoach">
+                  <td><?php echo $row['description'] ?></td>
+                </div>
                 <!-- Knapp för bokning som kopplar till booking.php -->
 
-                <td><div class="btnBook"><button class="bookbtn" onclick="location.href='booking.php?coachId=<?php echo $row["coachId"]; ?>';">Boka</button></div></td>
+                <td><div class="btnBook"><button onclick="location.href='booking.php?coachId=<?php echo $row["coachId"]; ?>';">Boka</button></div></td>
 
               </tr>
           <?php
@@ -159,8 +155,11 @@
           <?php
             }
           ?>
-
         </div>
+    </div>
+    <!-- Knapp för att logga ut användare -->
+    <div class="loginBtn">
+      <button onclick="location.href='logoutUser.php';">Logga ut</button>
     </div>
   </body>
 </html>
