@@ -30,10 +30,7 @@
 
     <title>Felmeddelande</title>
     </head>
-
     <body>
-
-
       <?php
 
         if(isset($_POST['btnAdd']))
@@ -63,7 +60,7 @@
           ?>
           <div class="popUp">
             <?php
-              echo '<div class="alreadyAvailable"><h2>Du har nu angett att du är tillgänglig på '.$selectedDay.'</h2></div>';
+              echo '<div class="popUpMsg"><h2>Du har nu angett att du är tillgänglig på '.$selectedDay.'</h2></div>';
               echo '<a class="linkStartpage" href="coachStartpage.php">Tillbaka till din sida</a>';
             ?>
           </div>

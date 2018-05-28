@@ -9,22 +9,10 @@ box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
 margin: 270px auto 0 auto;
 }
 
-.buttonBack
+.popUpMsg
 {
-  color: black;
-  font-size: 18px;
-  position: absolute;
-  width: 240px;
-  height: 20px;
-  margin: 75px auto 100px 78px;
-}
-
-.userSaved
-{
+  padding-top: 20px;
   color: white;
-  font-size: 30px;
-  position: absolute;
-  margin: 30px auto 100px 8px;
 }
 
 .tryAgain
@@ -43,12 +31,6 @@ margin: 270px auto 0 auto;
   font-size: 30px;
   position: absolute;
   margin: 20px auto 100px 50px;
-}
-
-.alreadyAvailable
-{
-  color: white;
-  padding-top: 10px;
 }
 
 .linkStartpage
