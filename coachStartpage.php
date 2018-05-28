@@ -24,12 +24,11 @@
   </head>
 
 <body>
-  <h1> <?php echo "Välkommen ".$_SESSION["name"]."!"; ?> </h1><!--Rubrik med studiecoachens email-->
-
-
-  <div class="loggOut"> <!--just nu används diven ej-->
+  <div class="loggOut"> <!--loggaut högst upp till höger-->
   <button><a href="logoutUser.php">Logga ut</a></button>
   </div>
+  <h1> <?php echo "Välkommen ".$_SESSION["name"]."!"; ?> </h1><!--Rubrik med studiecoachens email-->
+
 
 
 <!-- <div class="formBookings"> class för "dina bokningar" finns i admin.css-->
