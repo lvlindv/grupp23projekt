@@ -158,3 +158,21 @@ select
   margin-left: 350px;
 
 }
+
+.boxNewBookings
+{
+  width: 1200px;
+  height: 400px;
+  box-sizing: border-box;
+  background: rgba(0,0,0,.5);
+  box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
+  float: left;
+  padding-left:15px;
+  margin-left: 80px;
+
+}
+
+.descriptionStudyCoach
+{
+  width: 100px;
+}

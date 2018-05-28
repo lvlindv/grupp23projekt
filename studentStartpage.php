@@ -65,6 +65,10 @@
         }
       ?>
     </section>
+
+    <div class="boxNewBookings">
+
+
     <!-- Formulär för bokning av stydiehjälp -->
         <h2> Boka ny tid </h2>
     <div class="newBooking">
@@ -125,7 +129,9 @@
           <tr>
 
             <th>Namn</th>
+            <div class="descriptionStudyCoach">
             <th>Beskrivning</th>
+            </div>
             <th></th>
           </tr>
           <?php
@@ -155,6 +161,6 @@
           ?>
 
         </div>
-
+    </div>
   </body>
 </html>
