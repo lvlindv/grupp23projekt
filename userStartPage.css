@@ -38,8 +38,8 @@ td, th
 
 td {
     width: 60px;
-    height: 80px;
-    vertical-align: bottom;
+    height: 70px;
+    position: center;
 }
 
 th {
@@ -47,20 +47,17 @@ th {
     color: white;
 }
 
-tr:hover
+.btnBook
 {
-  background-color: #cc2900;
-  color: white;
-  transition-duration: 0.4s;
+  padding-top: 20px;
+  padding-left: 30px;
+  margin-right: auto;
 }
 
-button.bookbtn{
-  position: relative;
-}
-
-.logoutBtn
+.loginBtn
 {
-  margin-top: 200px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   margin-left: 575px;
 }
 
