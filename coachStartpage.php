@@ -42,6 +42,8 @@
 
   <h1> <?php echo "Välkommen ".$_SESSION["name"]."!"; ?> </h1><!--Rubrik med studiecoachens email-->
 
+
+
   <!-- underrubrik -->
   <h2> Dina bokningar </h2>
   <!-- ruta med bokningar -->

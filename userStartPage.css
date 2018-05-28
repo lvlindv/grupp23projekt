@@ -99,6 +99,17 @@ th {
   margin-left: 25px;
   padding-bottom: 20px;
 }
+.boxCoachAvalible
+{
+  width: 1200px;
+  height: auto;
+  box-sizing: border-box;
+  background: rgba(0,0,0,.5);
+  box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
+  padding-left:15px;
+  margin-left: 25px;
+  padding-bottom: 20px;
+}
 
 .descriptionStudyCoach
 {
@@ -153,4 +164,4 @@ th {
 .studentInfo
 {
   padding: 25px 25px 25px 0px;
-} 
+}
