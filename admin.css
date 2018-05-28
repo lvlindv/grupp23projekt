@@ -75,15 +75,7 @@ th {
   padding-top: 10px;
 }
 
-.myBookings
-{
-  background-color: red;
-}
 
-section {
-    background-color: red;
-
-}
 
 
 .formBookings
@@ -113,6 +105,23 @@ section {
 
 .btnBook
 {
-
   margin: 60px 0px 0px 25px;
+}
+
+.myBookings
+{
+  width: 1400px;
+  height: 300px;
+}
+
+.booking
+{
+  margin: 10px 10px 10px 10px;
+  background-color: white;
+  width: 300px;
+  height: 150px;
+  float: left;
+  border-radius: 25px;
+  padding: 15px;
+
 }
