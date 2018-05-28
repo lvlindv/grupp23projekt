@@ -20,38 +20,40 @@ include "db_connect.php";
       <body>
       <!-- Rubrik -->
       <h1>STUDIEHJÄLPEN </h1>
-      <!-- Ruta för inloggning m.m. -->
-      <div class="box">
-        <div class="divLoginImg">
-          <img src="img/gubbe.png" class="loginImg">
-        </div>
-        <h2>LOGGA IN</h2>
-        <!-- Inloggningsformulär -->
-        <form name="loginForm" action="loginUser.php" method="post" onsubmit="return validateLogin()">
-          <div class="loginForm">
-            <label for="uname" class="boxLabel"><b>E-post</b></label>
-            <input type="text" class="boxInput" placeholder="Ange din e-post..." name="email">
-            <label for="psw" class="boxLabel"><b>Lösenord</b></label>
-            <input type="password" class="boxInput" placeholder="Ange ditt lösenord..." name="psw">
+      <!-- Inloggningsruta och reklambanners -->
+      <div class="content">
+        <!-- Ruta för inloggning m.m. -->
+        <div class="box">
+          <div class="divLoginImg">
+            <img src="img/gubbe.png" class="loginImg">
           </div>
-          <!-- Knapp som kopplar användaren till loginUser.php -->
-          <button name="btnLogin" class="btnLogin" type="submit" value="Button" >Logga in</button>
-        </form>
-        <!-- Kopplar användaren till registreraFormStudent.php sidan. -->
-        <button name="btnRegister" onclick="location.href='registerFormStudent.php';" class="btnRegister">Registrera dig</button>
-        <!-- (EJ I FUNKTION) Knapp som kopplar användaren till ett form för att ansöka om att bli studycoach. -->
-        <button name="btnStudyCoach" class="btnSignup">Bli studiecoach</button>
-        <div class="divBoxLink">
-          <!-- Referens för glömt lösenord -->
-          <a href="startpage.php" class="boxLink">Glömt ditt lösenord?</a>
-        </div>
+          <h2>LOGGA IN</h2>
+          <!-- Inloggningsformulär -->
+          <form name="loginForm" action="loginUser.php" method="post" onsubmit="return validateLogin()">
+            <div class="loginForm">
+              <label for="uname" class="boxLabel"><b>E-post</b></label>
+              <input type="text" class="boxInput" placeholder="Ange din e-post..." name="email">
+              <label for="psw" class="boxLabel"><b>Lösenord</b></label>
+              <input type="password" class="boxInput" placeholder="Ange ditt lösenord..." name="psw">
+            </div>
+            <!-- Knapp som kopplar användaren till loginUser.php -->
+            <button name="btnLogin" class="btnLogin" type="submit" value="Button" >Logga in</button>
+          </form>
+          <!-- Kopplar användaren till registreraFormStudent.php sidan. -->
+          <button name="btnRegister" onclick="location.href='registerFormStudent.php';" class="btnRegister">Registrera dig</button>
+          <!-- (EJ I FUNKTION) Knapp som kopplar användaren till ett form för att ansöka om att bli studycoach. -->
+          <button name="btnStudyCoach" class="btnSignup">Bli studiecoach</button>
+          <div class="divBoxLink">
+            <!-- Referens för glömt lösenord -->
+            <a href="startpage.php" class="boxLink">Glömt ditt lösenord?</a>
+          </div>
+      </div>
+      <div class="banners">
+        <!-- "Reklambanner" till Halebop som öppnas i ny flik -->
+        <a target="_blank" href="https://www.halebop.se/"><img src="hale.jpg" class="halebop"></a>
+        <!-- "Reklambanner" till Studentbokhandeln som öppnas i ny flik -->
+        <a target="_blank" href="https://www.studentbokhandeln.se/"><img src="Beg.jpg" class="studentbokhandeln"></a>
+      </div>
     </div>
-    <div class="banners">
-      <!-- "Reklambanner" till Halebop som öppnas i ny flik -->
-      <a target="_blank" href="https://www.halebop.se/"><img src="hale.jpg" class="halebop"></a>
-      <!-- "Reklambanner" till Studentbokhandeln som öppnas i ny flik -->
-      <a target="_blank" href="https://www.studentbokhandeln.se/"><img src="Beg.jpg" class="studentbokhandeln"></a>
-    </div>
-
   </body>
 </html>
