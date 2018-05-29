@@ -1,7 +1,7 @@
 body
 {
-  background-color: lightgrey;
-  background-image: none;
+  background-size: cover;
+  background-image: url(img/userbackground.jpeg);
 }
 
 table
@@ -127,7 +127,7 @@ th
   box-shadow: 5px 5px 4px rgba(0,0,0, 0.7);
   padding-left:15px;
   margin-left: 25px;
-  padding-top: 5px; 
+  padding-top: 5px;
   padding-bottom: 20px;
 }
 
