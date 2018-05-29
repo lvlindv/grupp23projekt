@@ -25,7 +25,7 @@ $coach = $connection->query("SELECT * FROM StudyCoach WHERE coachId = '$coachId'
   <head>
     <meta charset="utf-8">
     <title>Edit page</title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="userStartPage.css">
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
