@@ -15,6 +15,7 @@ loggedInAsAdmin();
 $coachId = $_GET['id'];
 
 // Tar ut alla värden från tabellen, som ska ha samma som get-variabeln, det id nummer som coachen har på den raden kan klickar
+// HÄR BORDE QUERYN BRYTAS UT TILL QUERIES.PHP MEN VI LYCKADES INTE FÅ TILL DET
 $coach = $connection->query("SELECT * FROM StudyCoach WHERE coachId = '$coachId' LIMIT 1")->fetch_assoc();
 
 ?>
