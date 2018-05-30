@@ -34,7 +34,7 @@
       $phoneNr = $_POST['mnr'];
 
       // Kollar om email finns i databasen
-      if (!$connection->query(checkEmail($email)))
+      if ($connection->query(checkEmail($email)))
       {
       echo "Tyvärr, emailadressen finns redan registrerad!";
       }

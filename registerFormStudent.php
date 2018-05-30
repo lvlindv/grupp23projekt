@@ -44,7 +44,7 @@
 
             <!-- Checkbox och "länk" för att godkänna användaravtal -->
             <div class="agreeTerms">
-            <input class="boxCheckbox" type="checkbox" name="Godkänn">
+            <input class="boxCheckbox" type="checkbox" name="acceptTerms">
             <p class="userTermsText"><b>Godkänn våra <a class="userTermsLink" href="registerFormStudent.php">användarvillkor</a></b></p>
             </div>
 

@@ -14,8 +14,10 @@
   // Kollar om student är inloggad
   loggedInAsStudent();
 
-  if (isset($_GET["msg"])) {
-    switch ($_GET["msg"]) {
+  if (isset($_GET["msg"]))
+  {
+    switch ($_GET["msg"])
+    {
       case 'bokningfinns':
         echo "<script type='text/javascript'>alert('Du har redan studiehjälp bokat på den valda dagen.')</script>";
         break;

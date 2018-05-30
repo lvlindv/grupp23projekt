@@ -19,7 +19,7 @@ function validateLogin()
       }
 }
 
-//Funktion som säkerställer att alla registreringsfälten är ifyllda
+// Funktion som säkerställer att alla registreringsfälten är ifyllda
 function validateReg()
 {
   // Skapar variabler från formuläret regForm
@@ -36,7 +36,7 @@ function validateReg()
     }
 }
 
-//Funktion som säkerställer att alla registreringsfälten är ifyllda
+// Funktion som säkerställer att alla registreringsfälten är ifyllda
 function validateStudyCoach()
 {
   // Skapar variabler från formuläret regHelper
