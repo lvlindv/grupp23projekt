@@ -38,7 +38,7 @@ loggedInAsAdmin();
         <form name="regHelper" action="registerToDBCoach.php" method="post" onsubmit="return validateStudyCoach()">
 
           <label for="name" class="boxLabel"><b>Fullständigt namn</b></label>
-          <input type="text" class="boxInput" placeholder="Ange fullständigt namn på StudyCoachen" name="name">
+          <input type="text" class="boxInput" placeholder="Ange fullständigt namn på studiecoachen" name="name">
 
           <label for="email" class="boxLabel"><b>E-post</b></label>
           <input type="text" class="boxInput" placeholder="Ange epost" name="email" >
@@ -50,7 +50,7 @@ loggedInAsAdmin();
           <input type="password" class="boxInput" placeholder="Ange lösenord" name="psw" >
 
           <label for="description" class="boxLabel"><b>Beskrivning</b></label>
-          <input type="text" class="boxInput" placeholder="Ange en beskrivning av StudyCoachen" name="description" >
+          <input type="text" class="boxInput" placeholder="Ange en beskrivning av studiecoachen" name="description" >
 
           <div class="subjects">
           <label for="description" class="labelSubjects"><b>Ämnen</b></label>
