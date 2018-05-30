@@ -54,9 +54,12 @@ $coach = $connection->query("SELECT * FROM StudyCoach WHERE coachId = '$coachId'
 
         <!-- coachid är en hidden typ, denna visas ej men finns med och skickas då vidare till adminUpdate.php men inte synligt-->
         <input type="hidden" name="coachId" value="<?php echo $coachId; ?>">
-        <div class="saveEdit">
-          <button type="submit" class="registrera">Spara</button>
-        </div>
+
+        <!-- Knapp för att spara redigering -->
+        <button type="submit" class="btnregister">Spara</button>
+
+        <!-- Knapp för att avbryta redigering -->
+        <button class="btnCancelEdit" type="button" onclick="location.href='adminStartpage.php';">Avbryt</button>
      </form>
     </div>
  </body>

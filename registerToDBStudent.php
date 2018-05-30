@@ -42,8 +42,8 @@
       {
       // Om inte email finns i databasen, läggs den nya studenten in i databasen
       $connection->query(addStudent($name, $email, $password, $phoneNr));
-      echo '<a class="userSaved">Användaren sparad!</a>';
-      echo '<a href="startpage.php" class="buttonBack">Tillbaka till startsidan</a>';
+      echo '<div class="popUpMsg"><h2>Användaren sparad!</h2></div>';
+      echo '<a href="startpage.php" class="linkStartpage">Tillbaka till startsidan</a>';
       }
       $connection->close();
       ?>

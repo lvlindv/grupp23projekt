@@ -85,11 +85,13 @@ th
   margin: 10px 5px 4px 30px;
 }
 
-.saveEdit
+.btnCancelEdit
 {
-  padding-left: 30px;
+  margin-top: 20px;
+  margin-left: 100px;
 }
-+.btnSearch
+
+.btnSearch
 {
   margin: 25px 200px 25px 0px;
 }
@@ -237,11 +239,6 @@ th
 .boxTitle
 {
   padding-top: 10px;
-}
-
-.saveEdit
-{
-  margin-left: 100px;
 }
 
 .calendarImg

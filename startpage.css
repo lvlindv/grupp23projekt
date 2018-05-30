@@ -55,9 +55,9 @@ body
   margin: 20px 0px 0px 25px;
 }
 
-.btnCancel
+.btnCancelEdit
 {
-
+  padding-left: 100px;
 }
 
 .divBoxLink
