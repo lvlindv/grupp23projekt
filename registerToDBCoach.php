@@ -15,6 +15,7 @@
   <body>
     <div class="popUp">
       <?php
+      // Startar sessionen
       session_start();
       // Kopplar till databasen
       include 'db_connect.php';

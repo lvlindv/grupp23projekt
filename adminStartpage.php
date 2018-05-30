@@ -92,7 +92,7 @@ loggedInAsAdmin();
              <th>E-post</th>
              <th>Lösenord</th>
              <th>Beskrivning</th>
-             <th>Telefonummer</th>
+             <th>Mobilnummer</th>
              <th>Alternativ</th>
            </tr>
             <?php
