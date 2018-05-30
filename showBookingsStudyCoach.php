@@ -15,7 +15,9 @@
     echo $row["subject"];
     ?>
   </div>
-
+  <div class="imgDiv">
+    <img src="img/kalender.png" class="calendarImg">
+  </div>
   <div class="studentInfo">
     <?php
     echo "<b>Student: </b>";

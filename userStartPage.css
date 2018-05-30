@@ -178,12 +178,12 @@ th
 
 .coachInfo
 {
-  padding: 25px 25px 25px 0px;
+  padding: 0px 25px 25px 0px;
 }
 
 .studentInfo
 {
-  padding: 25px 25px 25px 0px;
+  padding: 0px 25px 25px 0px;
 }
 
 .formRegisterCoach
@@ -242,4 +242,11 @@ th
 .saveEdit
 {
   margin-left: 100px;
+}
+
+.calendarImg
+{
+  width: 40px;
+  height: 40px;
+  margin-left: 200px;
 }
