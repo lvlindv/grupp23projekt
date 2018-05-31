@@ -35,7 +35,7 @@
       if ($connection->query(updateStudyCoach($name, $email, $psw, $des, $coachId, $phnr)))
       {
         // Visar att en ny studiecoach har lagts till i databasen
-        echo '<div class="popUpMsg"><h2>Studiecoach registrerad.</h2></div>';
+        echo '<div class="popUpMsg"><h2>Studiecoach redigerad.</h2></div>';
         // Länk tillbaka till adminstartpage.php
         echo '<a href="adminStartpage.php" class="linkStartpage">Tillbaka till startsidan</a>';
       }
